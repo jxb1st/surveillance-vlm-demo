@@ -48,3 +48,7 @@
 .tabs{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}
 @media (max-width:1000px){.three,.rec,.facts{grid-template-columns:minmax(0,1fr)}.bmhead .links{margin-left:0}}
 .bm,.three .panel{overflow-wrap:anywhere;min-width:0}.bm .tag,.chipset .tag{white-space:normal}.rec>div{min-width:0}.bmnav .btn{white-space:nowrap}
+details.pipeline{background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin:0 0 18px}
+details.pipeline>summary{font-size:17px;font-weight:650;padding:2px 0}
+details.pipeline[open]>summary{margin-bottom:8px}
+details.pipeline .diagram{border:0;padding:0}
