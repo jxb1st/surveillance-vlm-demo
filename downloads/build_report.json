@@ -1,31 +1,22 @@
 {
-  "built_at": "2026-09-29T20:52:07Z",
-  "stage": "complete",
+  "built_at": "2026-09-29T23:01:53Z",
+  "mode": "simple",
   "pages": [
     "index.html",
-    "benchmarks.html",
-    "videos.html",
-    "annotations.html",
-    "models.html",
-    "results.html"
+    "benchmarks.html"
   ],
-  "videos": 174,
-  "playable_videos": 174,
   "samples": 192,
+  "videos": 174,
   "models": {
     "qwen38_27b": "completed",
     "qwen3vl_8b": "completed",
     "videollama3_7b": "completed"
   },
-  "replay_status": "completed",
-  "replay_cases": 3,
-  "data_script_bytes": {
-    "core": 2774,
-    "videos": 955702,
-    "samples": 658936,
-    "preds": 680480,
-    "replay": 21791
-  },
-  "prompt_hash_checks": 576,
-  "site_size_mb": 211.2
+  "catalog_samples": [
+    "CUVA",
+    "FINEVAU",
+    "HIVAU",
+    "SVQA",
+    "UCA"
+  ]
 }

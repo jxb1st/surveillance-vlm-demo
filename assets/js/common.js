@@ -27,9 +27,9 @@
   U.sec = function (x) { return x == null ? "—" : U.fmt(x, 1) + " s"; };
   U.pct = function (x) { return x == null ? "—" : (100 * x).toFixed(1) + "%"; };
   U.dur = function (s) { s = Math.round(s); return Math.floor(s / 60) + ":" + ("0" + (s % 60)).slice(-2); };
-  U.level = function (l) { return (D.core.level_labels || {})[l] || l; };
-  U.modelName = function (id) { var m = (D.core.models || []).filter(function (x) { return x.id === id; })[0]; return m ? m.name : id; };
-  U.modelStatus = function (id) { var m = (D.core.models || []).filter(function (x) { return x.id === id; })[0]; return m ? m.status : "not_run"; };
+  U.level = function (l) { return (((D.core || D.ex || {}).level_labels) || {})[l] || l; };
+  U.modelName = function (id) { var m = ((D.core || D.ex).models || []).filter(function (x) { return x.id === id; })[0]; return m ? m.name : id; };
+  U.modelStatus = function (id) { var m = ((D.core || D.ex).models || []).filter(function (x) { return x.id === id; })[0]; return m ? m.status : "not_run"; };
   U.tag = function (text, cls) { return U.el("span", { class: "tag " + (cls || ""), text: text }); };
   U.kv = function (pairs) {
     var dl = U.el("dl", { class: "kv" });
@@ -87,7 +87,7 @@
         var s = Math.max(0, Math.min(duration, sp.s)), e = Math.max(0, Math.min(duration, sp.e));
         var left = 100 * s / duration, w = Math.max(0.6, 100 * (e - s) / duration);
         track.appendChild(U.el("button", {
-          type: "button", class: "tl-span " + (sp.cls || ""), style: "left:" + left + "%;width:" + w + "%",
+          type: "button", class: "tl-span " + (sp.cls || ""), style: "left:" + left + "%;width:" + w + "%" + (sp.color ? ";background:" + sp.color + ";border-color:" + sp.color + ";color:#fff" : ""),
           title: (sp.title || sp.text || "") + " · " + U.fmt(sp.s) + "–" + U.fmt(sp.e) + " s (click to seek)",
           "aria-label": (t.label + ": " + (sp.title || sp.text || "") + ", " + U.fmt(sp.s) + " to " + U.fmt(sp.e) + " seconds. Seek to start."),
           onclick: function () { onSeek(sp.s); }
