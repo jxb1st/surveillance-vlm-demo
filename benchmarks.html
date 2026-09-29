@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benchmarks · Surveillance Video Understanding Demo</title>
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="benchmarks.html">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="topbar-in">
+  <div class="brand">Surveillance Video Understanding Demo</div>
+  <nav class="nav" aria-label="Pages">
+<a href="index.html" data-nav="index.html">Framework</a><a href="benchmarks.html" data-nav="benchmarks.html" aria-current="page">Benchmarks</a><a href="videos.html" data-nav="videos.html">Videos</a><a href="annotations.html" data-nav="annotations.html">Annotations</a><a href="models.html" data-nav="models.html">Models</a><a href="results.html" data-nav="results.html">Results</a>  </nav>
+</div></header>
+<div class="prov"><div class="prov-in">
+  <span><b>Build</b> 2026-09-29</span>
+  <span><b>Protocol</b> VALU demo subset v1 — adapted protocol</span>
+  <span><b>Dataset</b> VALU annotations @ <span class="mono">2ed33aa6</span>, UCF-Crime + ECVA masked media @ <span class="mono">299373f8</span></span>
+  <span><b>Manifest</b> <span class="mono">valu-demo-v1 · a29f5969ed65</span></span>
+  <span><b>Runs</b> Qwen3.8-27B: <span class="tag ok">completed</span> Qwen3-VL-8B-Instruct: <span class="tag ok">completed</span> VideoLLaMA3-7B: <span class="tag ok">completed</span></span>
+</div></div>
+<main id="main">
+<h1>Benchmarks</h1>
+<p class="lede">What the benchmark tests, where its videos come from, and which documented subset is evaluated in this demo.</p>
+
+<h2>Three different things that are often confused</h2>
+<div class="grid g3">
+  <div class="panel"><h3>Original video source</h3><p>The footage itself, for example UCF-Crime or ECVA. Several benchmarks reuse the same videos, so overlap is judged by source-video identifiers and file hashes, not by dataset names.</p></div>
+  <div class="panel"><h3>Language annotation collection</h3><p>Descriptions, questions or structured labels written for existing videos, for example UCA or FineW3. A collection can be released without any playable video.</p></div>
+  <div class="panel"><h3>Benchmark evaluation task</h3><p>A fixed input, a reference answer and a metric, for example the three VALU tasks below. Only this gives a score.</p></div>
+</div>
+
+<h2>Catalog</h2>
+<div class="grid g2">
+<div class="panel">
+  <h3>VALU <span class="tag ok">evaluated in this build</span></h3>
+  <dl class="kv">
+    <dt>Kind</dt><dd>Benchmark evaluation tasks with their own annotations</dd>
+    <dt>Purpose</dt><dd>Temporal localization and understanding of video anomalies at five semantic levels.</dd>
+    <dt>Annotation types</dt><dd>ADC multiple-choice records, TDG description + single time span, ALD description + single time span.</dd>
+    <dt>Source-video lineage</dt><dd>UCF-Crime, MSAD, ECVA (ECVA extends CUVA).</dd>
+    <dt>Access status</dt><dd>Annotations public. UCF-Crime and ECVA publisher-masked videos public. MSAD videos must be requested from the MSAD authors.
+<br><span class="note">Link check 2026-09-29: reachable; reachable</span></dd>
+    <dt>In this build</dt><dd>Evaluated in this build on the UCF-Crime and ECVA part only.</dd>
+    <dt>Sources</dt><dd><a href="https://aclanthology.org/2026.acl-long.56/" target="_blank" rel="noopener">Paper</a> · <a href="https://github.com/Mr-xiu/VALU" target="_blank" rel="noopener">Annotations</a> · <a href="https://huggingface.co/datasets/NIRCVAD/VALU" target="_blank" rel="noopener">Masked media</a></dd>
+  </dl>
+</div>
+<div class="panel">
+  <h3>SurveillanceVQA-589K <span class="tag norm">catalog only</span></h3>
+  <dl class="kv">
+    <dt>Kind</dt><dd>Language annotation collection (question answering)</dd>
+    <dt>Purpose</dt><dd>Large-scale question answering about surveillance footage.</dd>
+    <dt>Annotation types</dt><dd>Question–answer pairs.</dd>
+    <dt>Source-video lineage</dt><dd>Built on existing surveillance video datasets; original videos are acquired separately.</dd>
+    <dt>Access status</dt><dd>QA annotations public; source videos are not part of the annotation release.
+<br><span class="note">Link check 2026-09-29: reachable; reachable (54 files, 10 video/archive)</span></dd>
+    <dt>In this build</dt><dd>Catalog only. Not evaluated in this build.</dd>
+    <dt>Sources</dt><dd><a href="https://arxiv.org/abs/2505.12589" target="_blank" rel="noopener">Paper</a> · <a href="https://huggingface.co/datasets/fei213/SurveillanceVQA-589K" target="_blank" rel="noopener">Data</a></dd>
+  </dl>
+</div>
+<div class="panel">
+  <h3>FineVAU / FineW3 <span class="tag norm">catalog only</span></h3>
+  <dl class="kv">
+    <dt>Kind</dt><dd>Language annotation collection (structured)</dd>
+    <dt>Purpose</dt><dd>Fine-grained description of what happened, who was involved and where.</dd>
+    <dt>Annotation types</dt><dd>Structured events, entities and scene descriptions.</dd>
+    <dt>Source-video lineage</dt><dd>Source-video lineage: not verified in this build.</dd>
+    <dt>Access status</dt><dd>Annotations public. Playable videos and uniform time units are not assumed.
+<br><span class="note">Link check 2026-09-29: reachable; reachable (2 files, 0 video/archive)</span></dd>
+    <dt>In this build</dt><dd>Catalog only. Not evaluated in this build.</dd>
+    <dt>Sources</dt><dd><a href="https://finevau.github.io/" target="_blank" rel="noopener">Project</a> · <a href="https://huggingface.co/datasets/joao-cardeira/FineW3" target="_blank" rel="noopener">Annotations</a></dd>
+  </dl>
+</div>
+<div class="panel">
+  <h3>UCA <span class="tag norm">catalog only</span></h3>
+  <dl class="kv">
+    <dt>Kind</dt><dd>Language annotation collection</dd>
+    <dt>Purpose</dt><dd>Surveillance video-and-language understanding: description and temporal grounding.</dd>
+    <dt>Annotation types</dt><dd>Sentence descriptions with temporal annotations.</dd>
+    <dt>Source-video lineage</dt><dd>UCF-Crime.</dd>
+    <dt>Access status</dt><dd>Not checked for download in this build.
+<br><span class="note">Link check 2026-09-29: reachable</span></dd>
+    <dt>In this build</dt><dd>Catalog only. Not evaluated in this build.</dd>
+    <dt>Sources</dt><dd><a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Yuan_Towards_Surveillance_Video-and-Language_Understanding_New_Dataset_Baselines_and_Challenges_CVPR_2024_paper.pdf" target="_blank" rel="noopener">Paper</a></dd>
+  </dl>
+</div>
+<div class="panel">
+  <h3>CUVA <span class="tag norm">catalog only</span></h3>
+  <dl class="kv">
+    <dt>Kind</dt><dd>Benchmark with causal annotations</dd>
+    <dt>Purpose</dt><dd>Causation understanding of video anomalies: what happened, why, and how severe.</dd>
+    <dt>Annotation types</dt><dd>Free-text cause, effect and description annotations with time spans.</dd>
+    <dt>Source-video lineage</dt><dd>Videos collected from online video platforms (VALU paper, related work).</dd>
+    <dt>Access status</dt><dd>Not checked for download in this build.
+<br><span class="note">Link check 2026-09-29: reachable</span></dd>
+    <dt>In this build</dt><dd>Catalog only. Not evaluated in this build.</dd>
+    <dt>Sources</dt><dd><a href="https://arxiv.org/abs/2405.00181" target="_blank" rel="noopener">Paper</a></dd>
+  </dl>
+</div>
+<div class="panel">
+  <h3>HIVAU-70k <span class="tag norm">catalog only</span></h3>
+  <dl class="kv">
+    <dt>Kind</dt><dd>Instruction-tuning data</dd>
+    <dt>Purpose</dt><dd>Hierarchical instruction data used to train Holmes-VAU (clip, event and video level).</dd>
+    <dt>Annotation types</dt><dd>Hierarchical instruction–response pairs.</dd>
+    <dt>Source-video lineage</dt><dd>Surveillance anomaly datasets including UCF-Crime (Holmes-VAU paper).</dd>
+    <dt>Access status</dt><dd>Distributed through the Holmes-VAU repository; not downloaded in this build.
+<br><span class="note">Link check 2026-09-29: reachable; reachable; reachable (18 files, 0 video/archive)</span></dd>
+    <dt>In this build</dt><dd>Catalog only. It is training data, so a model trained on it may have seen VALU source videos.</dd>
+    <dt>Sources</dt><dd><a href="https://arxiv.org/abs/2412.06171" target="_blank" rel="noopener">Paper</a> · <a href="https://github.com/pipixin321/HolmesVAU" target="_blank" rel="noopener">Code</a></dd>
+  </dl>
+</div>
+</div>
+
+<h2>VALU tasks</h2>
+<div class="grid g3">
+  <div class="panel"><h3>ADC · Anomaly Description Choice</h3>
+    <p>Given a video and task-specific candidate descriptions, select one answer.</p>
+    <ul>
+      <li><b>Matching</b>: one candidate is the reference description (abnormal video, options A–G).</li>
+      <li><b>Exclusion</b>: every specific description is wrong; the correct choice is “anomaly present, but none of the descriptions is correct” (abnormal video, options A–F).</li>
+      <li><b>Rejection</b>: the video is normal and the descriptions are of non-existent abnormal events; the correct choice is “no abnormal occurrence” (options A–F).</li>
+    </ul>
+    <p class="note">In the imported records the correct Exclusion option is always E and the correct Rejection option is always F. A model that always answers E or F would score perfectly on that subtask, so the three subtasks are reported separately and never pooled.</p>
+    <p><span class="tag">Metric</span> exact answer-ID accuracy per subtask.</p></div>
+  <div class="panel"><h3>TDG · Temporal Description Grounding</h3>
+    <p>Given a video and a textual description, predict the time interval in which the described event occurs.</p>
+    <p><span class="tag">Metric</span> temporal IoU, recall at IoU ≥ 0.3, 0.5, 0.7. v1 uses records with one verified, non-empty reference span.</p></div>
+  <div class="panel"><h3>ALD · Anomaly Localization and Description</h3>
+    <p>Given a video and a requested semantic level, localize and describe the relevant anomaly. No description or time is supplied to the model.</p>
+    <p><span class="tag">Metric</span> <b>qualitative only</b> in v1. No description score is computed.</p></div>
+</div>
+
+<h2>Five abnormal semantic levels</h2>
+<div class="diagram">
+<svg viewBox="0 0 1000 250" role="img" aria-label="Five abnormal semantic levels shown as nested intervals on a timeline" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif">
+  <text x="10" y="18" font-size="14" font-weight="600" fill="#1a1e24">Illustration of the five abnormal semantic levels (schematic, not benchmark data)</text>
+  <line x1="200" y1="226" x2="980" y2="226" stroke="#5b6470" stroke-width="1.5"/>
+  <text x="200" y="244" font-size="11.5" fill="#5b6470">video start</text><text x="980" y="244" font-size="11.5" fill="#5b6470" text-anchor="end">video end</text>
+    <text x="10" y="48" font-size="13" font-weight="600" fill="#1a1e24">Complete event</text>
+    <text x="10" y="62" font-size="11" fill="#5b6470">context + abnormal part + aftermath</text>
+    <rect x="260" y="34" width="680" height="26" rx="4" fill="#dff2e5" stroke="#1f7a3d" stroke-width="1.5"/>
+    <text x="10" y="86" font-size="13" font-weight="600" fill="#1a1e24">Abnormal segment</text>
+    <text x="10" y="100" font-size="11" fill="#5b6470">the anomalous part as a whole</text>
+    <rect x="400" y="72" width="540" height="26" rx="4" fill="#e6f0dc" stroke="#4d7a1f" stroke-width="1.5"/>
+    <text x="10" y="124" font-size="13" font-weight="600" fill="#1a1e24">Action</text>
+    <text x="10" y="138" font-size="11" fill="#5b6470">the abnormal action or behavior</text>
+    <rect x="400" y="110" width="160" height="26" rx="4" fill="#fdf0d3" stroke="#8a5a00" stroke-width="1.5"/>
+    <text x="10" y="162" font-size="13" font-weight="600" fill="#1a1e24">Consequence</text>
+    <text x="10" y="176" font-size="11" fill="#5b6470">what the action causes</text>
+    <rect x="540" y="148" width="340" height="26" rx="4" fill="#fbe4e5" stroke="#a4262c" stroke-width="1.5"/>
+    <text x="10" y="200" font-size="13" font-weight="600" fill="#1a1e24">Subjects&#39; response</text>
+    <text x="10" y="214" font-size="11" fill="#5b6470">how people or vehicles react</text>
+    <rect x="600" y="186" width="340" height="26" rx="4" fill="#eee6f7" stroke="#6b3fa0" stroke-width="1.5"/>
+</svg>
+</div>
+
+<p class="note">Normal-event records keep their own source label, <span class="mono">Normal_Event</span>. They are not folded into an abnormal level.</p>
+
+<h2>Counts</h2>
+<p class="note">Each figure is either quoted from a source or computed from files in this build. Question counts are not video counts.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Quantity</th><th class="n">Value</th><th>Origin</th></tr></thead>
+<tbody>
+<tr><td>Paper-reported benchmark size (videos)</td><td class="n">1,019</td><td><span class="tag paper">paper-reported</span> VALU paper, Section 3 (“a total of 1,019 videos”)</td></tr>
+<tr><td>Imported annotation rows</td><td class="n">ADC 5,695 · TDG 3,072 · ALD 2,771</td><td><span class="tag norm">computed</span> rows of the three parquet files</td></tr>
+<tr><td>Unique source videos referenced by the annotations</td><td class="n">1,019</td><td><span class="tag norm">computed</span> ECVA 359, MSAD 361, UCF 299</td></tr>
+<tr><td>Locally available media</td><td class="n">658</td><td><span class="tag norm">computed</span> ECVA 359, UCF 299; MSAD media are not redistributed</td></tr>
+<tr><td>Available media within the 300 s duration limit</td><td class="n">639</td><td><span class="tag norm">computed</span> ffprobe duration</td></tr>
+<tr><td>Eligible annotation rows</td><td class="n">ADC 3,749 · TDG 1,995 · ALD 1,846</td><td><span class="tag norm">computed</span> after all eligibility rules</td></tr>
+<tr><td><b>Selected evaluation questions</b></td><td class="n"><b>ADC 120 · TDG 60 · ALD 12 (total 192)</b></td><td><span class="tag norm">computed</span> frozen manifest</td></tr>
+<tr><td><b>Distinct evaluated videos</b></td><td class="n"><b>174</b></td><td><span class="tag norm">computed</span> ADC 115, TDG 58, ALD 12 (a video can serve several tasks)</td></tr>
+</tbody></table></div>
+
+<h2>Selected subset: VALU demo subset v1 — adapted protocol</h2>
+<dl class="kv panel">
+  <dt>Manifest</dt><dd class="mono">valu-demo-v1 · sha256 a29f5969ed6587a421ca27190e8ac466b5e1de1bab3714382c63fbcd42e434f0</dd>
+  <dt>Frozen</dt><dd>2026-09-29T19:54:31Z, before any evaluation prediction was produced</dd>
+  <dt>Seed</dt><dd>42</dd>
+  <dt>Eligibility</dt><dd>Sources UCF, ECVA; source duration ≤ 300 s; decodable matched media; documented label semantics; verified time mapping (TDG/ALD single span inside media).</dd>
+  <dt>Selection rule</dt><dd>Within each stratum, records are ordered by SHA-256 of (dataset_revision | source_video_id | task | raw_record_locator | seed | role salt); one record per video per stratum; quotas spread evenly over ADC subtasks, then semantic levels, then sources; shortfalls are redistributed in sorted stratum order.</dd>
+  <dt>Shortfalls</dt><dd>None. Every target quota was met.</dd>
+  <dt>Development data</dt><dd>11 smoke questions on 11 videos, disjoint from the evaluation videos, were used to debug prompts and parsers.</dd>
+</dl>
+<div class="callout warn">This subset is a documented demonstration subset. It is not statistically representative of CCTV behavior, and it is not a reproduction of the full VALU benchmark.</div>
+
+<h3>Coverage by task and semantic level</h3>
+<div class="tablewrap"><table><thead><tr><th>Task</th><th class="n">Complete event</th><th class="n">Abnormal segment</th><th class="n">Action</th><th class="n">Consequence</th><th class="n">Subjects&#39; response</th><th class="n">Normal event</th></tr></thead><tbody>
+<tr><td>ADC</td><td class="n">16</td><td class="n">16</td><td class="n">16</td><td class="n">16</td><td class="n">16</td><td class="n">40</td></tr><tr><td>TDG</td><td class="n">10</td><td class="n">10</td><td class="n">10</td><td class="n">10</td><td class="n">10</td><td class="n">10</td></tr><tr><td>ALD</td><td class="n">2</td><td class="n">2</td><td class="n">3</td><td class="n">3</td><td class="n">2</td><td class="n">0</td></tr></tbody></table></div>
+<div class="grid g3">
+<div><h3>By source dataset</h3><div class="tablewrap"><table><thead><tr><th>Task</th><th>Source</th><th class="n">Questions</th></tr></thead><tbody>
+<tr><td>ADC</td><td>ECVA</td><td class="n">40</td></tr><tr><td>ADC</td><td>UCF</td><td class="n">80</td></tr><tr><td>ALD</td><td>ECVA</td><td class="n">7</td></tr><tr><td>ALD</td><td>UCF</td><td class="n">5</td></tr><tr><td>TDG</td><td>ECVA</td><td class="n">25</td></tr><tr><td>TDG</td><td>UCF</td><td class="n">35</td></tr></tbody></table></div></div>
+<div><h3>ADC by subtask</h3><div class="tablewrap"><table><thead><tr><th>Subtask</th><th class="n">Questions</th></tr></thead><tbody>
+<tr><td>Exclusion</td><td class="n">40</td></tr><tr><td>Matching</td><td class="n">40</td></tr><tr><td>Rejection</td><td class="n">40</td></tr></tbody></table></div></div>
+<div><h3>By observed event category</h3><div class="tablewrap"><table><thead><tr><th>Category</th><th class="n">Questions</th></tr></thead><tbody>
+<tr><td>unknown</td><td class="n">72</td></tr><tr><td>Normal</td><td class="n">50</td></tr><tr><td>RoadAccidents</td><td class="n">18</td></tr><tr><td>Explosion</td><td class="n">15</td></tr><tr><td>Shooting</td><td class="n">11</td></tr><tr><td>Burglary</td><td class="n">6</td></tr><tr><td>Arson</td><td class="n">5</td></tr><tr><td>Shoplifting</td><td class="n">5</td></tr><tr><td>Arrest</td><td class="n">3</td></tr><tr><td>Robbery</td><td class="n">3</td></tr><tr><td>Abuse</td><td class="n">1</td></tr><tr><td>Fighting</td><td class="n">1</td></tr><tr><td>Stealing</td><td class="n">1</td></tr><tr><td>Vandalism</td><td class="n">1</td></tr></tbody></table></div>
+<p class="note">A category is available only where the publisher filename carries one (UCF-Crime). ECVA records have no category metadata and are counted as <span class="mono">unknown</span>.</p></div>
+</div>
+
+<h3>Excluded records</h3>
+<p>3,948 imported rows are not eligible. The full list is in the <a href="downloads/excluded_records.json">excluded records file</a>.</p>
+<div class="tablewrap"><table><thead><tr><th>Task</th><th>Reason</th><th class="n">Rows</th></tr></thead><tbody>
+<tr><td>ADC</td><td class="mono">duration_over_300s</td><td class="n">80</td></tr><tr><td>ADC</td><td class="mono">source_media_not_redistributed (MSAD)</td><td class="n">1,866</td></tr><tr><td>ALD</td><td class="mono">duration_over_300s</td><td class="n">40</td></tr><tr><td>ALD</td><td class="mono">source_media_not_redistributed (MSAD)</td><td class="n">877</td></tr><tr><td>ALD</td><td class="mono">span_exceeds_media_duration</td><td class="n">6</td></tr><tr><td>ALD</td><td class="mono">span_not_ordered_or_empty</td><td class="n">2</td></tr><tr><td>TDG</td><td class="mono">duration_over_300s</td><td class="n">50</td></tr><tr><td>TDG</td><td class="mono">source_media_not_redistributed (MSAD)</td><td class="n">1,019</td></tr><tr><td>TDG</td><td class="mono">span_exceeds_media_duration</td><td class="n">6</td></tr><tr><td>TDG</td><td class="mono">span_not_ordered_or_empty</td><td class="n">2</td></tr></tbody></table></div>
+
+<h2>What this benchmark does not show</h2>
+<p>Fine-grained descriptions do not automatically cover paired ambiguities such as fighting versus play, or falling versus voluntarily lying down. A model can score well here without being tested on those pairs. Claims about such pairs need verified paired examples, which this subset does not contain.</p>
+</main>
+<footer>
+  Static build exported 2026-09-29T20:27:47Z. The browser plays local media and explores saved results; it does not run a model or contact an inference service.
+  Measured scores apply to <b>VALU demo subset v1 — adapted protocol</b> only and are not a reproduction of the full VALU benchmark.
+</footer>
+</body>
+</html>

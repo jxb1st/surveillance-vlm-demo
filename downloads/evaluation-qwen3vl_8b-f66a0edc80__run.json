@@ -1,0 +1,143 @@
+{
+  "run_id": "evaluation-qwen3vl_8b-f66a0edc80",
+  "origin": "measured",
+  "split": "evaluation",
+  "status": "completed",
+  "started_at": "2026-09-29T20:08:01Z",
+  "ended_at": "2026-09-29T20:10:38Z",
+  "exported_at": "2026-09-29T20:10:38Z",
+  "protocol_id": "valu_demo_v1",
+  "protocol_label": "VALU demo subset v1 — adapted protocol",
+  "manifest_id": "valu-demo-v1",
+  "manifest_sha256": "a29f5969ed6587a421ca27190e8ac466b5e1de1bab3714382c63fbcd42e434f0",
+  "model_id": "qwen3vl_8b",
+  "display_name": "Qwen3-VL-8B-Instruct",
+  "checkpoint": "Qwen/Qwen3-VL-8B-Instruct",
+  "model_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "processor_revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+  "code_commit": "9f1ddbe27c268551e0f75363decbb5d38780f258",
+  "environment_name": "env-qwen",
+  "versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.14.0-687.36.1.el9_8.x86_64-x86_64-with-glibc2.34",
+    "torch": "2.8.0+cu128",
+    "transformers": "5.17.0",
+    "accelerate": "1.15.0",
+    "tokenizers": "0.23.2",
+    "numpy": "2.4.6",
+    "PIL": "12.3.0",
+    "av": "18.1.0",
+    "pydantic": "2.13.5",
+    "huggingface_hub": "1.33.0",
+    "safetensors": "0.8.0",
+    "cuda_runtime": "12.8",
+    "cudnn": 91002,
+    "ffmpeg": "ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers"
+  },
+  "gpu": {
+    "visible": true,
+    "nvidia_smi": [
+      {
+        "index": "0",
+        "name": "NVIDIA H200",
+        "memory_total_mib": "143771",
+        "memory_used_mib_at_probe": "20445",
+        "driver": "610.57.04"
+      }
+    ],
+    "count_visible": 1,
+    "device_name": "NVIDIA H200",
+    "memory_total_gib": 139.79,
+    "memory_free_at_probe_gib": 119.83
+  },
+  "precision": "bf16",
+  "quantization": "none",
+  "attention_backend": "sdpa (PyTorch scaled_dot_product_attention)",
+  "generation_settings": {
+    "do_sample": false,
+    "num_beams": 1,
+    "repetition_penalty": 1.0,
+    "decoding": "greedy",
+    "deviation_from_model_card": {
+      "model_recommended": {
+        "source": "Qwen3-VL repository README",
+        "note": "sampling-based generation defaults"
+      },
+      "used": "greedy decoding for a deterministic adapted protocol"
+    },
+    "chat_template_kwargs": {}
+  },
+  "max_new_tokens": {
+    "ADC": 128,
+    "TDG": 192,
+    "ALD": 384
+  },
+  "sampling": {
+    "protocol_id": "valu_demo_v1",
+    "target_frames": 32,
+    "long_edge": 672,
+    "strategy": "uniform_segment_midpoints",
+    "frame_format": "jpeg_q95",
+    "sampling_config_sha256": "cdc3e5c4b6bcef2e331368c7a08900ac012fef5a81ed6db7287c46a472cf2cd9"
+  },
+  "input_handling": {
+    "processor_class": "Qwen3VLProcessor",
+    "video_processor_class": "Qwen3VLVideoProcessor",
+    "model_class": "Qwen3VLForConditionalGeneration",
+    "do_sample_frames": false,
+    "processor_resampling": "disabled; the 32 shared frames are passed as-is",
+    "timestamps": "real decoded frame timestamps passed via video metadata (frames_indices = round(t*1000), fps = 1000)",
+    "temporal_patch_size": 2,
+    "temporal_merging": "the processor merges every 2 consecutive frames into one temporal patch and inserts the mean timestamp of the merged frames as text",
+    "patch_size": 16,
+    "spatial_merge_size": 2,
+    "size_budget": {
+      "longest_edge": 25165824,
+      "shortest_edge": 4096
+    },
+    "cap_pixels_per_frame": false,
+    "optional_kernels": {
+      "flash-linear-attention": "absent (reference PyTorch fallback)",
+      "causal_conv1d": "absent (reference PyTorch fallback)"
+    },
+    "processor_resize": "smart_resize to multiples of patch_size*merge_size within the processor pixel budget"
+  },
+  "thinking": "not_applicable",
+  "prompt_hashes": {
+    "adc_matching.txt": "e58bc3ad6689d80fa609d44ff3fdc32968421050ca556a2de901c3e7eb8b2598",
+    "adc_exclusion.txt": "2b9b46c2a1953c283db75c6341772191c36dd1801219efeb56f962fadbe394fa",
+    "adc_rejection.txt": "760b9b624654857fbcc7c3213ccc10080dad2a9ebd2d58fc90ede1a2754571cd",
+    "tdg.txt": "2e8cb9f514072ef8d6b7a0da9dcdddc4d361141099cbf110a8ed0c63d83b0f4e",
+    "ald.txt": "21832d9068299f32fcba39c45628ea3b5dc0e4477d6ab6d764da51950af89e98",
+    "replay.txt": "352e8b842ae30351be1acc00f9cce87028df3600c95caedb15098e957b8d2352",
+    "level_questions.json": "16b66ea753824414dff5a9f75be1d4517d3dcc671ddd43313c4df89d0b2ec21a",
+    "VERSION": "c6d729cd431d8deadce8cc6159ac18c133a01de6c23262506e73cb0563192136"
+  },
+  "load_time_sec": 7.24,
+  "warmup": {
+    "performed": true,
+    "scored": false,
+    "ms": 1514.7
+  },
+  "retry_history": [],
+  "training_overlap": {
+    "status": "unknown",
+    "source": "https://arxiv.org/abs/2511.21631",
+    "note": "Training data are not enumerated at video level. Exposure to UCF-Crime or ECVA footage cannot be ruled out."
+  },
+  "counts": {
+    "selected": 192,
+    "attempted": 192,
+    "generation_ok": 192,
+    "valid_parse": 192,
+    "failed": 0,
+    "by_status": {
+      "completed": 192
+    }
+  },
+  "blocked_reason": null,
+  "notes": [
+    "prompt set version valu_demo_v1-prompts-1",
+    "latency profile 'cached_frames': frames were decoded and cached before inference; the decode time is the time to load cached JPEG frames, not video decoding"
+  ]
+}

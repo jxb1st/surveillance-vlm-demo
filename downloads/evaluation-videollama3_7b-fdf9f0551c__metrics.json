@@ -1,0 +1,4013 @@
+{
+  "run_id": "evaluation-videollama3_7b-fdf9f0551c",
+  "model_id": "videollama3_7b",
+  "split": "evaluation",
+  "run_status": "completed",
+  "protocol_id": "valu_demo_v1",
+  "protocol_label": "VALU demo subset v1 — adapted protocol",
+  "manifest_id": "valu-demo-v1",
+  "manifest_sha256": "a29f5969ed6587a421ca27190e8ac466b5e1de1bab3714382c63fbcd42e434f0",
+  "evaluated_at": "2026-09-29T20:27:47Z",
+  "eligible_for_main_ranking": true,
+  "origin": "measured",
+  "ADC": {
+    "overall_counts": {
+      "selected": 120,
+      "attempted": 120,
+      "generation_ok": 120,
+      "valid_output": 120,
+      "failed": 0,
+      "not_run": 0
+    },
+    "note": "No single pooled ADC accuracy is reported as a headline: the three subtasks have different option sets and semantics.",
+    "by_subtask": {
+      "Exclusion": {
+        "counts": {
+          "selected": 40,
+          "attempted": 40,
+          "generation_ok": 40,
+          "valid_output": 40,
+          "failed": 0,
+          "not_run": 0
+        },
+        "accuracy_all_selected": 0.075,
+        "accuracy_valid_only": 0.075,
+        "valid_only_denominator": 40,
+        "reason_if_missing": null
+      },
+      "Matching": {
+        "counts": {
+          "selected": 40,
+          "attempted": 40,
+          "generation_ok": 40,
+          "valid_output": 40,
+          "failed": 0,
+          "not_run": 0
+        },
+        "accuracy_all_selected": 0.725,
+        "accuracy_valid_only": 0.725,
+        "valid_only_denominator": 40,
+        "reason_if_missing": null
+      },
+      "Rejection": {
+        "counts": {
+          "selected": 40,
+          "attempted": 40,
+          "generation_ok": 40,
+          "valid_output": 40,
+          "failed": 0,
+          "not_run": 0
+        },
+        "accuracy_all_selected": 0.7,
+        "accuracy_valid_only": 0.7,
+        "valid_only_denominator": 40,
+        "reason_if_missing": null
+      }
+    },
+    "by_subtask_and_level": {
+      "Exclusion": {
+        "Abnormal_Action": {
+          "counts": {
+            "selected": 8,
+            "attempted": 8,
+            "generation_ok": 8,
+            "valid_output": 8,
+            "failed": 0,
+            "not_run": 0
+          },
+          "accuracy_all_selected": 0.125,
+          "accuracy_valid_only": 0.125,
+          "valid_only_denominator": 8,
+          "reason_if_missing": null
+        },
+        "Abnormal_Consequence": {
+          "counts": {
+            "selected": 8,
+            "attempted": 8,
+            "generation_ok": 8,
+            "valid_output": 8,
+            "failed": 0,
+            "not_run": 0
+          },
+          "accuracy_all_selected": 0.125,
+          "accuracy_valid_only": 0.125,
+          "valid_only_denominator": 8,
+          "reason_if_missing": null
+        },
+        "Abnormal_Event": {
+          "counts": {
+            "selected": 8,
+            "attempted": 8,
+            "generation_ok": 8,
+            "valid_output": 8,
+            "failed": 0,
+            "not_run": 0
+          },
+          "accuracy_all_selected": 0.0,
+          "accuracy_valid_only": 0.0,
+          "valid_only_denominator": 8,
+          "reason_if_missing": null
+        },
+        "Abnormal_Segment": {
+          "counts": {
+            "selected": 8,
+            "attempted": 8,
+            "generation_ok": 8,
+            "valid_output": 8,
+            "failed": 0,
+            "not_run": 0
+          },
+          "accuracy_all_selected": 0.125,
+          "accuracy_valid_only": 0.125,
+          "valid_only_denominator": 8,
+          "reason_if_missing": null
+        },
+        "Subjects_Response": {
+          "counts": {
+            "selected": 8,
+            "attempted": 8,
+            "generation_ok": 8,
+            "valid_output": 8,
+            "failed": 0,
+            "not_run": 0
+          },
+          "accuracy_all_selected": 0.0,
+          "accuracy_valid_only": 0.0,
+          "valid_only_denominator": 8,
+          "reason_if_missing": null
+        }
+      },
+      "Matching": {
+        "Abnormal_Action": {
+          "counts": {
+            "selected": 8,
+            "attempted": 8,
+            "generation_ok": 8,
+            "valid_output": 8,
+            "failed": 0,
+            "not_run": 0
+          },
+          "accuracy_all_selected": 0.75,
+          "accuracy_valid_only": 0.75,
+          "valid_only_denominator": 8,
+          "reason_if_missing": null
+        },
+        "Abnormal_Consequence": {
+          "counts": {
+            "selected": 8,
+            "attempted": 8,
+            "generation_ok": 8,
+            "valid_output": 8,
+            "failed": 0,
+            "not_run": 0
+          },
+          "accuracy_all_selected": 0.625,
+          "accuracy_valid_only": 0.625,
+          "valid_only_denominator": 8,
+          "reason_if_missing": null
+        },
+        "Abnormal_Event": {
+          "counts": {
+            "selected": 8,
+            "attempted": 8,
+            "generation_ok": 8,
+            "valid_output": 8,
+            "failed": 0,
+            "not_run": 0
+          },
+          "accuracy_all_selected": 0.625,
+          "accuracy_valid_only": 0.625,
+          "valid_only_denominator": 8,
+          "reason_if_missing": null
+        },
+        "Abnormal_Segment": {
+          "counts": {
+            "selected": 8,
+            "attempted": 8,
+            "generation_ok": 8,
+            "valid_output": 8,
+            "failed": 0,
+            "not_run": 0
+          },
+          "accuracy_all_selected": 1.0,
+          "accuracy_valid_only": 1.0,
+          "valid_only_denominator": 8,
+          "reason_if_missing": null
+        },
+        "Subjects_Response": {
+          "counts": {
+            "selected": 8,
+            "attempted": 8,
+            "generation_ok": 8,
+            "valid_output": 8,
+            "failed": 0,
+            "not_run": 0
+          },
+          "accuracy_all_selected": 0.625,
+          "accuracy_valid_only": 0.625,
+          "valid_only_denominator": 8,
+          "reason_if_missing": null
+        }
+      },
+      "Rejection": {
+        "Normal_Event": {
+          "counts": {
+            "selected": 40,
+            "attempted": 40,
+            "generation_ok": 40,
+            "valid_output": 40,
+            "failed": 0,
+            "not_run": 0
+          },
+          "accuracy_all_selected": 0.7,
+          "accuracy_valid_only": 0.7,
+          "valid_only_denominator": 40,
+          "reason_if_missing": null
+        }
+      }
+    },
+    "by_source": {
+      "ECVA": {
+        "counts": {
+          "selected": 40,
+          "attempted": 40,
+          "generation_ok": 40,
+          "valid_output": 40,
+          "failed": 0,
+          "not_run": 0
+        },
+        "accuracy_all_selected": 0.45,
+        "accuracy_valid_only": 0.45,
+        "valid_only_denominator": 40,
+        "reason_if_missing": null
+      },
+      "UCF": {
+        "counts": {
+          "selected": 80,
+          "attempted": 80,
+          "generation_ok": 80,
+          "valid_output": 80,
+          "failed": 0,
+          "not_run": 0
+        },
+        "accuracy_all_selected": 0.525,
+        "accuracy_valid_only": 0.525,
+        "valid_only_denominator": 80,
+        "reason_if_missing": null
+      }
+    }
+  },
+  "TDG": {
+    "overall": {
+      "counts": {
+        "selected": 60,
+        "attempted": 60,
+        "generation_ok": 60,
+        "valid_output": 54,
+        "failed": 6,
+        "not_run": 0
+      },
+      "miou_all_selected": 0.3757223634080011,
+      "miou_valid_only": 0.41746929267555677,
+      "valid_only_denominator": 54,
+      "recall_all_selected": {
+        "0.3": 0.5,
+        "0.5": 0.35,
+        "0.7": 0.25
+      },
+      "recall_valid_only": {
+        "0.3": 0.5555555555555556,
+        "0.5": 0.3888888888888889,
+        "0.7": 0.2777777777777778
+      },
+      "reason_if_missing": null
+    },
+    "by_level": {
+      "Abnormal_Action": {
+        "counts": {
+          "selected": 10,
+          "attempted": 10,
+          "generation_ok": 10,
+          "valid_output": 9,
+          "failed": 1,
+          "not_run": 0
+        },
+        "miou_all_selected": 0.3033085642600261,
+        "miou_valid_only": 0.3370095158444735,
+        "valid_only_denominator": 9,
+        "recall_all_selected": {
+          "0.3": 0.4,
+          "0.5": 0.4,
+          "0.7": 0.3
+        },
+        "recall_valid_only": {
+          "0.3": 0.4444444444444444,
+          "0.5": 0.4444444444444444,
+          "0.7": 0.3333333333333333
+        },
+        "reason_if_missing": null
+      },
+      "Abnormal_Consequence": {
+        "counts": {
+          "selected": 10,
+          "attempted": 10,
+          "generation_ok": 10,
+          "valid_output": 9,
+          "failed": 1,
+          "not_run": 0
+        },
+        "miou_all_selected": 0.3936534126388633,
+        "miou_valid_only": 0.4373926807098481,
+        "valid_only_denominator": 9,
+        "recall_all_selected": {
+          "0.3": 0.5,
+          "0.5": 0.4,
+          "0.7": 0.2
+        },
+        "recall_valid_only": {
+          "0.3": 0.5555555555555556,
+          "0.5": 0.4444444444444444,
+          "0.7": 0.2222222222222222
+        },
+        "reason_if_missing": null
+      },
+      "Abnormal_Event": {
+        "counts": {
+          "selected": 10,
+          "attempted": 10,
+          "generation_ok": 10,
+          "valid_output": 8,
+          "failed": 2,
+          "not_run": 0
+        },
+        "miou_all_selected": 0.3559477419157078,
+        "miou_valid_only": 0.44493467739463477,
+        "valid_only_denominator": 8,
+        "recall_all_selected": {
+          "0.3": 0.5,
+          "0.5": 0.3,
+          "0.7": 0.2
+        },
+        "recall_valid_only": {
+          "0.3": 0.625,
+          "0.5": 0.375,
+          "0.7": 0.25
+        },
+        "reason_if_missing": null
+      },
+      "Abnormal_Segment": {
+        "counts": {
+          "selected": 10,
+          "attempted": 10,
+          "generation_ok": 10,
+          "valid_output": 10,
+          "failed": 0,
+          "not_run": 0
+        },
+        "miou_all_selected": 0.5632112027510676,
+        "miou_valid_only": 0.5632112027510676,
+        "valid_only_denominator": 10,
+        "recall_all_selected": {
+          "0.3": 0.8,
+          "0.5": 0.5,
+          "0.7": 0.4
+        },
+        "recall_valid_only": {
+          "0.3": 0.8,
+          "0.5": 0.5,
+          "0.7": 0.4
+        },
+        "reason_if_missing": null
+      },
+      "Normal_Event": {
+        "counts": {
+          "selected": 10,
+          "attempted": 10,
+          "generation_ok": 10,
+          "valid_output": 8,
+          "failed": 2,
+          "not_run": 0
+        },
+        "miou_all_selected": 0.4182255278796555,
+        "miou_valid_only": 0.5227819098495694,
+        "valid_only_denominator": 8,
+        "recall_all_selected": {
+          "0.3": 0.5,
+          "0.5": 0.3,
+          "0.7": 0.3
+        },
+        "recall_valid_only": {
+          "0.3": 0.625,
+          "0.5": 0.375,
+          "0.7": 0.375
+        },
+        "reason_if_missing": null
+      },
+      "Subjects_Response": {
+        "counts": {
+          "selected": 10,
+          "attempted": 10,
+          "generation_ok": 10,
+          "valid_output": 10,
+          "failed": 0,
+          "not_run": 0
+        },
+        "miou_all_selected": 0.219987731002686,
+        "miou_valid_only": 0.219987731002686,
+        "valid_only_denominator": 10,
+        "recall_all_selected": {
+          "0.3": 0.3,
+          "0.5": 0.2,
+          "0.7": 0.1
+        },
+        "recall_valid_only": {
+          "0.3": 0.3,
+          "0.5": 0.2,
+          "0.7": 0.1
+        },
+        "reason_if_missing": null
+      }
+    },
+    "by_source": {
+      "ECVA": {
+        "counts": {
+          "selected": 25,
+          "attempted": 25,
+          "generation_ok": 25,
+          "valid_output": 21,
+          "failed": 4,
+          "not_run": 0
+        },
+        "miou_all_selected": 0.4173102547811726,
+        "miou_valid_only": 0.4967979223585388,
+        "valid_only_denominator": 21,
+        "recall_all_selected": {
+          "0.3": 0.6,
+          "0.5": 0.44,
+          "0.7": 0.2
+        },
+        "recall_valid_only": {
+          "0.3": 0.7142857142857143,
+          "0.5": 0.5238095238095238,
+          "0.7": 0.23809523809523808
+        },
+        "reason_if_missing": null
+      },
+      "UCF": {
+        "counts": {
+          "selected": 35,
+          "attempted": 35,
+          "generation_ok": 35,
+          "valid_output": 33,
+          "failed": 2,
+          "not_run": 0
+        },
+        "miou_all_selected": 0.3460167267128785,
+        "miou_valid_only": 0.36698743742274986,
+        "valid_only_denominator": 33,
+        "recall_all_selected": {
+          "0.3": 0.42857142857142855,
+          "0.5": 0.2857142857142857,
+          "0.7": 0.2857142857142857
+        },
+        "recall_valid_only": {
+          "0.3": 0.45454545454545453,
+          "0.5": 0.30303030303030304,
+          "0.7": 0.30303030303030304
+        },
+        "reason_if_missing": null
+      }
+    },
+    "thresholds": [
+      0.3,
+      0.5,
+      0.7
+    ],
+    "definition": "tIoU = intersection / union of the predicted and reference single span; invalid, missing or truncated predictions score 0."
+  },
+  "ALD": {
+    "mode": "qualitative only",
+    "counts": {
+      "selected": 12,
+      "attempted": 12,
+      "generation_ok": 12,
+      "valid_output": 10,
+      "failed": 2,
+      "not_run": 0
+    },
+    "note": "No description score is computed in v1. No BLEU/ROUGE or LLM judge is used."
+  },
+  "latency": {
+    "end_to_end_ms": {
+      "n": 190,
+      "mean": 794.7340265480116,
+      "median": 681.9088109768927,
+      "p90": 1248.226891970262,
+      "max": 1461.5938591305166
+    },
+    "generation_ms": {
+      "n": 190,
+      "mean": 590.8440356351141,
+      "median": 540.451615001075,
+      "p90": 915.3491659089923,
+      "max": 1079.2821911163628
+    },
+    "preprocess_ms": {
+      "n": 190,
+      "mean": 158.0780286109075,
+      "median": 95.50033102277666,
+      "p90": 272.47626706957817,
+      "max": 333.40624207630754
+    },
+    "decode_ms": {
+      "n": 190,
+      "mean": 45.15078704755165,
+      "median": 38.68576243985444,
+      "p90": 66.93430594168603,
+      "max": 96.19110403582454
+    },
+    "peak_gpu_allocated_gib": {
+      "n": 190,
+      "mean": 16.163368421052635,
+      "median": 15.736,
+      "p90": 17.221,
+      "max": 17.491
+    },
+    "output_tokens": {
+      "n": 190,
+      "mean": 25.49473684210526,
+      "median": 22.0,
+      "p90": 37,
+      "max": 53
+    },
+    "visual_tokens": {
+      "n": 190,
+      "mean": 5858.1894736842105,
+      "median": 3168.0,
+      "p90": 10752,
+      "max": 12288
+    },
+    "latency_profile": [
+      "cached_frames"
+    ],
+    "note": "Peak value is torch allocated memory for the request, not total device memory usage. Model loading and checkpoint download are excluded from latency."
+  },
+  "per_sample": [
+    {
+      "sample_id": "valu-adc-04214",
+      "video_id": "v-ecva-768e61269b",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-04231",
+      "video_id": "v-ecva-d627f89aba",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "D",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-04922",
+      "video_id": "v-ecva-7593852c54",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-04292",
+      "video_id": "v-ecva-4f9f174907",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "E",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-04694",
+      "video_id": "v-ucf-eb45a01a84",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-04714",
+      "video_id": "v-ucf-ad77b8021d",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-04567",
+      "video_id": "v-ucf-b6cdad45f0",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-04779",
+      "video_id": "v-ucf-ea49116d34",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "D",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05079",
+      "video_id": "v-ecva-b103faa007",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05137",
+      "video_id": "v-ecva-7aafb2609e",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "D",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05127",
+      "video_id": "v-ecva-0c337258bd",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05300",
+      "video_id": "v-ecva-79c7609ce0",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05235",
+      "video_id": "v-ucf-a431564700",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05156",
+      "video_id": "v-ucf-b0aaa6a8ed",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "E",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05209",
+      "video_id": "v-ucf-bcc2b440ad",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "D",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-04974",
+      "video_id": "v-ucf-31029c6d0f",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-02813",
+      "video_id": "v-ecva-cad236b125",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "D",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-03289",
+      "video_id": "v-ecva-c85f86cf0d",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "B",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-03104",
+      "video_id": "v-ecva-f9b961fdca",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-03062",
+      "video_id": "v-ecva-f6695abd9f",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "C",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-03362",
+      "video_id": "v-ucf-1ef44d809c",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "C",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-02738",
+      "video_id": "v-ucf-01dda939f1",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-03367",
+      "video_id": "v-ucf-0d64596818",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "C",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-03041",
+      "video_id": "v-ucf-5e417eff8b",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "C",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-03571",
+      "video_id": "v-ecva-f327b2110a",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "D",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-03739",
+      "video_id": "v-ecva-c5912ec218",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "C",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-04167",
+      "video_id": "v-ecva-b99f052ff6",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-03840",
+      "video_id": "v-ecva-ca6315e893",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "E",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-03925",
+      "video_id": "v-ucf-0bafd26328",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "B",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-03959",
+      "video_id": "v-ucf-d1ee1f5993",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "D",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-03958",
+      "video_id": "v-ucf-56b99a2c71",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "B",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-04151",
+      "video_id": "v-ucf-be5ee9237d",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "D",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05357",
+      "video_id": "v-ecva-8c21f0ccaa",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "C",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05330",
+      "video_id": "v-ecva-ee1e693deb",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "B",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05329",
+      "video_id": "v-ecva-966badaf71",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05334",
+      "video_id": "v-ecva-09463a7550",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05379",
+      "video_id": "v-ucf-8685bedd94",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "C",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05419",
+      "video_id": "v-ucf-6c226f9a1a",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "C",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05398",
+      "video_id": "v-ucf-0f28960dee",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "B",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05322",
+      "video_id": "v-ucf-8004a64b36",
+      "task": "ADC",
+      "subtask": "Exclusion",
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "D",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-02135",
+      "video_id": "v-ecva-2fb8c13999",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "E",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-01761",
+      "video_id": "v-ecva-e2c58c612d",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "C",
+        "reference": "C"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-01804",
+      "video_id": "v-ecva-ad8d202150",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "C",
+        "reference": "C"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-01782",
+      "video_id": "v-ecva-4b3b536e47",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "D",
+        "reference": "D"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-01611",
+      "video_id": "v-ucf-bfab50c3a4",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "C",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-01774",
+      "video_id": "v-ucf-2301613b4a",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "E",
+        "reference": "B"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-01892",
+      "video_id": "v-ucf-8f4783368f",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "E",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-02047",
+      "video_id": "v-ucf-d00ad25f9c",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "D",
+        "reference": "D"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-02313",
+      "video_id": "v-ecva-d75a69fe81",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "A"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-02458",
+      "video_id": "v-ecva-9903507051",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "C",
+        "reference": "C"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-02510",
+      "video_id": "v-ecva-037842633c",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "C",
+        "reference": "D"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-02290",
+      "video_id": "v-ecva-7866c8b03b",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "D",
+        "reference": "D"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-02371",
+      "video_id": "v-ucf-5c4ffeab47",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "E",
+        "reference": "D"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-02419",
+      "video_id": "v-ucf-5792bbe00f",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "C",
+        "reference": "C"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-02281",
+      "video_id": "v-ucf-1562ecc09b",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "D",
+        "reference": "A"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-02574",
+      "video_id": "v-ucf-8004a64b36",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "D",
+        "reference": "D"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-00631",
+      "video_id": "v-ecva-e4cb786b2d",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "A"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-00199",
+      "video_id": "v-ecva-cad236b125",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "D",
+        "reference": "D"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-00181",
+      "video_id": "v-ecva-d7b7189108",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "A"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-00157",
+      "video_id": "v-ecva-391836a804",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-00311",
+      "video_id": "v-ucf-57bb0dfc20",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "D",
+        "reference": "D"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-00480",
+      "video_id": "v-ucf-4cae454425",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "E",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-00225",
+      "video_id": "v-ucf-f5605c46eb",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-00299",
+      "video_id": "v-ucf-561b769385",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "E",
+        "reference": "A"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-01194",
+      "video_id": "v-ecva-d673c8b532",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "A"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-01256",
+      "video_id": "v-ecva-e92cfae8c7",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "E",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-01163",
+      "video_id": "v-ecva-362294519c",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "E",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-00842",
+      "video_id": "v-ecva-18f78edbc4",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "A"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-01449",
+      "video_id": "v-ucf-ecebf2e1d7",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "D",
+        "reference": "D"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-00944",
+      "video_id": "v-ucf-eb45a01a84",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "D",
+        "reference": "D"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-00999",
+      "video_id": "v-ucf-27c2e76acc",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "B",
+        "reference": "B"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-01215",
+      "video_id": "v-ucf-8329dfe903",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "C",
+        "reference": "C"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-02630",
+      "video_id": "v-ecva-8c21f0ccaa",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "D",
+        "reference": "C"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-02631",
+      "video_id": "v-ecva-4e0bddcf30",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "E",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-02624",
+      "video_id": "v-ecva-9203dc76c9",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "B",
+        "reference": "A"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-02638",
+      "video_id": "v-ecva-f86ff4a24d",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "B",
+        "reference": "B"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-02642",
+      "video_id": "v-ucf-20bff37e84",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "D",
+        "reference": "D"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-02706",
+      "video_id": "v-ucf-d70b618a64",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "B",
+        "reference": "B"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-02683",
+      "video_id": "v-ucf-8f4783368f",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "E",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-02661",
+      "video_id": "v-ucf-e3da0c84d0",
+      "task": "ADC",
+      "subtask": "Matching",
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "E"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05437",
+      "video_id": "v-ucf-7bcc030c26",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05486",
+      "video_id": "v-ucf-64bd04d6fb",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05483",
+      "video_id": "v-ucf-497b69ab08",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05654",
+      "video_id": "v-ucf-d9b879c0bf",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05667",
+      "video_id": "v-ucf-aeda2abf9b",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "B",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05468",
+      "video_id": "v-ucf-fd938d09cc",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "E",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05453",
+      "video_id": "v-ucf-3ba0e05826",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05540",
+      "video_id": "v-ucf-285c6390c2",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05568",
+      "video_id": "v-ucf-936db06669",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05463",
+      "video_id": "v-ucf-e06dd2e906",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05475",
+      "video_id": "v-ucf-7576894122",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05525",
+      "video_id": "v-ucf-263f1f0d29",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05504",
+      "video_id": "v-ucf-622386a558",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05456",
+      "video_id": "v-ucf-fb67450dfd",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05663",
+      "video_id": "v-ucf-63b7e71233",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05536",
+      "video_id": "v-ucf-5e59ea15b6",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05681",
+      "video_id": "v-ucf-1eb594fc7b",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05621",
+      "video_id": "v-ucf-b3a3f8fa1a",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05520",
+      "video_id": "v-ucf-204792c3b3",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05578",
+      "video_id": "v-ucf-e0188c4f17",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05598",
+      "video_id": "v-ucf-b68055a24c",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05611",
+      "video_id": "v-ucf-4d14b2c4da",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05508",
+      "video_id": "v-ucf-4dfa61615f",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05580",
+      "video_id": "v-ucf-2498c166a6",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05657",
+      "video_id": "v-ucf-8933cd8f88",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "E",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05545",
+      "video_id": "v-ucf-e629b171b8",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05556",
+      "video_id": "v-ucf-f1043ff845",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05510",
+      "video_id": "v-ucf-b45a6c20ec",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05460",
+      "video_id": "v-ucf-1f2f364831",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05648",
+      "video_id": "v-ucf-a5e91be21e",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "B",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05579",
+      "video_id": "v-ucf-af23a960d7",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05641",
+      "video_id": "v-ucf-bfdfb5df7d",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05584",
+      "video_id": "v-ucf-13d5d3e6a1",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted": "A",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05435",
+      "video_id": "v-ucf-2636a7ff8e",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05429",
+      "video_id": "v-ucf-785c0979a5",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05583",
+      "video_id": "v-ucf-ec3f4a8805",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05449",
+      "video_id": "v-ucf-2c6a5a2d5a",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05557",
+      "video_id": "v-ucf-b8b459edc9",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05513",
+      "video_id": "v-ucf-b3c052ac99",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-adc-05461",
+      "video_id": "v-ucf-daca5d4613",
+      "task": "ADC",
+      "subtask": "Rejection",
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted": "F",
+        "reference": "F"
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02128",
+      "video_id": "v-ecva-1a746211ae",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.6756756756756758,
+      "detail": {
+        "predicted_source_sec": [
+          10.8,
+          17.2
+        ],
+        "reference_source_sec": [
+          12.2,
+          18.2
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-01692",
+      "video_id": "v-ecva-a79a32ed6f",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "ECVA",
+      "state": "unparsed",
+      "valid_output": false,
+      "score": 0.0,
+      "detail": {
+        "predicted_source_sec": [
+          0.0,
+          54.0
+        ],
+        "reference_source_sec": [
+          0.0,
+          53.6
+        ],
+        "valid_interval": false
+      },
+      "failure": "invalid_interval"
+    },
+    {
+      "sample_id": "valu-tdg-01834",
+      "video_id": "v-ecva-973a5c2ba7",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.07386363636363635,
+      "detail": {
+        "predicted_source_sec": [
+          0.0,
+          10.0
+        ],
+        "reference_source_sec": [
+          7.4,
+          35.2
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02053",
+      "video_id": "v-ecva-1614369b0b",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted_source_sec": [
+          0.0,
+          1.0
+        ],
+        "reference_source_sec": [
+          8.1,
+          19.3
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-01733",
+      "video_id": "v-ecva-5f5d5c76c4",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.7499999999999998,
+      "detail": {
+        "predicted_source_sec": [
+          13.1,
+          27.1
+        ],
+        "reference_source_sec": [
+          13.4,
+          23.9
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02172",
+      "video_id": "v-ucf-bbd90e59db",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.8163265306122448,
+      "detail": {
+        "predicted_source_sec": [
+          1.0,
+          10.0
+        ],
+        "reference_source_sec": [
+          2.0,
+          10.8
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-01956",
+      "video_id": "v-ucf-2fb34ceb7b",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.014362657091561952,
+      "detail": {
+        "predicted_source_sec": [
+          10.6,
+          20.6
+        ],
+        "reference_source_sec": [
+          19.0,
+          122.0
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-01894",
+      "video_id": "v-ucf-eae2bc8345",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted_source_sec": [
+          50.0,
+          57.0
+        ],
+        "reference_source_sec": [
+          91.9,
+          104.2
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02187",
+      "video_id": "v-ucf-0d64596818",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted_source_sec": [
+          20.0,
+          25.0
+        ],
+        "reference_source_sec": [
+          16.0,
+          17.5
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-01515",
+      "video_id": "v-ucf-5c4ffeab47",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.7028571428571428,
+      "detail": {
+        "predicted_source_sec": [
+          42.0,
+          121.0
+        ],
+        "reference_source_sec": [
+          33.5,
+          103.5
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02626",
+      "video_id": "v-ecva-6da0202cff",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.49645390070921985,
+      "detail": {
+        "predicted_source_sec": [
+          0.0,
+          14.1
+        ],
+        "reference_source_sec": [
+          7.1,
+          14.1
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02573",
+      "video_id": "v-ecva-597d35be31",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "ECVA",
+      "state": "unparsed",
+      "valid_output": false,
+      "score": 0.0,
+      "detail": {
+        "predicted_source_sec": [
+          15.0,
+          22.2
+        ],
+        "reference_source_sec": [
+          17.3,
+          21.4
+        ],
+        "valid_interval": false
+      },
+      "failure": "invalid_interval"
+    },
+    {
+      "sample_id": "valu-tdg-02309",
+      "video_id": "v-ecva-f757630895",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.5312499999999999,
+      "detail": {
+        "predicted_source_sec": [
+          8.0,
+          9.7
+        ],
+        "reference_source_sec": [
+          6.5,
+          9.7
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02586",
+      "video_id": "v-ecva-ffe43ab3e2",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.24917771354530066,
+      "detail": {
+        "predicted_source_sec": [
+          82.0,
+          87.0
+        ],
+        "reference_source_sec": [
+          76.4,
+          96.466
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02507",
+      "video_id": "v-ecva-ad6cff55ec",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.523809523809524,
+      "detail": {
+        "predicted_source_sec": [
+          4.4,
+          7.3
+        ],
+        "reference_source_sec": [
+          5.1,
+          8.6
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02482",
+      "video_id": "v-ucf-f41d875277",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted_source_sec": [
+          125.0,
+          130.0
+        ],
+        "reference_source_sec": [
+          189.0,
+          197.4
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02449",
+      "video_id": "v-ucf-bcc2b440ad",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.24657534246575508,
+      "detail": {
+        "predicted_source_sec": [
+          69.4,
+          74.9
+        ],
+        "reference_source_sec": [
+          73.1,
+          76.7
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02610",
+      "video_id": "v-ucf-561b769385",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted_source_sec": [
+          22.7,
+          27.2
+        ],
+        "reference_source_sec": [
+          29.2,
+          46.966
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02564",
+      "video_id": "v-ucf-fa8fc46eff",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.9590350877192984,
+      "detail": {
+        "predicted_source_sec": [
+          35.5,
+          58.3
+        ],
+        "reference_source_sec": [
+          36.4,
+          58.266
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02305",
+      "video_id": "v-ucf-5d52d2a116",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.9302325581395348,
+      "detail": {
+        "predicted_source_sec": [
+          49.1,
+          57.1
+        ],
+        "reference_source_sec": [
+          48.5,
+          57.1
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-00146",
+      "video_id": "v-ecva-75043efc1b",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted_source_sec": [
+          0.0,
+          15.0
+        ],
+        "reference_source_sec": [
+          0.0,
+          15.0
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-00478",
+      "video_id": "v-ecva-911379e18c",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.6610169491525424,
+      "detail": {
+        "predicted_source_sec": [
+          4.0,
+          12.0
+        ],
+        "reference_source_sec": [
+          0.2,
+          11.8
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-00530",
+      "video_id": "v-ecva-5896210910",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted_source_sec": [
+          0.0,
+          10.8
+        ],
+        "reference_source_sec": [
+          0.0,
+          10.8
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-00432",
+      "video_id": "v-ecva-a79a32ed6f",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "ECVA",
+      "state": "unparsed",
+      "valid_output": false,
+      "score": 0.0,
+      "detail": {
+        "predicted_source_sec": [
+          0.0,
+          54.0
+        ],
+        "reference_source_sec": [
+          0.0,
+          53.6
+        ],
+        "valid_interval": false
+      },
+      "failure": "invalid_interval"
+    },
+    {
+      "sample_id": "valu-tdg-00513",
+      "video_id": "v-ecva-09a8be40aa",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "ECVA",
+      "state": "unparsed",
+      "valid_output": false,
+      "score": 0.0,
+      "detail": {
+        "predicted_source_sec": [
+          0.0,
+          13.0
+        ],
+        "reference_source_sec": [
+          0.0,
+          12.866667
+        ],
+        "valid_interval": false
+      },
+      "failure": "invalid_interval"
+    },
+    {
+      "sample_id": "valu-tdg-00341",
+      "video_id": "v-ucf-6270a3885e",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.05319148936170213,
+      "detail": {
+        "predicted_source_sec": [
+          10.0,
+          15.0
+        ],
+        "reference_source_sec": [
+          0.0,
+          94.0
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-00597",
+      "video_id": "v-ucf-eb45a01a84",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.12145945683330905,
+      "detail": {
+        "predicted_source_sec": [
+          25.0,
+          30.0
+        ],
+        "reference_source_sec": [
+          21.3,
+          62.466
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-00335",
+      "video_id": "v-ucf-d332390a91",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.36666666666666714,
+      "detail": {
+        "predicted_source_sec": [
+          16.0,
+          22.0
+        ],
+        "reference_source_sec": [
+          16.4,
+          18.6
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-00231",
+      "video_id": "v-ucf-6b1e42f0a8",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted_source_sec": [
+          13.1,
+          16.1
+        ],
+        "reference_source_sec": [
+          128.6,
+          191.9
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-00274",
+      "video_id": "v-ucf-b36730a243",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.35714285714285715,
+      "detail": {
+        "predicted_source_sec": [
+          3.4,
+          7.0
+        ],
+        "reference_source_sec": [
+          4.0,
+          11.8
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-00863",
+      "video_id": "v-ecva-4c8d4c23c8",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.8545454545454546,
+      "detail": {
+        "predicted_source_sec": [
+          4.0,
+          9.5
+        ],
+        "reference_source_sec": [
+          4.8,
+          9.5
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-00759",
+      "video_id": "v-ecva-47515a4a10",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.43548387096774194,
+      "detail": {
+        "predicted_source_sec": [
+          1.4,
+          4.1
+        ],
+        "reference_source_sec": [
+          0.9,
+          7.1
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-01335",
+      "video_id": "v-ecva-a800eed715",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.451219512195122,
+      "detail": {
+        "predicted_source_sec": [
+          4.0,
+          10.0
+        ],
+        "reference_source_sec": [
+          6.3,
+          12.2
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-01115",
+      "video_id": "v-ecva-806bbe6117",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.4197530864197532,
+      "detail": {
+        "predicted_source_sec": [
+          6.0,
+          10.0
+        ],
+        "reference_source_sec": [
+          6.6,
+          14.1
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-01181",
+      "video_id": "v-ecva-ad6cff55ec",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.6964285714285715,
+      "detail": {
+        "predicted_source_sec": [
+          3.4,
+          7.3
+        ],
+        "reference_source_sec": [
+          3.0,
+          8.6
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-01421",
+      "video_id": "v-ucf-1842b7e40c",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.15993906961204057,
+      "detail": {
+        "predicted_source_sec": [
+          50.0,
+          57.0
+        ],
+        "reference_source_sec": [
+          47.6,
+          91.366667
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-00805",
+      "video_id": "v-ucf-e7c03f4e42",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.2535211267605634,
+      "detail": {
+        "predicted_source_sec": [
+          1.0,
+          10.0
+        ],
+        "reference_source_sec": [
+          1.0,
+          36.5
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-00775",
+      "video_id": "v-ucf-ce8c0aa563",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.7323943661971833,
+      "detail": {
+        "predicted_source_sec": [
+          33.1,
+          40.2
+        ],
+        "reference_source_sec": [
+          34.0,
+          39.2
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-01480",
+      "video_id": "v-ucf-2301613b4a",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.8771929824561403,
+      "detail": {
+        "predicted_source_sec": [
+          0.0,
+          10.0
+        ],
+        "reference_source_sec": [
+          0.0,
+          11.4
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-01060",
+      "video_id": "v-ucf-e6ac075564",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.7516339869281046,
+      "detail": {
+        "predicted_source_sec": [
+          0.0,
+          14.0
+        ],
+        "reference_source_sec": [
+          2.5,
+          15.3
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02922",
+      "video_id": "v-ucf-23ddebb74f",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.395264116575592,
+      "detail": {
+        "predicted_source_sec": [
+          64.0,
+          85.7
+        ],
+        "reference_source_sec": [
+          30.8,
+          85.7
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02787",
+      "video_id": "v-ucf-02251d90ff",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "unparsed",
+      "valid_output": false,
+      "score": 0.0,
+      "detail": {
+        "predicted_source_sec": [
+          0.0,
+          12.0
+        ],
+        "reference_source_sec": [
+          0.0,
+          11.8
+        ],
+        "valid_interval": false
+      },
+      "failure": "invalid_interval"
+    },
+    {
+      "sample_id": "valu-tdg-02784",
+      "video_id": "v-ucf-56fd0b5bf5",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.4129353233830846,
+      "detail": {
+        "predicted_source_sec": [
+          0.0,
+          20.1
+        ],
+        "reference_source_sec": [
+          0.0,
+          8.3
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02877",
+      "video_id": "v-ucf-63b7e71233",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.8527607361963191,
+      "detail": {
+        "predicted_source_sec": [
+          28.4,
+          43.9
+        ],
+        "reference_source_sec": [
+          27.6,
+          42.3
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02944",
+      "video_id": "v-ucf-6ffc8a820b",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.9734513274336283,
+      "detail": {
+        "predicted_source_sec": [
+          0.0,
+          11.0
+        ],
+        "reference_source_sec": [
+          0.0,
+          11.3
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02992",
+      "video_id": "v-ucf-20c08d6905",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.03436426116838488,
+      "detail": {
+        "predicted_source_sec": [
+          0.0,
+          10.0
+        ],
+        "reference_source_sec": [
+          0.0,
+          291.0
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02846",
+      "video_id": "v-ucf-1f5cf28791",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 1.0,
+      "detail": {
+        "predicted_source_sec": [
+          0.0,
+          35.1
+        ],
+        "reference_source_sec": [
+          0.0,
+          35.1
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02930",
+      "video_id": "v-ucf-bfdfb5df7d",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.241986301369863,
+      "detail": {
+        "predicted_source_sec": [
+          0.0,
+          29.2
+        ],
+        "reference_source_sec": [
+          22.1,
+          29.166
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02788",
+      "video_id": "v-ucf-683c85d45f",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "unparsed",
+      "valid_output": false,
+      "score": 0.0,
+      "detail": {
+        "predicted_source_sec": [
+          0.0,
+          141.0
+        ],
+        "reference_source_sec": [
+          0.0,
+          140.866
+        ],
+        "valid_interval": false
+      },
+      "failure": "invalid_interval"
+    },
+    {
+      "sample_id": "valu-tdg-02785",
+      "video_id": "v-ucf-ee191ca273",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.2714932126696833,
+      "detail": {
+        "predicted_source_sec": [
+          20.0,
+          26.0
+        ],
+        "reference_source_sec": [
+          19.3,
+          41.4
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02697",
+      "video_id": "v-ecva-23e08154cf",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.2411347517730498,
+      "detail": {
+        "predicted_source_sec": [
+          13.1,
+          23.1
+        ],
+        "reference_source_sec": [
+          19.7,
+          27.2
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02721",
+      "video_id": "v-ecva-a329d86b81",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.5714285714285714,
+      "detail": {
+        "predicted_source_sec": [
+          0.0,
+          12.0
+        ],
+        "reference_source_sec": [
+          0.0,
+          21.0
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02689",
+      "video_id": "v-ecva-966badaf71",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted_source_sec": [
+          0.0,
+          1.0
+        ],
+        "reference_source_sec": [
+          5.9,
+          15.0
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02770",
+      "video_id": "v-ecva-1689e7cef4",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0944444444444444,
+      "detail": {
+        "predicted_source_sec": [
+          1.0,
+          10.0
+        ],
+        "reference_source_sec": [
+          8.3,
+          19.0
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02698",
+      "video_id": "v-ecva-672287e16b",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.7070707070707071,
+      "detail": {
+        "predicted_source_sec": [
+          0.0,
+          7.0
+        ],
+        "reference_source_sec": [
+          0.0,
+          9.9
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02741",
+      "video_id": "v-ucf-4e1a0dfbd1",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted_source_sec": [
+          10.0,
+          15.0
+        ],
+        "reference_source_sec": [
+          18.9,
+          28.8
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02766",
+      "video_id": "v-ucf-212783dd80",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted_source_sec": [
+          10.0,
+          15.0
+        ],
+        "reference_source_sec": [
+          19.2,
+          35.4
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02748",
+      "video_id": "v-ucf-ab94e500b3",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.10645999233488054,
+      "detail": {
+        "predicted_source_sec": [
+          27.5,
+          32.5
+        ],
+        "reference_source_sec": [
+          15.1,
+          62.066
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02711",
+      "video_id": "v-ucf-5bb8723dcc",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.4793388429752066,
+      "detail": {
+        "predicted_source_sec": [
+          46.0,
+          63.4
+        ],
+        "reference_source_sec": [
+          27.1,
+          63.4
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-tdg-02660",
+      "video_id": "v-ucf-6c226f9a1a",
+      "task": "TDG",
+      "subtask": null,
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": 0.0,
+      "detail": {
+        "predicted_source_sec": [
+          2.8,
+          4.2
+        ],
+        "reference_source_sec": [
+          5.3,
+          10.0
+        ],
+        "valid_interval": true
+      },
+      "failure": null
+    },
+    {
+      "sample_id": "valu-ald-02214",
+      "video_id": "v-ecva-dac588787d",
+      "task": "ALD",
+      "subtask": null,
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "ECVA",
+      "state": "unparsed",
+      "valid_output": false,
+      "score": null,
+      "detail": {},
+      "failure": "parse_invalid"
+    },
+    {
+      "sample_id": "valu-ald-01529",
+      "video_id": "v-ecva-cfbbb813b4",
+      "task": "ALD",
+      "subtask": null,
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": null,
+      "detail": {},
+      "failure": null
+    },
+    {
+      "sample_id": "valu-ald-02210",
+      "video_id": "v-ucf-44870f59ce",
+      "task": "ALD",
+      "subtask": null,
+      "semantic_level": "Abnormal_Action",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": null,
+      "detail": {},
+      "failure": null
+    },
+    {
+      "sample_id": "valu-ald-02585",
+      "video_id": "v-ecva-faa1d1b693",
+      "task": "ALD",
+      "subtask": null,
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": null,
+      "detail": {},
+      "failure": null
+    },
+    {
+      "sample_id": "valu-ald-02595",
+      "video_id": "v-ecva-0801853832",
+      "task": "ALD",
+      "subtask": null,
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": null,
+      "detail": {},
+      "failure": null
+    },
+    {
+      "sample_id": "valu-ald-02372",
+      "video_id": "v-ucf-be264859f8",
+      "task": "ALD",
+      "subtask": null,
+      "semantic_level": "Abnormal_Consequence",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": null,
+      "detail": {},
+      "failure": null
+    },
+    {
+      "sample_id": "valu-ald-00543",
+      "video_id": "v-ecva-857b7c6020",
+      "task": "ALD",
+      "subtask": null,
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "ECVA",
+      "state": "unparsed",
+      "valid_output": false,
+      "score": null,
+      "detail": {},
+      "failure": "parse_invalid"
+    },
+    {
+      "sample_id": "valu-ald-00346",
+      "video_id": "v-ucf-01dda939f1",
+      "task": "ALD",
+      "subtask": null,
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": null,
+      "detail": {},
+      "failure": null
+    },
+    {
+      "sample_id": "valu-ald-00878",
+      "video_id": "v-ecva-7c20433005",
+      "task": "ALD",
+      "subtask": null,
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": null,
+      "detail": {},
+      "failure": null
+    },
+    {
+      "sample_id": "valu-ald-01316",
+      "video_id": "v-ucf-bf1e0fd74f",
+      "task": "ALD",
+      "subtask": null,
+      "semantic_level": "Abnormal_Segment",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": null,
+      "detail": {},
+      "failure": null
+    },
+    {
+      "sample_id": "valu-ald-02712",
+      "video_id": "v-ecva-bc6ac78e5a",
+      "task": "ALD",
+      "subtask": null,
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "ECVA",
+      "state": "scored",
+      "valid_output": true,
+      "score": null,
+      "detail": {},
+      "failure": null
+    },
+    {
+      "sample_id": "valu-ald-02678",
+      "video_id": "v-ucf-ce2cbead98",
+      "task": "ALD",
+      "subtask": null,
+      "semantic_level": "Subjects_Response",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": null,
+      "detail": {},
+      "failure": null
+    }
+  ]
+}

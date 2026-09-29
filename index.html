@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Framework · Surveillance Video Understanding Demo</title>
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="index.html">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="topbar-in">
+  <div class="brand">Surveillance Video Understanding Demo</div>
+  <nav class="nav" aria-label="Pages">
+<a href="index.html" data-nav="index.html" aria-current="page">Framework</a><a href="benchmarks.html" data-nav="benchmarks.html">Benchmarks</a><a href="videos.html" data-nav="videos.html">Videos</a><a href="annotations.html" data-nav="annotations.html">Annotations</a><a href="models.html" data-nav="models.html">Models</a><a href="results.html" data-nav="results.html">Results</a>  </nav>
+</div></header>
+<div class="prov"><div class="prov-in">
+  <span><b>Build</b> 2026-09-29</span>
+  <span><b>Protocol</b> VALU demo subset v1 — adapted protocol</span>
+  <span><b>Dataset</b> VALU annotations @ <span class="mono">2ed33aa6</span>, UCF-Crime + ECVA masked media @ <span class="mono">299373f8</span></span>
+  <span><b>Manifest</b> <span class="mono">valu-demo-v1 · a29f5969ed65</span></span>
+  <span><b>Runs</b> Qwen3.8-27B: <span class="tag ok">completed</span> Qwen3-VL-8B-Instruct: <span class="tag ok">completed</span> VideoLLaMA3-7B: <span class="tag ok">completed</span></span>
+</div></div>
+<main id="main">
+<h1>Can server-side Video VLMs resolve ambiguous surveillance events using temporal context and relationships?</h1>
+<p class="lede">An edge detector flags an uncertain event, a relevant video window is sent to a server, and a Video VLM analyzes the event using temporal and relational evidence. This page explains that workflow and replays it on real footage.</p>
+
+<h2>Proposed workflow</h2>
+<div class="diagram">
+<svg viewBox="0 0 1180 330" role="img" aria-label="Framework: camera video feeds a lightweight edge detector and a rolling buffer; uncertain events trigger context window selection, server Video VLM analysis and operator review" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif">
+  <defs><marker id="fa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b4450"/></marker></defs>
+  <rect x="6" y="6" width="560" height="318" rx="10" fill="#fbfbfc" stroke="#d9dde3" stroke-dasharray="5 4"/>
+  <text x="18" y="26" font-size="12.5" fill="#5b6470" font-weight="600">EDGE (scripted in this demo)</text>
+  <rect x="750" y="6" width="424" height="318" rx="10" fill="#f7fbff" stroke="#b3cfee" stroke-dasharray="5 4"/>
+  <text x="762" y="26" font-size="12.5" fill="#0a447d" font-weight="600">SERVER (real cached inference)</text>
+  <g font-size="13" fill="#1a1e24" text-anchor="middle">
+    <g data-node="camera"><rect x="22" y="130" width="120" height="60" rx="8" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="82" y="165">Camera video</text></g>
+    <g data-node="edge"><rect x="196" y="56" width="160" height="60" rx="8" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="276" y="82">Lightweight</text><text x="276" y="100">edge detector</text></g>
+    <g data-node="buffer"><rect x="196" y="214" width="160" height="60" rx="8" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="276" y="240">Rolling video</text><text x="276" y="258">buffer</text></g>
+    <g data-node="gate"><path d="M476 36 L556 86 L476 136 L396 86 Z" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="476" y="82" font-size="12">Uncertain or</text><text x="476" y="98" font-size="12">semantic event?</text></g>
+    <g data-node="monitor"><rect x="410" y="170" width="132" height="44" rx="8" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="476" y="197" font-size="12.5">Continue monitoring</text></g>
+    <g data-node="window"><rect x="596" y="214" width="140" height="60" rx="8" fill="#fff3e6" stroke="#c77700" stroke-width="1.5"/><text x="666" y="240">Select context</text><text x="666" y="258">window</text></g>
+    <g data-node="server"><rect x="778" y="214" width="150" height="60" rx="8" fill="#dbe9f8" stroke="#0b5aa6" stroke-width="1.5"/><text x="853" y="240">Server</text><text x="853" y="258">Video VLM</text></g>
+    <g data-node="output"><rect x="966" y="200" width="196" height="88" rx="8" fill="#fff" stroke="#0b5aa6" stroke-width="1.5"/><text x="1064" y="226">Decision,</text><text x="1064" y="244">evidence interval,</text><text x="1064" y="262">concise explanation</text></g>
+    <g data-node="operator"><rect x="994" y="70" width="140" height="56" rx="8" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="1064" y="103">Operator review</text></g>
+  </g>
+  <g stroke="#3b4450" stroke-width="1.5" fill="none" marker-end="url(#fa)">
+    <path d="M142 148 L194 96"/><path d="M142 172 L194 236"/>
+    <path d="M356 86 L394 86"/>
+    <path d="M476 136 L476 168"/>
+    <path d="M556 86 L666 86 L666 212"/>
+    <path d="M356 244 L594 244"/>
+    <path d="M736 244 L776 244"/>
+    <path d="M928 244 L964 244"/>
+    <path d="M1064 200 L1064 128"/>
+  </g>
+  <g font-size="12" fill="#3b4450"><text x="484" y="156">No</text><text x="600" y="78">Yes</text></g>
+</svg>
+</div>
+
+<p class="note">In this version the edge side is a scripted replay. The server side is real: every server output shown below was produced by running the model on exactly the window shown.</p>
+
+<h2>Replay</h2>
+<div class="banner" id="replay-banner"><span class="tag manual">Scripted edge trigger</span><span>·</span><span class="tag pred">Real cached server inference</span>
+  <span class="note">Replay run status: <span class="tag ok">completed</span> · Qwen3.8-27B · run <span class="mono">replay-qwen38_27b-af4768d4e0</span></span></div>
+
+<div class="filters" role="group" aria-label="Replay case">
+  <div class="seg" id="case-seg">
+<button class="btn" type="button" data-case="replay-physical_interaction" aria-pressed="false">Case 1: Physical interaction between people</button><button class="btn" type="button" data-case="replay-person_object_event" aria-pressed="false">Case 2: Person-object event</button><button class="btn" type="button" data-case="replay-normal_or_ambiguous" aria-pressed="false">Case 3: Normal or ambiguous scene</button>  </div>
+</div>
+<ol class="stages" id="stages" aria-label="Replay stage">
+  <li data-stage="0"><b>1 · Monitoring</b>Edge watches the stream</li>
+  <li data-stage="1"><b>2 · Trigger</b>Scripted uncertain event</li>
+  <li data-stage="2"><b>3 · Context selection</b>Window taken from buffer</li>
+  <li data-stage="3"><b>4 · Server analysis</b>Video VLM reads the window</li>
+  <li data-stage="4"><b>5 · Result</b>Decision and evidence</li>
+</ol>
+<div class="filters">
+  <button class="btn" type="button" id="btn-prev">Previous stage</button>
+  <button class="btn primary" type="button" id="btn-next">Next stage</button>
+  <button class="btn" type="button" id="btn-play">Play replay</button>
+  <button class="btn" type="button" id="btn-reset">Reset</button>
+  <span class="note" id="stage-msg" aria-live="polite"></span>
+</div>
+<div class="detail">
+  <div class="panel">
+    <video id="rv" controls muted playsinline preload="metadata"></video>
+    <p class="note" id="rv-note"></p>
+    <div id="rtl" class="tl"></div>
+  </div>
+  <div class="panel" id="rside"></div>
+</div>
+<h3>Frames supplied to the server model for this window</h3>
+<div id="rframes" class="sheet"></div>
+<p class="note">Stage changes and the replay animation use presentation timing. They are not measured system latency. Measured model latency is shown separately with the result.</p>
+
+<h2>Coverage of the replay</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Theme</th><th>Status</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Physical interaction between people</td><td><span class="tag ok">covered</span></td><td>Real footage, window 42.1–72.1 s of a 103.4 s source video (UCF).</td></tr><tr><td>Person-object event</td><td><span class="tag ok">covered</span></td><td>Real footage, window 56.2–75.2 s of a 75.2 s source video (UCF).</td></tr><tr><td>Normal or ambiguous scene</td><td><span class="tag ok">covered</span></td><td>Real footage, window 96.2–126.2 s of a 212.5 s source video (UCF).</td></tr><tr><td>Fall versus voluntarily lying down</td><td><span class="tag pend">not covered in this demo</span></td><td>Research target. No verified paired footage for this distinction in the available VALU media.</td></tr><tr><td>Unattended object</td><td><span class="tag pend">not covered in this demo</span></td><td>Research target. No verified unattended-object footage in the available VALU media.</td></tr></tbody></table></div>
+
+<h2>Where to go next</h2>
+<div class="grid g3">
+  <div class="panel"><h3><a href="benchmarks.html">Benchmarks</a></h3><p>What the benchmark tests and which subset was selected.</p></div>
+  <div class="panel"><h3><a href="videos.html">Videos</a></h3><p>174 playable videos from the locked subset, with the frames the models saw.</p></div>
+  <div class="panel"><h3><a href="annotations.html">Annotations</a></h3><p>Original annotation, normalized record and exact model input, side by side.</p></div>
+  <div class="panel"><h3><a href="models.html">Models</a></h3><p>Architectures of the measured models and of reference methods.</p></div>
+  <div class="panel"><h3><a href="results.html">Results</a></h3><p>Measured scores on the locked subset, with per-example outputs.</p></div>
+</div>
+</main>
+<footer>
+  Static build exported 2026-09-29T20:27:47Z. The browser plays local media and explores saved results; it does not run a model or contact an inference service.
+  Measured scores apply to <b>VALU demo subset v1 — adapted protocol</b> only and are not a reproduction of the full VALU benchmark.
+</footer>
+<script src="assets/data/core.js"></script>
+<script src="assets/data/replay.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/framework.js"></script>
+</body>
+</html>

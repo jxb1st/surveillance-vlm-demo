@@ -1,0 +1,169 @@
+{
+  "run_id": "replay-qwen38_27b-af4768d4e0",
+  "model_id": "qwen38_27b",
+  "split": "replay",
+  "run_status": "completed",
+  "protocol_id": "valu_demo_v1_replay",
+  "protocol_label": "VALU demo subset v1 — adapted protocol (replay windows)",
+  "manifest_id": "valu-demo-v1-replay",
+  "manifest_sha256": "3e6a4efb5ff97c11192cf7ecab4fae2063f2258c24375f75ad449a01065fe24c",
+  "evaluated_at": "2026-09-29T20:27:47Z",
+  "eligible_for_main_ranking": false,
+  "origin": "measured",
+  "ADC": {
+    "overall_counts": {
+      "selected": 0,
+      "attempted": 0,
+      "generation_ok": 0,
+      "valid_output": 0,
+      "failed": 0,
+      "not_run": 0
+    },
+    "note": "No single pooled ADC accuracy is reported as a headline: the three subtasks have different option sets and semantics.",
+    "by_subtask": {},
+    "by_subtask_and_level": {},
+    "by_source": {}
+  },
+  "TDG": {
+    "overall": {
+      "counts": {
+        "selected": 0,
+        "attempted": 0,
+        "generation_ok": 0,
+        "valid_output": 0,
+        "failed": 0,
+        "not_run": 0
+      },
+      "miou_all_selected": null,
+      "miou_valid_only": null,
+      "valid_only_denominator": 0,
+      "recall_all_selected": {
+        "0.3": null,
+        "0.5": null,
+        "0.7": null
+      },
+      "recall_valid_only": {
+        "0.3": null,
+        "0.5": null,
+        "0.7": null
+      },
+      "reason_if_missing": null
+    },
+    "by_level": {},
+    "by_source": {},
+    "thresholds": [
+      0.3,
+      0.5,
+      0.7
+    ],
+    "definition": "tIoU = intersection / union of the predicted and reference single span; invalid, missing or truncated predictions score 0."
+  },
+  "ALD": {
+    "mode": "qualitative only",
+    "counts": {
+      "selected": 0,
+      "attempted": 0,
+      "generation_ok": 0,
+      "valid_output": 0,
+      "failed": 0,
+      "not_run": 0
+    },
+    "note": "No description score is computed in v1. No BLEU/ROUGE or LLM judge is used."
+  },
+  "latency": {
+    "end_to_end_ms": {
+      "n": 3,
+      "mean": 3889.7669583332877,
+      "median": 3778.1816280003113,
+      "p90": 4165.86699599975,
+      "max": 4165.86699599975
+    },
+    "generation_ms": {
+      "n": 3,
+      "mean": 3841.9226123329886,
+      "median": 3728.88961299941,
+      "p90": 4117.810177999672,
+      "max": 4117.810177999672
+    },
+    "preprocess_ms": {
+      "n": 3,
+      "mean": 26.87674166675909,
+      "median": 27.402624000387732,
+      "p90": 28.43794100044761,
+      "max": 28.43794100044761
+    },
+    "decode_ms": {
+      "n": 3,
+      "mean": 20.041871666762745,
+      "median": 21.007129000281566,
+      "p90": 22.322073000395903,
+      "max": 22.322073000395903
+    },
+    "peak_gpu_allocated_gib": {
+      "n": 3,
+      "mean": 51.847,
+      "median": 51.847,
+      "p90": 51.847,
+      "max": 51.847
+    },
+    "output_tokens": {
+      "n": 3,
+      "mean": 76.0,
+      "median": 74,
+      "p90": 82,
+      "max": 82
+    },
+    "visual_tokens": {
+      "n": 3,
+      "mean": 1280.0,
+      "median": 1280,
+      "p90": 1280,
+      "max": 1280
+    },
+    "latency_profile": [
+      "cached_frames"
+    ],
+    "note": "Peak value is torch allocated memory for the request, not total device memory usage. Model loading and checkpoint download are excluded from latency."
+  },
+  "per_sample": [
+    {
+      "sample_id": "replay-physical_interaction",
+      "video_id": "v-ucf-2abbd0c648",
+      "task": "REPLAY",
+      "subtask": null,
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": null,
+      "detail": {},
+      "failure": null
+    },
+    {
+      "sample_id": "replay-person_object_event",
+      "video_id": "v-ucf-9c613b88e7",
+      "task": "REPLAY",
+      "subtask": null,
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": null,
+      "detail": {},
+      "failure": null
+    },
+    {
+      "sample_id": "replay-normal_or_ambiguous",
+      "video_id": "v-ucf-4d14b2c4da",
+      "task": "REPLAY",
+      "subtask": null,
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "state": "scored",
+      "valid_output": true,
+      "score": null,
+      "detail": {},
+      "failure": null
+    }
+  ]
+}

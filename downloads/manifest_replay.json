@@ -1,0 +1,298 @@
+{
+  "manifest_sha256": "3e6a4efb5ff97c11192cf7ecab4fae2063f2258c24375f75ad449a01065fe24c",
+  "frozen_at": "2026-09-29T20:06:20Z",
+  "manifest_id": "valu-demo-v1-replay",
+  "protocol_id": "valu_demo_v1_replay",
+  "protocol_label": "VALU demo subset v1 — adapted protocol (replay windows)",
+  "benchmark": "VALU (media only)",
+  "dataset_revision": "2ed33aa6fe6ccd282f2ff99e7ececf80b61a3eca",
+  "media_revision": "299373f8ca67fe27c20e196fd7185726980ff088",
+  "selection_seed": 42,
+  "selection_rule": "First candidate per theme in SHA-256 order among eligible UCF videos outside the smoke set, long enough for a sub-window, with a verified publisher event span.",
+  "coverage": {
+    "covered": [
+      "physical_interaction",
+      "person_object_event",
+      "normal_or_ambiguous"
+    ],
+    "not_covered": [
+      {
+        "theme": "fall_vs_lying_down",
+        "label": "Fall versus voluntarily lying down",
+        "status": "not covered in this demo",
+        "reason": "No verified paired footage for this distinction in the available VALU media."
+      },
+      {
+        "theme": "unattended_object",
+        "label": "Unattended object",
+        "status": "not covered in this demo",
+        "reason": "No verified unattended-object footage in the available VALU media."
+      }
+    ]
+  },
+  "videos": {
+    "v-ucf-2abbd0c648": {
+      "video_id": "v-ucf-2abbd0c648",
+      "source_dataset": "UCF",
+      "source_video_id": "Fighting003_x264.mp4",
+      "source_revision": "299373f8ca67fe27c20e196fd7185726980ff088",
+      "source_url": "https://huggingface.co/datasets/NIRCVAD/VALU",
+      "media_variant": "publisher_masked",
+      "observed_category": "Fighting",
+      "is_normal_video": false,
+      "ineligible_reason": null,
+      "source_media_sha256": "5a5a86e26cb6aa644ecdf9f304ba4d8bf9836ce8be82fadf6b68c247159dcd16",
+      "duration_sec": 103.4,
+      "width": 320,
+      "height": 240,
+      "fps": 30.0,
+      "codec": "h264",
+      "n_frames": 3102,
+      "size_bytes": 19939799,
+      "availability": "available"
+    },
+    "v-ucf-4d14b2c4da": {
+      "video_id": "v-ucf-4d14b2c4da",
+      "source_dataset": "UCF",
+      "source_video_id": "Normal_Videos893_x264.mp4",
+      "source_revision": "299373f8ca67fe27c20e196fd7185726980ff088",
+      "source_url": "https://huggingface.co/datasets/NIRCVAD/VALU",
+      "media_variant": "publisher_masked",
+      "observed_category": "Normal",
+      "is_normal_video": true,
+      "ineligible_reason": null,
+      "source_media_sha256": "1b058de64719087f0c588de085bcc83d837b947e96ac8c4d88be8713cb68d93b",
+      "duration_sec": 212.466,
+      "width": 320,
+      "height": 240,
+      "fps": 30.0,
+      "codec": "h264",
+      "n_frames": 6374,
+      "size_bytes": 40818003,
+      "availability": "available"
+    },
+    "v-ucf-9c613b88e7": {
+      "video_id": "v-ucf-9c613b88e7",
+      "source_dataset": "UCF",
+      "source_video_id": "Shoplifting015_x264.mp4",
+      "source_revision": "299373f8ca67fe27c20e196fd7185726980ff088",
+      "source_url": "https://huggingface.co/datasets/NIRCVAD/VALU",
+      "media_variant": "publisher_masked",
+      "observed_category": "Shoplifting",
+      "is_normal_video": false,
+      "ineligible_reason": null,
+      "source_media_sha256": "d525718249e89f514ba308dec8856310ab5c19d8099b29108e4344b469fadc17",
+      "duration_sec": 75.2,
+      "width": 320,
+      "height": 240,
+      "fps": 30.0,
+      "codec": "h264",
+      "n_frames": 2256,
+      "size_bytes": 14432302,
+      "availability": "available"
+    }
+  },
+  "samples": [
+    {
+      "sample_id": "replay-physical_interaction",
+      "video_id": "v-ucf-2abbd0c648",
+      "benchmark": "VALU (media only)",
+      "benchmark_revision": "2ed33aa6fe6ccd282f2ff99e7ececf80b61a3eca",
+      "publisher_split": null,
+      "evaluation_role": "replay",
+      "task": "REPLAY",
+      "subtask": null,
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "UCF",
+      "raw_record_locator": "data/TDG.parquet#row=263",
+      "raw_annotation": {
+        "subset": "Abnormal_Event",
+        "video": "Fighting003_x264.mp4",
+        "source": "UCF",
+        "description": "Two groups step forward and start arguing, then they begin to fight each other and continue to brawl.",
+        "timestamps": [
+          52.1,
+          103.4
+        ]
+      },
+      "model_input": {
+        "question": "Server-side review of an uploaded context window.",
+        "options": null,
+        "requested_semantic_level": null,
+        "input_window_sec": [
+          42.1,
+          72.1
+        ]
+      },
+      "reference": {
+        "answer_id": null,
+        "intervals_sec": [
+          [
+            52.1,
+            103.4
+          ]
+        ],
+        "description": "Two groups step forward and start arguing, then they begin to fight each other and continue to brawl."
+      },
+      "time_mapping": {
+        "source_units": "seconds",
+        "input_origin_sec": 42.1,
+        "normalized_units": "seconds",
+        "validation_status": "verified",
+        "validation_note": "Input clock starts at the window start; source time = input time + origin."
+      },
+      "annotation_origin": "manual_demo",
+      "exclusion_reason": null,
+      "replay": {
+        "theme": "physical_interaction",
+        "theme_label": "Physical interaction between people",
+        "trigger_reason": "Edge detector flags rapid close-contact motion between people but cannot tell aggression from benign contact.",
+        "trigger_source_sec": 52.1,
+        "trigger_origin": "scripted: start of the publisher Abnormal_Event span (manual demo curation)",
+        "edge_detector": "scripted replay; no edge model was run",
+        "window_source_sec": [
+          42.1,
+          72.1
+        ],
+        "pre_trigger_context_sec": 10.0,
+        "post_trigger_context_sec": 20.0,
+        "post_trigger_context_included": true,
+        "information_access": "The scripted trigger time uses the publisher annotation. The server model receives only 32 frames sampled uniformly from the window and the replay prompt."
+      }
+    },
+    {
+      "sample_id": "replay-person_object_event",
+      "video_id": "v-ucf-9c613b88e7",
+      "benchmark": "VALU (media only)",
+      "benchmark_revision": "2ed33aa6fe6ccd282f2ff99e7ececf80b61a3eca",
+      "publisher_split": null,
+      "evaluation_role": "replay",
+      "task": "REPLAY",
+      "subtask": null,
+      "semantic_level": "Abnormal_Event",
+      "source_dataset": "UCF",
+      "raw_record_locator": "data/TDG.parquet#row=361",
+      "raw_annotation": {
+        "subset": "Abnormal_Event",
+        "video": "Shoplifting015_x264.mp4",
+        "source": "UCF",
+        "description": "A man in white walks up to the table, takes the phone from it, and then leaves.",
+        "timestamps": [
+          66.2,
+          73.4
+        ]
+      },
+      "model_input": {
+        "question": "Server-side review of an uploaded context window.",
+        "options": null,
+        "requested_semantic_level": null,
+        "input_window_sec": [
+          56.2,
+          75.2
+        ]
+      },
+      "reference": {
+        "answer_id": null,
+        "intervals_sec": [
+          [
+            66.2,
+            73.4
+          ]
+        ],
+        "description": "A man in white walks up to the table, takes the phone from it, and then leaves."
+      },
+      "time_mapping": {
+        "source_units": "seconds",
+        "input_origin_sec": 56.2,
+        "normalized_units": "seconds",
+        "validation_status": "verified",
+        "validation_note": "Input clock starts at the window start; source time = input time + origin."
+      },
+      "annotation_origin": "manual_demo",
+      "exclusion_reason": null,
+      "replay": {
+        "theme": "person_object_event",
+        "theme_label": "Person-object event",
+        "trigger_reason": "Edge detector flags a person handling an object near shelves, a vehicle or an entrance but cannot judge what happens to the object.",
+        "trigger_source_sec": 66.2,
+        "trigger_origin": "scripted: start of the publisher Abnormal_Event span (manual demo curation)",
+        "edge_detector": "scripted replay; no edge model was run",
+        "window_source_sec": [
+          56.2,
+          75.2
+        ],
+        "pre_trigger_context_sec": 10.0,
+        "post_trigger_context_sec": 9.0,
+        "post_trigger_context_included": true,
+        "information_access": "The scripted trigger time uses the publisher annotation. The server model receives only 32 frames sampled uniformly from the window and the replay prompt."
+      }
+    },
+    {
+      "sample_id": "replay-normal_or_ambiguous",
+      "video_id": "v-ucf-4d14b2c4da",
+      "benchmark": "VALU (media only)",
+      "benchmark_revision": "2ed33aa6fe6ccd282f2ff99e7ececf80b61a3eca",
+      "publisher_split": null,
+      "evaluation_role": "replay",
+      "task": "REPLAY",
+      "subtask": null,
+      "semantic_level": "Normal_Event",
+      "source_dataset": "UCF",
+      "raw_record_locator": "data/TDG.parquet#row=2891",
+      "raw_annotation": {
+        "subset": "Normal_Event",
+        "video": "Normal_Videos893_x264.mp4",
+        "source": "UCF",
+        "description": "A man with a blue backpack walks to the shelf, takes a magazine from the shelf, paces back and forth, flips through it for a while, and then walks away with the magazine.",
+        "timestamps": [
+          15.6,
+          115.8
+        ]
+      },
+      "model_input": {
+        "question": "Server-side review of an uploaded context window.",
+        "options": null,
+        "requested_semantic_level": null,
+        "input_window_sec": [
+          96.2,
+          126.2
+        ]
+      },
+      "reference": {
+        "answer_id": null,
+        "intervals_sec": [
+          [
+            15.6,
+            115.8
+          ]
+        ],
+        "description": "A man with a blue backpack walks to the shelf, takes a magazine from the shelf, paces back and forth, flips through it for a while, and then walks away with the magazine."
+      },
+      "time_mapping": {
+        "source_units": "seconds",
+        "input_origin_sec": 96.2,
+        "normalized_units": "seconds",
+        "validation_status": "verified",
+        "validation_note": "Input clock starts at the window start; source time = input time + origin."
+      },
+      "annotation_origin": "manual_demo",
+      "exclusion_reason": null,
+      "replay": {
+        "theme": "normal_or_ambiguous",
+        "theme_label": "Normal or ambiguous scene",
+        "trigger_reason": "Edge detector flags unusual motion density with low confidence.",
+        "trigger_source_sec": 106.2,
+        "trigger_origin": "scripted: fixed at 50% of the video duration (manual demo curation)",
+        "edge_detector": "scripted replay; no edge model was run",
+        "window_source_sec": [
+          96.2,
+          126.2
+        ],
+        "pre_trigger_context_sec": 10.0,
+        "post_trigger_context_sec": 20.0,
+        "post_trigger_context_included": true,
+        "information_access": "The scripted trigger time uses the publisher annotation. The server model receives only 32 frames sampled uniformly from the window and the replay prompt."
+      }
+    }
+  ]
+}

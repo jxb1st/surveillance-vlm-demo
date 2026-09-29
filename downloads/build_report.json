@@ -1,0 +1,31 @@
+{
+  "built_at": "2026-09-29T20:27:47Z",
+  "stage": "complete",
+  "pages": [
+    "index.html",
+    "benchmarks.html",
+    "videos.html",
+    "annotations.html",
+    "models.html",
+    "results.html"
+  ],
+  "videos": 174,
+  "playable_videos": 174,
+  "samples": 192,
+  "models": {
+    "qwen38_27b": "completed",
+    "qwen3vl_8b": "completed",
+    "videollama3_7b": "completed"
+  },
+  "replay_status": "completed",
+  "replay_cases": 3,
+  "data_script_bytes": {
+    "core": 2774,
+    "videos": 955702,
+    "samples": 658936,
+    "preds": 680480,
+    "replay": 21791
+  },
+  "prompt_hash_checks": 576,
+  "site_size_mb": 210.8
+}

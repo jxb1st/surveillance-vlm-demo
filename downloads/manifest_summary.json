@@ -1,0 +1,1272 @@
+{
+  "status": "frozen",
+  "manifest_id": "valu-demo-v1",
+  "manifest_sha256": "a29f5969ed6587a421ca27190e8ac466b5e1de1bab3714382c63fbcd42e434f0",
+  "frozen_at": "2026-09-29T19:54:31Z",
+  "targets": {
+    "ADC": 120,
+    "TDG": 60,
+    "ALD": 12
+  },
+  "selected_questions": {
+    "ADC": 120,
+    "TDG": 60,
+    "ALD": 12
+  },
+  "selected_questions_total": 192,
+  "distinct_evaluated_videos": 174,
+  "distinct_videos_by_task": {
+    "ADC": 115,
+    "TDG": 58,
+    "ALD": 12
+  },
+  "smoke_questions": {
+    "ADC": 6,
+    "TDG": 3,
+    "ALD": 2
+  },
+  "smoke_videos": 11,
+  "coverage": {
+    "ADC_by_subtask_level_source": [
+      {
+        "key": [
+          "Exclusion",
+          "Abnormal_Action",
+          "ECVA"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "Exclusion",
+          "Abnormal_Action",
+          "UCF"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "Exclusion",
+          "Abnormal_Consequence",
+          "ECVA"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "Exclusion",
+          "Abnormal_Consequence",
+          "UCF"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "Exclusion",
+          "Abnormal_Event",
+          "ECVA"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "Exclusion",
+          "Abnormal_Event",
+          "UCF"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "Exclusion",
+          "Abnormal_Segment",
+          "ECVA"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "Exclusion",
+          "Abnormal_Segment",
+          "UCF"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "Exclusion",
+          "Subjects_Response",
+          "ECVA"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "Exclusion",
+          "Subjects_Response",
+          "UCF"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "Matching",
+          "Abnormal_Action",
+          "ECVA"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "Matching",
+          "Abnormal_Action",
+          "UCF"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "Matching",
+          "Abnormal_Consequence",
+          "ECVA"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "Matching",
+          "Abnormal_Consequence",
+          "UCF"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "Matching",
+          "Abnormal_Event",
+          "ECVA"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "Matching",
+          "Abnormal_Event",
+          "UCF"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "Matching",
+          "Abnormal_Segment",
+          "ECVA"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "Matching",
+          "Abnormal_Segment",
+          "UCF"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "Matching",
+          "Subjects_Response",
+          "ECVA"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "Matching",
+          "Subjects_Response",
+          "UCF"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "Rejection",
+          "Normal_Event",
+          "UCF"
+        ],
+        "n": 40
+      }
+    ],
+    "TDG_by_level_source": [
+      {
+        "key": [
+          "Abnormal_Action",
+          "ECVA"
+        ],
+        "n": 5
+      },
+      {
+        "key": [
+          "Abnormal_Action",
+          "UCF"
+        ],
+        "n": 5
+      },
+      {
+        "key": [
+          "Abnormal_Consequence",
+          "ECVA"
+        ],
+        "n": 5
+      },
+      {
+        "key": [
+          "Abnormal_Consequence",
+          "UCF"
+        ],
+        "n": 5
+      },
+      {
+        "key": [
+          "Abnormal_Event",
+          "ECVA"
+        ],
+        "n": 5
+      },
+      {
+        "key": [
+          "Abnormal_Event",
+          "UCF"
+        ],
+        "n": 5
+      },
+      {
+        "key": [
+          "Abnormal_Segment",
+          "ECVA"
+        ],
+        "n": 5
+      },
+      {
+        "key": [
+          "Abnormal_Segment",
+          "UCF"
+        ],
+        "n": 5
+      },
+      {
+        "key": [
+          "Normal_Event",
+          "UCF"
+        ],
+        "n": 10
+      },
+      {
+        "key": [
+          "Subjects_Response",
+          "ECVA"
+        ],
+        "n": 5
+      },
+      {
+        "key": [
+          "Subjects_Response",
+          "UCF"
+        ],
+        "n": 5
+      }
+    ],
+    "ALD_by_level_source": [
+      {
+        "key": [
+          "Abnormal_Action",
+          "ECVA"
+        ],
+        "n": 2
+      },
+      {
+        "key": [
+          "Abnormal_Action",
+          "UCF"
+        ],
+        "n": 1
+      },
+      {
+        "key": [
+          "Abnormal_Consequence",
+          "ECVA"
+        ],
+        "n": 2
+      },
+      {
+        "key": [
+          "Abnormal_Consequence",
+          "UCF"
+        ],
+        "n": 1
+      },
+      {
+        "key": [
+          "Abnormal_Event",
+          "ECVA"
+        ],
+        "n": 1
+      },
+      {
+        "key": [
+          "Abnormal_Event",
+          "UCF"
+        ],
+        "n": 1
+      },
+      {
+        "key": [
+          "Abnormal_Segment",
+          "ECVA"
+        ],
+        "n": 1
+      },
+      {
+        "key": [
+          "Abnormal_Segment",
+          "UCF"
+        ],
+        "n": 1
+      },
+      {
+        "key": [
+          "Subjects_Response",
+          "ECVA"
+        ],
+        "n": 1
+      },
+      {
+        "key": [
+          "Subjects_Response",
+          "UCF"
+        ],
+        "n": 1
+      }
+    ],
+    "by_observed_category": [
+      {
+        "key": [
+          "ADC",
+          "Arrest"
+        ],
+        "n": 2
+      },
+      {
+        "key": [
+          "ADC",
+          "Arson"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "ADC",
+          "Burglary"
+        ],
+        "n": 3
+      },
+      {
+        "key": [
+          "ADC",
+          "Explosion"
+        ],
+        "n": 8
+      },
+      {
+        "key": [
+          "ADC",
+          "Normal"
+        ],
+        "n": 40
+      },
+      {
+        "key": [
+          "ADC",
+          "RoadAccidents"
+        ],
+        "n": 12
+      },
+      {
+        "key": [
+          "ADC",
+          "Robbery"
+        ],
+        "n": 2
+      },
+      {
+        "key": [
+          "ADC",
+          "Shooting"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "ADC",
+          "Shoplifting"
+        ],
+        "n": 4
+      },
+      {
+        "key": [
+          "ADC",
+          "Vandalism"
+        ],
+        "n": 1
+      },
+      {
+        "key": [
+          "ADC",
+          "unknown"
+        ],
+        "n": 40
+      },
+      {
+        "key": [
+          "ALD",
+          "Explosion"
+        ],
+        "n": 2
+      },
+      {
+        "key": [
+          "ALD",
+          "RoadAccidents"
+        ],
+        "n": 1
+      },
+      {
+        "key": [
+          "ALD",
+          "Shooting"
+        ],
+        "n": 2
+      },
+      {
+        "key": [
+          "ALD",
+          "unknown"
+        ],
+        "n": 7
+      },
+      {
+        "key": [
+          "TDG",
+          "Abuse"
+        ],
+        "n": 1
+      },
+      {
+        "key": [
+          "TDG",
+          "Arrest"
+        ],
+        "n": 1
+      },
+      {
+        "key": [
+          "TDG",
+          "Arson"
+        ],
+        "n": 1
+      },
+      {
+        "key": [
+          "TDG",
+          "Burglary"
+        ],
+        "n": 3
+      },
+      {
+        "key": [
+          "TDG",
+          "Explosion"
+        ],
+        "n": 5
+      },
+      {
+        "key": [
+          "TDG",
+          "Fighting"
+        ],
+        "n": 1
+      },
+      {
+        "key": [
+          "TDG",
+          "Normal"
+        ],
+        "n": 10
+      },
+      {
+        "key": [
+          "TDG",
+          "RoadAccidents"
+        ],
+        "n": 5
+      },
+      {
+        "key": [
+          "TDG",
+          "Robbery"
+        ],
+        "n": 1
+      },
+      {
+        "key": [
+          "TDG",
+          "Shooting"
+        ],
+        "n": 5
+      },
+      {
+        "key": [
+          "TDG",
+          "Shoplifting"
+        ],
+        "n": 1
+      },
+      {
+        "key": [
+          "TDG",
+          "Stealing"
+        ],
+        "n": 1
+      },
+      {
+        "key": [
+          "TDG",
+          "unknown"
+        ],
+        "n": 25
+      }
+    ]
+  },
+  "stratum_report": {
+    "smoke": [
+      {
+        "task": "ADC",
+        "group": "Exclusion",
+        "source": "ECVA",
+        "level": "Abnormal_Action",
+        "eligible_distinct_videos": 357,
+        "selected": 1
+      },
+      {
+        "task": "ADC",
+        "group": "Exclusion",
+        "source": "UCF",
+        "level": "Abnormal_Action",
+        "eligible_distinct_videos": 143,
+        "selected": 0
+      },
+      {
+        "task": "ADC",
+        "group": "Exclusion",
+        "source": "ECVA",
+        "level": "Abnormal_Consequence",
+        "eligible_distinct_videos": 152,
+        "selected": 1
+      },
+      {
+        "task": "ADC",
+        "group": "Exclusion",
+        "source": "UCF",
+        "level": "Abnormal_Consequence",
+        "eligible_distinct_videos": 79,
+        "selected": 0
+      },
+      {
+        "task": "ADC",
+        "group": "Exclusion",
+        "source": "ECVA",
+        "level": "Abnormal_Event",
+        "eligible_distinct_videos": 357,
+        "selected": 0
+      },
+      {
+        "task": "ADC",
+        "group": "Exclusion",
+        "source": "UCF",
+        "level": "Abnormal_Event",
+        "eligible_distinct_videos": 143,
+        "selected": 0
+      },
+      {
+        "task": "ADC",
+        "group": "Exclusion",
+        "source": "ECVA",
+        "level": "Abnormal_Segment",
+        "eligible_distinct_videos": 357,
+        "selected": 0
+      },
+      {
+        "task": "ADC",
+        "group": "Exclusion",
+        "source": "UCF",
+        "level": "Abnormal_Segment",
+        "eligible_distinct_videos": 143,
+        "selected": 0
+      },
+      {
+        "task": "ADC",
+        "group": "Exclusion",
+        "source": "ECVA",
+        "level": "Subjects_Response",
+        "eligible_distinct_videos": 45,
+        "selected": 0
+      },
+      {
+        "task": "ADC",
+        "group": "Exclusion",
+        "source": "UCF",
+        "level": "Subjects_Response",
+        "eligible_distinct_videos": 29,
+        "selected": 0
+      },
+      {
+        "task": "ADC",
+        "group": "Matching",
+        "source": "ECVA",
+        "level": "Abnormal_Action",
+        "eligible_distinct_videos": 357,
+        "selected": 1
+      },
+      {
+        "task": "ADC",
+        "group": "Matching",
+        "source": "UCF",
+        "level": "Abnormal_Action",
+        "eligible_distinct_videos": 143,
+        "selected": 0
+      },
+      {
+        "task": "ADC",
+        "group": "Matching",
+        "source": "ECVA",
+        "level": "Abnormal_Consequence",
+        "eligible_distinct_videos": 152,
+        "selected": 1
+      },
+      {
+        "task": "ADC",
+        "group": "Matching",
+        "source": "UCF",
+        "level": "Abnormal_Consequence",
+        "eligible_distinct_videos": 79,
+        "selected": 0
+      },
+      {
+        "task": "ADC",
+        "group": "Matching",
+        "source": "ECVA",
+        "level": "Abnormal_Event",
+        "eligible_distinct_videos": 357,
+        "selected": 0
+      },
+      {
+        "task": "ADC",
+        "group": "Matching",
+        "source": "UCF",
+        "level": "Abnormal_Event",
+        "eligible_distinct_videos": 143,
+        "selected": 0
+      },
+      {
+        "task": "ADC",
+        "group": "Matching",
+        "source": "ECVA",
+        "level": "Abnormal_Segment",
+        "eligible_distinct_videos": 357,
+        "selected": 0
+      },
+      {
+        "task": "ADC",
+        "group": "Matching",
+        "source": "UCF",
+        "level": "Abnormal_Segment",
+        "eligible_distinct_videos": 143,
+        "selected": 0
+      },
+      {
+        "task": "ADC",
+        "group": "Matching",
+        "source": "ECVA",
+        "level": "Subjects_Response",
+        "eligible_distinct_videos": 45,
+        "selected": 0
+      },
+      {
+        "task": "ADC",
+        "group": "Matching",
+        "source": "UCF",
+        "level": "Subjects_Response",
+        "eligible_distinct_videos": 29,
+        "selected": 0
+      },
+      {
+        "task": "ADC",
+        "group": "Rejection",
+        "source": "UCF",
+        "level": "Normal_Event",
+        "eligible_distinct_videos": 139,
+        "selected": 2
+      },
+      {
+        "task": "ADC",
+        "summary": true,
+        "target": 6,
+        "selected": 6,
+        "shortfall": 0
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "ECVA",
+        "level": "Abnormal_Action",
+        "eligible_distinct_videos": 355,
+        "selected": 1
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "UCF",
+        "level": "Abnormal_Action",
+        "eligible_distinct_videos": 143,
+        "selected": 0
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "ECVA",
+        "level": "Abnormal_Consequence",
+        "eligible_distinct_videos": 153,
+        "selected": 1
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "UCF",
+        "level": "Abnormal_Consequence",
+        "eligible_distinct_videos": 79,
+        "selected": 0
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "ECVA",
+        "level": "Abnormal_Event",
+        "eligible_distinct_videos": 354,
+        "selected": 1
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "UCF",
+        "level": "Abnormal_Event",
+        "eligible_distinct_videos": 143,
+        "selected": 0
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "ECVA",
+        "level": "Abnormal_Segment",
+        "eligible_distinct_videos": 355,
+        "selected": 0
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "UCF",
+        "level": "Abnormal_Segment",
+        "eligible_distinct_videos": 142,
+        "selected": 0
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "UCF",
+        "level": "Normal_Event",
+        "eligible_distinct_videos": 139,
+        "selected": 0
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "ECVA",
+        "level": "Subjects_Response",
+        "eligible_distinct_videos": 45,
+        "selected": 0
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "UCF",
+        "level": "Subjects_Response",
+        "eligible_distinct_videos": 29,
+        "selected": 0
+      },
+      {
+        "task": "TDG",
+        "summary": true,
+        "target": 3,
+        "selected": 3,
+        "shortfall": 0
+      },
+      {
+        "task": "ALD",
+        "group": null,
+        "source": "ECVA",
+        "level": "Abnormal_Action",
+        "eligible_distinct_videos": 355,
+        "selected": 1
+      },
+      {
+        "task": "ALD",
+        "group": null,
+        "source": "UCF",
+        "level": "Abnormal_Action",
+        "eligible_distinct_videos": 143,
+        "selected": 0
+      },
+      {
+        "task": "ALD",
+        "group": null,
+        "source": "ECVA",
+        "level": "Abnormal_Consequence",
+        "eligible_distinct_videos": 153,
+        "selected": 1
+      },
+      {
+        "task": "ALD",
+        "group": null,
+        "source": "UCF",
+        "level": "Abnormal_Consequence",
+        "eligible_distinct_videos": 79,
+        "selected": 0
+      },
+      {
+        "task": "ALD",
+        "group": null,
+        "source": "ECVA",
+        "level": "Abnormal_Event",
+        "eligible_distinct_videos": 354,
+        "selected": 0
+      },
+      {
+        "task": "ALD",
+        "group": null,
+        "source": "UCF",
+        "level": "Abnormal_Event",
+        "eligible_distinct_videos": 143,
+        "selected": 0
+      },
+      {
+        "task": "ALD",
+        "group": null,
+        "source": "ECVA",
+        "level": "Abnormal_Segment",
+        "eligible_distinct_videos": 355,
+        "selected": 0
+      },
+      {
+        "task": "ALD",
+        "group": null,
+        "source": "UCF",
+        "level": "Abnormal_Segment",
+        "eligible_distinct_videos": 142,
+        "selected": 0
+      },
+      {
+        "task": "ALD",
+        "group": null,
+        "source": "ECVA",
+        "level": "Subjects_Response",
+        "eligible_distinct_videos": 45,
+        "selected": 0
+      },
+      {
+        "task": "ALD",
+        "group": null,
+        "source": "UCF",
+        "level": "Subjects_Response",
+        "eligible_distinct_videos": 29,
+        "selected": 0
+      },
+      {
+        "task": "ALD",
+        "summary": true,
+        "target": 2,
+        "selected": 2,
+        "shortfall": 0
+      }
+    ],
+    "evaluation": [
+      {
+        "task": "ADC",
+        "group": "Exclusion",
+        "source": "ECVA",
+        "level": "Abnormal_Action",
+        "eligible_distinct_videos": 348,
+        "selected": 4
+      },
+      {
+        "task": "ADC",
+        "group": "Exclusion",
+        "source": "UCF",
+        "level": "Abnormal_Action",
+        "eligible_distinct_videos": 143,
+        "selected": 4
+      },
+      {
+        "task": "ADC",
+        "group": "Exclusion",
+        "source": "ECVA",
+        "level": "Abnormal_Consequence",
+        "eligible_distinct_videos": 146,
+        "selected": 4
+      },
+      {
+        "task": "ADC",
+        "group": "Exclusion",
+        "source": "UCF",
+        "level": "Abnormal_Consequence",
+        "eligible_distinct_videos": 79,
+        "selected": 4
+      },
+      {
+        "task": "ADC",
+        "group": "Exclusion",
+        "source": "ECVA",
+        "level": "Abnormal_Event",
+        "eligible_distinct_videos": 348,
+        "selected": 4
+      },
+      {
+        "task": "ADC",
+        "group": "Exclusion",
+        "source": "UCF",
+        "level": "Abnormal_Event",
+        "eligible_distinct_videos": 143,
+        "selected": 4
+      },
+      {
+        "task": "ADC",
+        "group": "Exclusion",
+        "source": "ECVA",
+        "level": "Abnormal_Segment",
+        "eligible_distinct_videos": 348,
+        "selected": 4
+      },
+      {
+        "task": "ADC",
+        "group": "Exclusion",
+        "source": "UCF",
+        "level": "Abnormal_Segment",
+        "eligible_distinct_videos": 143,
+        "selected": 4
+      },
+      {
+        "task": "ADC",
+        "group": "Exclusion",
+        "source": "ECVA",
+        "level": "Subjects_Response",
+        "eligible_distinct_videos": 42,
+        "selected": 4
+      },
+      {
+        "task": "ADC",
+        "group": "Exclusion",
+        "source": "UCF",
+        "level": "Subjects_Response",
+        "eligible_distinct_videos": 29,
+        "selected": 4
+      },
+      {
+        "task": "ADC",
+        "group": "Matching",
+        "source": "ECVA",
+        "level": "Abnormal_Action",
+        "eligible_distinct_videos": 348,
+        "selected": 4
+      },
+      {
+        "task": "ADC",
+        "group": "Matching",
+        "source": "UCF",
+        "level": "Abnormal_Action",
+        "eligible_distinct_videos": 143,
+        "selected": 4
+      },
+      {
+        "task": "ADC",
+        "group": "Matching",
+        "source": "ECVA",
+        "level": "Abnormal_Consequence",
+        "eligible_distinct_videos": 146,
+        "selected": 4
+      },
+      {
+        "task": "ADC",
+        "group": "Matching",
+        "source": "UCF",
+        "level": "Abnormal_Consequence",
+        "eligible_distinct_videos": 79,
+        "selected": 4
+      },
+      {
+        "task": "ADC",
+        "group": "Matching",
+        "source": "ECVA",
+        "level": "Abnormal_Event",
+        "eligible_distinct_videos": 348,
+        "selected": 4
+      },
+      {
+        "task": "ADC",
+        "group": "Matching",
+        "source": "UCF",
+        "level": "Abnormal_Event",
+        "eligible_distinct_videos": 143,
+        "selected": 4
+      },
+      {
+        "task": "ADC",
+        "group": "Matching",
+        "source": "ECVA",
+        "level": "Abnormal_Segment",
+        "eligible_distinct_videos": 348,
+        "selected": 4
+      },
+      {
+        "task": "ADC",
+        "group": "Matching",
+        "source": "UCF",
+        "level": "Abnormal_Segment",
+        "eligible_distinct_videos": 143,
+        "selected": 4
+      },
+      {
+        "task": "ADC",
+        "group": "Matching",
+        "source": "ECVA",
+        "level": "Subjects_Response",
+        "eligible_distinct_videos": 42,
+        "selected": 4
+      },
+      {
+        "task": "ADC",
+        "group": "Matching",
+        "source": "UCF",
+        "level": "Subjects_Response",
+        "eligible_distinct_videos": 29,
+        "selected": 4
+      },
+      {
+        "task": "ADC",
+        "group": "Rejection",
+        "source": "UCF",
+        "level": "Normal_Event",
+        "eligible_distinct_videos": 137,
+        "selected": 40
+      },
+      {
+        "task": "ADC",
+        "summary": true,
+        "target": 120,
+        "selected": 120,
+        "shortfall": 0
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "ECVA",
+        "level": "Abnormal_Action",
+        "eligible_distinct_videos": 346,
+        "selected": 5
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "UCF",
+        "level": "Abnormal_Action",
+        "eligible_distinct_videos": 143,
+        "selected": 5
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "ECVA",
+        "level": "Abnormal_Consequence",
+        "eligible_distinct_videos": 147,
+        "selected": 5
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "UCF",
+        "level": "Abnormal_Consequence",
+        "eligible_distinct_videos": 79,
+        "selected": 5
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "ECVA",
+        "level": "Abnormal_Event",
+        "eligible_distinct_videos": 345,
+        "selected": 5
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "UCF",
+        "level": "Abnormal_Event",
+        "eligible_distinct_videos": 143,
+        "selected": 5
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "ECVA",
+        "level": "Abnormal_Segment",
+        "eligible_distinct_videos": 346,
+        "selected": 5
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "UCF",
+        "level": "Abnormal_Segment",
+        "eligible_distinct_videos": 142,
+        "selected": 5
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "UCF",
+        "level": "Normal_Event",
+        "eligible_distinct_videos": 137,
+        "selected": 10
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "ECVA",
+        "level": "Subjects_Response",
+        "eligible_distinct_videos": 42,
+        "selected": 5
+      },
+      {
+        "task": "TDG",
+        "group": null,
+        "source": "UCF",
+        "level": "Subjects_Response",
+        "eligible_distinct_videos": 29,
+        "selected": 5
+      },
+      {
+        "task": "TDG",
+        "summary": true,
+        "target": 60,
+        "selected": 60,
+        "shortfall": 0
+      },
+      {
+        "task": "ALD",
+        "group": null,
+        "source": "ECVA",
+        "level": "Abnormal_Action",
+        "eligible_distinct_videos": 346,
+        "selected": 2
+      },
+      {
+        "task": "ALD",
+        "group": null,
+        "source": "UCF",
+        "level": "Abnormal_Action",
+        "eligible_distinct_videos": 143,
+        "selected": 1
+      },
+      {
+        "task": "ALD",
+        "group": null,
+        "source": "ECVA",
+        "level": "Abnormal_Consequence",
+        "eligible_distinct_videos": 147,
+        "selected": 2
+      },
+      {
+        "task": "ALD",
+        "group": null,
+        "source": "UCF",
+        "level": "Abnormal_Consequence",
+        "eligible_distinct_videos": 79,
+        "selected": 1
+      },
+      {
+        "task": "ALD",
+        "group": null,
+        "source": "ECVA",
+        "level": "Abnormal_Event",
+        "eligible_distinct_videos": 345,
+        "selected": 1
+      },
+      {
+        "task": "ALD",
+        "group": null,
+        "source": "UCF",
+        "level": "Abnormal_Event",
+        "eligible_distinct_videos": 143,
+        "selected": 1
+      },
+      {
+        "task": "ALD",
+        "group": null,
+        "source": "ECVA",
+        "level": "Abnormal_Segment",
+        "eligible_distinct_videos": 346,
+        "selected": 1
+      },
+      {
+        "task": "ALD",
+        "group": null,
+        "source": "UCF",
+        "level": "Abnormal_Segment",
+        "eligible_distinct_videos": 142,
+        "selected": 1
+      },
+      {
+        "task": "ALD",
+        "group": null,
+        "source": "ECVA",
+        "level": "Subjects_Response",
+        "eligible_distinct_videos": 42,
+        "selected": 1
+      },
+      {
+        "task": "ALD",
+        "group": null,
+        "source": "UCF",
+        "level": "Subjects_Response",
+        "eligible_distinct_videos": 29,
+        "selected": 1
+      },
+      {
+        "task": "ALD",
+        "summary": true,
+        "target": 12,
+        "selected": 12,
+        "shortfall": 0
+      }
+    ]
+  },
+  "shortfalls": [],
+  "note": "Question counts are not video counts. This is a documented demonstration subset and is not statistically representative of CCTV behavior."
+}

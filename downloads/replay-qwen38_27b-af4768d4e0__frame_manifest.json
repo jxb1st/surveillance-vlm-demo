@@ -1,0 +1,950 @@
+{
+  "replay-physical_interaction": {
+    "video_id": "v-ucf-2abbd0c648",
+    "window_source_sec": [
+      42.1,
+      72.1
+    ],
+    "input_origin_sec": 42.1,
+    "input_duration_sec": 30.0,
+    "duplicated_frames": 0,
+    "frames": [
+      {
+        "slot": 0,
+        "frame_index": 1277,
+        "source_timestamp_sec": 42.5667,
+        "input_timestamp_sec": 0.4667,
+        "image_sha256": "29f9995c6afe7ee04864859d49c027c1913d1a8771069003daf6fa055da78468",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 1,
+        "frame_index": 1305,
+        "source_timestamp_sec": 43.5,
+        "input_timestamp_sec": 1.4,
+        "image_sha256": "1809279b9d14713b397a37e57292ec7bfcb4d11b4ff2be9e1ea6c5af0e88429e",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 2,
+        "frame_index": 1333,
+        "source_timestamp_sec": 44.4333,
+        "input_timestamp_sec": 2.3333,
+        "image_sha256": "183a01db7e1a6d68f9fbdc6d3c2df9b0322709ae4fcdf5a34a7c9c44e4423134",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 3,
+        "frame_index": 1361,
+        "source_timestamp_sec": 45.3667,
+        "input_timestamp_sec": 3.2667,
+        "image_sha256": "4b23e2e6da9b922ab4961899c7ea56f3b5422bc76027cdbdb884a6ff706e37b3",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 4,
+        "frame_index": 1390,
+        "source_timestamp_sec": 46.3333,
+        "input_timestamp_sec": 4.2333,
+        "image_sha256": "e54816f27e5fad2e27397ffd02204b0ec69c98d79d7c84a3d5e10f0d773ac378",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 5,
+        "frame_index": 1418,
+        "source_timestamp_sec": 47.2667,
+        "input_timestamp_sec": 5.1667,
+        "image_sha256": "d21388fd9f356d4f9eacddb91bf46849c38865f4472da8ab886e79e6f3515471",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 6,
+        "frame_index": 1446,
+        "source_timestamp_sec": 48.2,
+        "input_timestamp_sec": 6.1,
+        "image_sha256": "0d9c222d0b81b71ca4143de3cbfc7733f6b3d7624a944bddf17515dfd8e76b15",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 7,
+        "frame_index": 1474,
+        "source_timestamp_sec": 49.1333,
+        "input_timestamp_sec": 7.0333,
+        "image_sha256": "19897740c6874b4892ebbec49dd14d851560dabc7060172439be4c758e459fee",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 8,
+        "frame_index": 1502,
+        "source_timestamp_sec": 50.0667,
+        "input_timestamp_sec": 7.9667,
+        "image_sha256": "dac91b8fc6fdfec90fc6527c281e3d21bcd6f7cafedeab4ede49e09158e43c1d",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 9,
+        "frame_index": 1530,
+        "source_timestamp_sec": 51.0,
+        "input_timestamp_sec": 8.9,
+        "image_sha256": "3266e068f9b5f24cc6e274ec54492e5701f4b9e1eaf29deb1f59249428365473",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 10,
+        "frame_index": 1558,
+        "source_timestamp_sec": 51.9333,
+        "input_timestamp_sec": 9.8333,
+        "image_sha256": "7ba988ac5f90debb21c716bfd6c15c9bfae176dd519f389b453a0bfe6c252576",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 11,
+        "frame_index": 1586,
+        "source_timestamp_sec": 52.8667,
+        "input_timestamp_sec": 10.7667,
+        "image_sha256": "ece79cc1df0d2918f1e35dbdcab9197d5798ed73da93afa497558c7d46c3cf61",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 12,
+        "frame_index": 1615,
+        "source_timestamp_sec": 53.8333,
+        "input_timestamp_sec": 11.7333,
+        "image_sha256": "4c8254d1de0fe3707559a4904096903daec318bf20e30c87d0e092f1ea10276c",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 13,
+        "frame_index": 1643,
+        "source_timestamp_sec": 54.7667,
+        "input_timestamp_sec": 12.6667,
+        "image_sha256": "c80eb3645a7e1fa9795b6525bc8f976b606c7c79d3fa4663a56ad01bad0dbacd",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 14,
+        "frame_index": 1671,
+        "source_timestamp_sec": 55.7,
+        "input_timestamp_sec": 13.6,
+        "image_sha256": "e3ae36a8a6aac8c70f6bcfec24c142653e21094d5c6035a9ad935dacc38ccae7",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 15,
+        "frame_index": 1699,
+        "source_timestamp_sec": 56.6333,
+        "input_timestamp_sec": 14.5333,
+        "image_sha256": "f58c0ffc7de917d2df48d22478d3fa4fd89819db2720b07ba95aaca4f016abcf",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 16,
+        "frame_index": 1727,
+        "source_timestamp_sec": 57.5667,
+        "input_timestamp_sec": 15.4667,
+        "image_sha256": "ed0853a5641e986c9e14ccc15d3df2b704c70243f3f595b230a47d807939e2bb",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 17,
+        "frame_index": 1755,
+        "source_timestamp_sec": 58.5,
+        "input_timestamp_sec": 16.4,
+        "image_sha256": "6ab130e0a6b6438e39929d91771ee7888f089562b780afc5175d207cabb507f1",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 18,
+        "frame_index": 1783,
+        "source_timestamp_sec": 59.4333,
+        "input_timestamp_sec": 17.3333,
+        "image_sha256": "532236e9817b1ef1bfd9dc9758d14552c9c0bb68bf74d798dc42d31818e40291",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 19,
+        "frame_index": 1811,
+        "source_timestamp_sec": 60.3667,
+        "input_timestamp_sec": 18.2667,
+        "image_sha256": "af7b072a26a1593e7ae5cff518d8f7368f72ea34907ab686250615ba0f83dc60",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 20,
+        "frame_index": 1840,
+        "source_timestamp_sec": 61.3333,
+        "input_timestamp_sec": 19.2333,
+        "image_sha256": "efe853d52d3c1a476dee091a130a8fc876d5f801b59e8137e3c53b4e1ad3bd33",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 21,
+        "frame_index": 1868,
+        "source_timestamp_sec": 62.2667,
+        "input_timestamp_sec": 20.1667,
+        "image_sha256": "368fcefd6817623b9df26ee426945f115c60ca7066da6b350d928339fafdfdbd",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 22,
+        "frame_index": 1896,
+        "source_timestamp_sec": 63.2,
+        "input_timestamp_sec": 21.1,
+        "image_sha256": "d201f706a4477da3c5f8273b4f1b11b796507f7a38f1255c5dfe194e2377065d",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 23,
+        "frame_index": 1924,
+        "source_timestamp_sec": 64.1333,
+        "input_timestamp_sec": 22.0333,
+        "image_sha256": "c28922d161b5197e4257faa4e6311cfd8099a5c56f30386570161321962282a1",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 24,
+        "frame_index": 1952,
+        "source_timestamp_sec": 65.0667,
+        "input_timestamp_sec": 22.9667,
+        "image_sha256": "bfe020cf7045fd5df20ceb250e6508c9fbf3b2b48bac73355b590c622cdf1fae",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 25,
+        "frame_index": 1980,
+        "source_timestamp_sec": 66.0,
+        "input_timestamp_sec": 23.9,
+        "image_sha256": "e1648f98e47139dea6d603675d5b3ed33e957fbe757681f8f601dd626ca3c0f8",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 26,
+        "frame_index": 2008,
+        "source_timestamp_sec": 66.9333,
+        "input_timestamp_sec": 24.8333,
+        "image_sha256": "d4593f62cb56aedb81658531183fcced899b91140aa7f276972d4ccd2250250a",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 27,
+        "frame_index": 2036,
+        "source_timestamp_sec": 67.8667,
+        "input_timestamp_sec": 25.7667,
+        "image_sha256": "5844fb50c67b418a54301466c7cf2761b369fd5dcf5fdb9d6495ec9aad11229e",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 28,
+        "frame_index": 2065,
+        "source_timestamp_sec": 68.8333,
+        "input_timestamp_sec": 26.7333,
+        "image_sha256": "55abcb37a8d5f2650554e31401f457a2cbe25d2ae54166cb5c9b22c00dec424a",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 29,
+        "frame_index": 2093,
+        "source_timestamp_sec": 69.7667,
+        "input_timestamp_sec": 27.6667,
+        "image_sha256": "4b57d467e5affa397c3914e78b3e91d810533fc04e34e2cfd03cbe3808d50f83",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 30,
+        "frame_index": 2121,
+        "source_timestamp_sec": 70.7,
+        "input_timestamp_sec": 28.6,
+        "image_sha256": "ade861dbb72b7b6dbb2e135e9b7158410c91f80fe5807d9b0b72702f1a2dcf14",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 31,
+        "frame_index": 2149,
+        "source_timestamp_sec": 71.6333,
+        "input_timestamp_sec": 29.5333,
+        "image_sha256": "fc9108ab69b056af31f00359c23308b78409dd4776dba118e6d5f04517a50eb9",
+        "width": 320,
+        "height": 240
+      }
+    ],
+    "tensor_info": {
+      "pixel_values_videos_shape": [
+        5120,
+        1536
+      ],
+      "video_grid_thw": [
+        16,
+        16,
+        20
+      ],
+      "source_frame_size": [
+        320,
+        240
+      ],
+      "n_frames_supplied": 32
+    }
+  },
+  "replay-person_object_event": {
+    "video_id": "v-ucf-9c613b88e7",
+    "window_source_sec": [
+      56.2,
+      75.2
+    ],
+    "input_origin_sec": 56.2,
+    "input_duration_sec": 19.0,
+    "duplicated_frames": 0,
+    "frames": [
+      {
+        "slot": 0,
+        "frame_index": 1695,
+        "source_timestamp_sec": 56.5,
+        "input_timestamp_sec": 0.3,
+        "image_sha256": "7d4cfa5b44916db3fc1d0d3c9f36a27c9801804b7aa3ae3c2ce70c24f444022d",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 1,
+        "frame_index": 1713,
+        "source_timestamp_sec": 57.1,
+        "input_timestamp_sec": 0.9,
+        "image_sha256": "b7b86942d6e89ae8a0721d5521255c53338e283df435d301112427ae5c483821",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 2,
+        "frame_index": 1731,
+        "source_timestamp_sec": 57.7,
+        "input_timestamp_sec": 1.5,
+        "image_sha256": "671a05e8b1233148915f3f7ea0616c2526e7e78f4a295ec9ff9b51f8f74df4ec",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 3,
+        "frame_index": 1748,
+        "source_timestamp_sec": 58.2667,
+        "input_timestamp_sec": 2.0667,
+        "image_sha256": "2e107defcef55d1ca9bd15e378922177cf80e342543414472fd4c4e84a64f00e",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 4,
+        "frame_index": 1766,
+        "source_timestamp_sec": 58.8667,
+        "input_timestamp_sec": 2.6667,
+        "image_sha256": "b3557f39d11ff2e6af5611a6c6e5f7214d70f0460f77c55635ef93169f10d6d2",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 5,
+        "frame_index": 1784,
+        "source_timestamp_sec": 59.4667,
+        "input_timestamp_sec": 3.2667,
+        "image_sha256": "df137928b0f0ae3605778c4a24f54fd0a31e02180a97aa52bf9bdaf9b72fa5af",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 6,
+        "frame_index": 1802,
+        "source_timestamp_sec": 60.0667,
+        "input_timestamp_sec": 3.8667,
+        "image_sha256": "bb53453eafe846d1e3cc67a0a464bf2ffc64c15c7b55ddc301e9520df4244f69",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 7,
+        "frame_index": 1820,
+        "source_timestamp_sec": 60.6667,
+        "input_timestamp_sec": 4.4667,
+        "image_sha256": "cff3f97053082a440471d70bbafb9f290e1769027080bf67e9c4f3f5be598ec9",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 8,
+        "frame_index": 1837,
+        "source_timestamp_sec": 61.2333,
+        "input_timestamp_sec": 5.0333,
+        "image_sha256": "5a85e9456bd2fb64798458b900020d084a70a903120184b1eeeb55e775d334aa",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 9,
+        "frame_index": 1855,
+        "source_timestamp_sec": 61.8333,
+        "input_timestamp_sec": 5.6333,
+        "image_sha256": "1bcc13b29d8f78e3ea9ed6c7514214cd20aeba848d5fadbe2c774fd52f6ff529",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 10,
+        "frame_index": 1873,
+        "source_timestamp_sec": 62.4333,
+        "input_timestamp_sec": 6.2333,
+        "image_sha256": "ae51c74e67591d459abfd619fbea1050efb689f1d6145c83c4217d52969634b2",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 11,
+        "frame_index": 1891,
+        "source_timestamp_sec": 63.0333,
+        "input_timestamp_sec": 6.8333,
+        "image_sha256": "aac7eae21dc5921043534c29b4e2d4d67b5e156cf15c1d80f8643249e5adf3ec",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 12,
+        "frame_index": 1909,
+        "source_timestamp_sec": 63.6333,
+        "input_timestamp_sec": 7.4333,
+        "image_sha256": "f9fdc0402c3c26e27b377a79609ca4c4d1722fd2e9cf79e894022e032067760b",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 13,
+        "frame_index": 1926,
+        "source_timestamp_sec": 64.2,
+        "input_timestamp_sec": 8.0,
+        "image_sha256": "29661473016d49800f6b1bf58a53c3098a01b1129765b08dc51f6f87390a8d76",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 14,
+        "frame_index": 1944,
+        "source_timestamp_sec": 64.8,
+        "input_timestamp_sec": 8.6,
+        "image_sha256": "f6e613f356fdabb2f378499728dcba561996c1978e85978d7339c6f2b59346f6",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 15,
+        "frame_index": 1962,
+        "source_timestamp_sec": 65.4,
+        "input_timestamp_sec": 9.2,
+        "image_sha256": "36b972c4e4098c62df1e162cb3d3ca1ba46d16fd982b8a2f098fa7fb7f844285",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 16,
+        "frame_index": 1980,
+        "source_timestamp_sec": 66.0,
+        "input_timestamp_sec": 9.8,
+        "image_sha256": "b91eebed90752bc02f4c33b5595b5725f0703069b184bc9a26a7152148d3b082",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 17,
+        "frame_index": 1998,
+        "source_timestamp_sec": 66.6,
+        "input_timestamp_sec": 10.4,
+        "image_sha256": "a8b772e92bbef68651571c3a12cf65749e16575f1d4c8c7926963c7a74b84a1d",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 18,
+        "frame_index": 2016,
+        "source_timestamp_sec": 67.2,
+        "input_timestamp_sec": 11.0,
+        "image_sha256": "dded163456811354f8702365429f4064dca8b3dbd92320d6c570573f69ec4a93",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 19,
+        "frame_index": 2033,
+        "source_timestamp_sec": 67.7667,
+        "input_timestamp_sec": 11.5667,
+        "image_sha256": "70a684d40c650d63fb5e4e1463bcd91731d684070afccf4114eb9dbd9e1b5522",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 20,
+        "frame_index": 2051,
+        "source_timestamp_sec": 68.3667,
+        "input_timestamp_sec": 12.1667,
+        "image_sha256": "15966cf6d7687ec22ed27f76053774b34259e587609d91d207e1ce4d4d31992a",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 21,
+        "frame_index": 2069,
+        "source_timestamp_sec": 68.9667,
+        "input_timestamp_sec": 12.7667,
+        "image_sha256": "8ca5f8781382112108944ea0da9e3c125f608d584c800c31a33637e7f4f8122b",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 22,
+        "frame_index": 2087,
+        "source_timestamp_sec": 69.5667,
+        "input_timestamp_sec": 13.3667,
+        "image_sha256": "5739e05fccaf51608daa81d0bcf067855add09508b26847526973f99991bd09e",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 23,
+        "frame_index": 2105,
+        "source_timestamp_sec": 70.1667,
+        "input_timestamp_sec": 13.9667,
+        "image_sha256": "3a195d7e0dfe425fb3614718fd292fde3ad668e47eb2386bceec15b20a6ed840",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 24,
+        "frame_index": 2122,
+        "source_timestamp_sec": 70.7333,
+        "input_timestamp_sec": 14.5333,
+        "image_sha256": "6c9893fa579dd836a3114521f02877e02fc22b2b12d6d367a83058a45dd70b01",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 25,
+        "frame_index": 2140,
+        "source_timestamp_sec": 71.3333,
+        "input_timestamp_sec": 15.1333,
+        "image_sha256": "43a60041f9e7d6408eb172927eb08d854848b4d9e13550ab1d1164195fb8f8ef",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 26,
+        "frame_index": 2158,
+        "source_timestamp_sec": 71.9333,
+        "input_timestamp_sec": 15.7333,
+        "image_sha256": "8758cb531b8209ca95fd7e1cfea3c260393a2b35b1ce9c1c6eefcec2b9ad73a9",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 27,
+        "frame_index": 2176,
+        "source_timestamp_sec": 72.5333,
+        "input_timestamp_sec": 16.3333,
+        "image_sha256": "10975a5c5cbb795f53fddca869175a6d9a322963d6d9aad9e9354988b12117f3",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 28,
+        "frame_index": 2194,
+        "source_timestamp_sec": 73.1333,
+        "input_timestamp_sec": 16.9333,
+        "image_sha256": "89b7179a6b7f9ec86b904a819a71304e663c7b4aa6c483c37e68941e8be8bc65",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 29,
+        "frame_index": 2211,
+        "source_timestamp_sec": 73.7,
+        "input_timestamp_sec": 17.5,
+        "image_sha256": "df6cc91898de897f789186e3f2a4f6834f36b907bdde460b97e5f3e7a2df10b3",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 30,
+        "frame_index": 2229,
+        "source_timestamp_sec": 74.3,
+        "input_timestamp_sec": 18.1,
+        "image_sha256": "a3dd633e5ee94c61a47692d0d047f8c78dec83b0bb8e3b3eefb86e798118ecec",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 31,
+        "frame_index": 2247,
+        "source_timestamp_sec": 74.9,
+        "input_timestamp_sec": 18.7,
+        "image_sha256": "7db9bff1acf117db69b4e77ed4fbd236faa07579cdc7efa42c01083cf255b2a8",
+        "width": 320,
+        "height": 240
+      }
+    ],
+    "tensor_info": {
+      "pixel_values_videos_shape": [
+        5120,
+        1536
+      ],
+      "video_grid_thw": [
+        16,
+        16,
+        20
+      ],
+      "source_frame_size": [
+        320,
+        240
+      ],
+      "n_frames_supplied": 32
+    }
+  },
+  "replay-normal_or_ambiguous": {
+    "video_id": "v-ucf-4d14b2c4da",
+    "window_source_sec": [
+      96.2,
+      126.2
+    ],
+    "input_origin_sec": 96.2,
+    "input_duration_sec": 30.0,
+    "duplicated_frames": 0,
+    "frames": [
+      {
+        "slot": 0,
+        "frame_index": 2900,
+        "source_timestamp_sec": 96.6667,
+        "input_timestamp_sec": 0.4667,
+        "image_sha256": "93a8676f761514c588d6d72570502fb637a610fc61ad90f21e11d11bf1238006",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 1,
+        "frame_index": 2928,
+        "source_timestamp_sec": 97.6,
+        "input_timestamp_sec": 1.4,
+        "image_sha256": "44c4b545b3ecdf0e4938c079d76187d8f3fd60630e4ce0a77944ab55237511ae",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 2,
+        "frame_index": 2956,
+        "source_timestamp_sec": 98.5333,
+        "input_timestamp_sec": 2.3333,
+        "image_sha256": "6151607c9e584e8a58db8c78727ee75c64a231b4d39f14f53f7657c87a850c46",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 3,
+        "frame_index": 2984,
+        "source_timestamp_sec": 99.4667,
+        "input_timestamp_sec": 3.2667,
+        "image_sha256": "dedec475fbdb8f91782b2eb63aaa48c4b468fcd3960c9c2b10119ead6316493e",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 4,
+        "frame_index": 3013,
+        "source_timestamp_sec": 100.4333,
+        "input_timestamp_sec": 4.2333,
+        "image_sha256": "eda51e84b1fcc0c00e539576a3d449fedf4518caff929c71964192cedef53907",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 5,
+        "frame_index": 3041,
+        "source_timestamp_sec": 101.3667,
+        "input_timestamp_sec": 5.1667,
+        "image_sha256": "fea521b6ff4223a1cffa57f6b6ab950d19b3846daf678d41036f5d59f0d490a7",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 6,
+        "frame_index": 3069,
+        "source_timestamp_sec": 102.3,
+        "input_timestamp_sec": 6.1,
+        "image_sha256": "6533d5e84fc5a28a05a86c976aa203bf30318892fe259589caf4e634b2375c3e",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 7,
+        "frame_index": 3097,
+        "source_timestamp_sec": 103.2333,
+        "input_timestamp_sec": 7.0333,
+        "image_sha256": "cc29e6f10035d1865de3eefc00b8b056f7e855129348af573f69b1ee4761f052",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 8,
+        "frame_index": 3125,
+        "source_timestamp_sec": 104.1667,
+        "input_timestamp_sec": 7.9667,
+        "image_sha256": "62ec9d5cccd5d12ccba9738b56dc09add21138990c5fefc479ba8b9d28d5807b",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 9,
+        "frame_index": 3153,
+        "source_timestamp_sec": 105.1,
+        "input_timestamp_sec": 8.9,
+        "image_sha256": "52b642b9899d8bdbb52d260aac861950c93508b28ee554ad0f6663f839c4de3e",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 10,
+        "frame_index": 3181,
+        "source_timestamp_sec": 106.0333,
+        "input_timestamp_sec": 9.8333,
+        "image_sha256": "f6401592487c6c1576ac95bcc6cfa54f48932a6b8a5815fa3596c54d15cfb166",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 11,
+        "frame_index": 3209,
+        "source_timestamp_sec": 106.9667,
+        "input_timestamp_sec": 10.7667,
+        "image_sha256": "9c683ecbc4f804beb7f9ff8e41c123e69cfcc5ab1007432aa69896067a51c4d1",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 12,
+        "frame_index": 3238,
+        "source_timestamp_sec": 107.9333,
+        "input_timestamp_sec": 11.7333,
+        "image_sha256": "f46411d29049bbb647ef0efcf6b9f846baa0032f6f94b68b0d50d61126d40abf",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 13,
+        "frame_index": 3266,
+        "source_timestamp_sec": 108.8667,
+        "input_timestamp_sec": 12.6667,
+        "image_sha256": "924ad742736bc8a4dc113f630a866b5f6974d12db96c767b3637f39519c56624",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 14,
+        "frame_index": 3294,
+        "source_timestamp_sec": 109.8,
+        "input_timestamp_sec": 13.6,
+        "image_sha256": "68e68d8e88e63206f86292185cbcc96dcac2d9562f93526fae2ef037892832fb",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 15,
+        "frame_index": 3322,
+        "source_timestamp_sec": 110.7333,
+        "input_timestamp_sec": 14.5333,
+        "image_sha256": "a7fadf8d02dfa920d9adf990bb73575b67c498400556637dc65154205f507d26",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 16,
+        "frame_index": 3350,
+        "source_timestamp_sec": 111.6667,
+        "input_timestamp_sec": 15.4667,
+        "image_sha256": "51b88fe60a48f6a41d64ad11eeceaf7e8a6c02b05e6990228df18b735969c9a2",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 17,
+        "frame_index": 3378,
+        "source_timestamp_sec": 112.6,
+        "input_timestamp_sec": 16.4,
+        "image_sha256": "778b050882550c1b31c9414547219095b5b925dcf6af16dfb124af2a9e0d5d50",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 18,
+        "frame_index": 3406,
+        "source_timestamp_sec": 113.5333,
+        "input_timestamp_sec": 17.3333,
+        "image_sha256": "6fe31fbb2fdc06c1d56a026b4876f45ab453ed6fc02e6b16084056fc32667eba",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 19,
+        "frame_index": 3434,
+        "source_timestamp_sec": 114.4667,
+        "input_timestamp_sec": 18.2667,
+        "image_sha256": "a680f04716869eb3d69e6ea4bf2ad37ced2de9138bc888bed95a54bc11501031",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 20,
+        "frame_index": 3463,
+        "source_timestamp_sec": 115.4333,
+        "input_timestamp_sec": 19.2333,
+        "image_sha256": "83287d73742e8aeabc2c55accc883638dd79fa821eaf69e4c6c8839f733f60b5",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 21,
+        "frame_index": 3491,
+        "source_timestamp_sec": 116.3667,
+        "input_timestamp_sec": 20.1667,
+        "image_sha256": "b0009fed49a9a9452d356028393e1e24cf2268cda5160da1676d1533dab07887",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 22,
+        "frame_index": 3519,
+        "source_timestamp_sec": 117.3,
+        "input_timestamp_sec": 21.1,
+        "image_sha256": "15374aa7d18c7dd5b6b13953d483a1dfb8b355056090d56d8894b17517a3cb07",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 23,
+        "frame_index": 3547,
+        "source_timestamp_sec": 118.2333,
+        "input_timestamp_sec": 22.0333,
+        "image_sha256": "0ce4dc6e7638f8412c63059b4219f6bdf2376fe81e9e071d63cb3626499ce4eb",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 24,
+        "frame_index": 3575,
+        "source_timestamp_sec": 119.1667,
+        "input_timestamp_sec": 22.9667,
+        "image_sha256": "d71b0c9d2a2fcf11a4d1cd3bbda8d43b891a7ff62bfc615405e956d2d6f2af31",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 25,
+        "frame_index": 3603,
+        "source_timestamp_sec": 120.1,
+        "input_timestamp_sec": 23.9,
+        "image_sha256": "09fced47573f5a20759eab9dbc0a2568496681d0f54c8f51762402b2bbde524f",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 26,
+        "frame_index": 3631,
+        "source_timestamp_sec": 121.0333,
+        "input_timestamp_sec": 24.8333,
+        "image_sha256": "447bc0f208b8e7d23bb6eb9d40da29a274d0424f1c68255223f62bd07934bdbe",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 27,
+        "frame_index": 3659,
+        "source_timestamp_sec": 121.9667,
+        "input_timestamp_sec": 25.7667,
+        "image_sha256": "91f9aa6f5d62302e67d19db46c4d7b03cf400994f1d1c377b946b44e3d9c4929",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 28,
+        "frame_index": 3688,
+        "source_timestamp_sec": 122.9333,
+        "input_timestamp_sec": 26.7333,
+        "image_sha256": "052fa7ea140a8af13b414d359ba1cefeb2ade8fa77d89667f3f02b7a53eb2053",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 29,
+        "frame_index": 3716,
+        "source_timestamp_sec": 123.8667,
+        "input_timestamp_sec": 27.6667,
+        "image_sha256": "ff5a13ddd92e3398370caa07309a7ecb3aef5aec9843342b25fdbc65db8819d9",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 30,
+        "frame_index": 3744,
+        "source_timestamp_sec": 124.8,
+        "input_timestamp_sec": 28.6,
+        "image_sha256": "ef1db7c2c97ac254848cec2650f0ee918cb8898d630c5a70051ce171b550929f",
+        "width": 320,
+        "height": 240
+      },
+      {
+        "slot": 31,
+        "frame_index": 3772,
+        "source_timestamp_sec": 125.7333,
+        "input_timestamp_sec": 29.5333,
+        "image_sha256": "1e9c0600c5fa51c34e21281f7d8a4b54504293f849c924be7e6b3692b8579853",
+        "width": 320,
+        "height": 240
+      }
+    ],
+    "tensor_info": {
+      "pixel_values_videos_shape": [
+        5120,
+        1536
+      ],
+      "video_grid_thw": [
+        16,
+        16,
+        20
+      ],
+      "source_frame_size": [
+        320,
+        240
+      ],
+      "n_frames_supplied": 32
+    }
+  }
+}

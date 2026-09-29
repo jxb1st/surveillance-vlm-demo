@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Videos · Surveillance Video Understanding Demo</title>
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="videos.html">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="topbar-in">
+  <div class="brand">Surveillance Video Understanding Demo</div>
+  <nav class="nav" aria-label="Pages">
+<a href="index.html" data-nav="index.html">Framework</a><a href="benchmarks.html" data-nav="benchmarks.html">Benchmarks</a><a href="videos.html" data-nav="videos.html" aria-current="page">Videos</a><a href="annotations.html" data-nav="annotations.html">Annotations</a><a href="models.html" data-nav="models.html">Models</a><a href="results.html" data-nav="results.html">Results</a>  </nav>
+</div></header>
+<div class="prov"><div class="prov-in">
+  <span><b>Build</b> 2026-09-29</span>
+  <span><b>Protocol</b> VALU demo subset v1 — adapted protocol</span>
+  <span><b>Dataset</b> VALU annotations @ <span class="mono">2ed33aa6</span>, UCF-Crime + ECVA masked media @ <span class="mono">299373f8</span></span>
+  <span><b>Manifest</b> <span class="mono">valu-demo-v1 · a29f5969ed65</span></span>
+  <span><b>Runs</b> Qwen3.8-27B: <span class="tag ok">completed</span> Qwen3-VL-8B-Instruct: <span class="tag ok">completed</span> VideoLLaMA3-7B: <span class="tag ok">completed</span></span>
+</div></div>
+<main id="main">
+<h1>Videos</h1>
+<p class="lede">174 real, playable videos. They are the videos of the locked evaluation subset. Event labels are hidden until you reveal them.</p>
+<div id="detail" class="hidden" aria-live="polite"></div>
+<h2 id="gallery-h">Gallery</h2>
+<div class="filters" role="search">
+  <label class="f">Search ID<input type="search" id="f-q" placeholder="v-ucf-…"></label>
+  <label class="f">Source<select id="f-source"><option value="">All</option><option>UCF</option><option>ECVA</option></select></label>
+  <label class="f">Task<select id="f-task"><option value="">All</option><option>ADC</option><option>TDG</option><option>ALD</option></select></label>
+  <label class="f">Semantic level<select id="f-level"><option value="">All</option><option value="Abnormal_Event">Complete event</option><option value="Abnormal_Segment">Abnormal segment</option><option value="Abnormal_Action">Action</option><option value="Abnormal_Consequence">Consequence</option><option value="Subjects_Response">Subjects&#39; response</option><option value="Normal_Event">Normal event</option></select></label>
+  <label class="f">Normal / abnormal<select id="f-normal"><option value="">All</option><option value="abnormal">Abnormal video</option><option value="normal">Normal video</option></select></label>
+  <label class="f">Model<select id="f-model"><option value="qwen38_27b">Qwen3.8-27B</option><option value="qwen3vl_8b">Qwen3-VL-8B-Instruct</option><option value="videollama3_7b">VideoLLaMA3-7B</option></select></label>
+  <label class="f">Prediction status<select id="f-status"><option value="">All</option><option value="scored">All outputs valid</option><option value="has_failure">Has a failed or invalid output</option><option value="not_run">Not run</option></select></label>
+  <span class="note" id="f-count" aria-live="polite"></span>
+</div>
+<div id="gallery" class="cards"></div>
+<noscript><p class="callout warn">This page needs JavaScript to filter and play the local videos.</p></noscript>
+</main>
+<footer>
+  Static build exported 2026-09-29T20:27:47Z. The browser plays local media and explores saved results; it does not run a model or contact an inference service.
+  Measured scores apply to <b>VALU demo subset v1 — adapted protocol</b> only and are not a reproduction of the full VALU benchmark.
+</footer>
+<script src="assets/data/core.js"></script>
+<script src="assets/data/videos.js"></script>
+<script src="assets/data/samples.js"></script>
+<script src="assets/data/preds.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/videos.js"></script>
+</body>
+</html>

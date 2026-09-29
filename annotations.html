@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Annotations · Surveillance Video Understanding Demo</title>
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="annotations.html">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="topbar-in">
+  <div class="brand">Surveillance Video Understanding Demo</div>
+  <nav class="nav" aria-label="Pages">
+<a href="index.html" data-nav="index.html">Framework</a><a href="benchmarks.html" data-nav="benchmarks.html">Benchmarks</a><a href="videos.html" data-nav="videos.html">Videos</a><a href="annotations.html" data-nav="annotations.html" aria-current="page">Annotations</a><a href="models.html" data-nav="models.html">Models</a><a href="results.html" data-nav="results.html">Results</a>  </nav>
+</div></header>
+<div class="prov"><div class="prov-in">
+  <span><b>Build</b> 2026-09-29</span>
+  <span><b>Protocol</b> VALU demo subset v1 — adapted protocol</span>
+  <span><b>Dataset</b> VALU annotations @ <span class="mono">2ed33aa6</span>, UCF-Crime + ECVA masked media @ <span class="mono">299373f8</span></span>
+  <span><b>Manifest</b> <span class="mono">valu-demo-v1 · a29f5969ed65</span></span>
+  <span><b>Runs</b> Qwen3.8-27B: <span class="tag ok">completed</span> Qwen3-VL-8B-Instruct: <span class="tag ok">completed</span> VideoLLaMA3-7B: <span class="tag ok">completed</span></span>
+</div></div>
+<main id="main">
+<h1>Annotations</h1>
+<p class="lede">For one real record at a time: the publisher annotation as released, the normalized record used by this project, and the exact input given to a model.</p>
+<div class="banner"><b>Field legend</b>
+  <span class="tag ref">publisher annotation</span>
+  <span class="tag norm">local normalization</span>
+  <span class="tag manual">manual demo curation</span>
+  <span class="tag pred">model prediction</span>
+  <span class="note">Model-predicted evidence is never reference ground truth.</span></div>
+<div class="filters">
+  <span>One real example per task:</span>
+<a class="btn" href="annotations.html?sample=valu-adc-02631">ADC example</a><a class="btn" href="annotations.html?sample=valu-tdg-02305">TDG example</a><a class="btn" href="annotations.html?sample=valu-ald-00878">ALD example</a></div>
+<div class="split">
+  <div>
+    <div class="filters">
+      <label class="f">Task<select id="a-task"><option value="">All</option><option>ADC</option><option>TDG</option><option>ALD</option></select></label>
+      <label class="f">Search<input type="search" id="a-q" placeholder="sample or video ID"></label>
+    </div>
+    <div class="list" id="a-list" role="listbox" aria-label="Records"></div>
+  </div>
+  <div id="a-body"></div>
+</div>
+
+<h2>Fields that the source does not provide</h2>
+<div class="tablewrap"><table><thead><tr><th>Field</th><th>In VALU annotations</th></tr></thead><tbody>
+<tr><td>Bounding boxes</td><td><b>not provided</b></td></tr>
+<tr><td>Person or object IDs</td><td><b>not provided</b></td></tr>
+<tr><td>Object ownership</td><td><b>not provided</b></td></tr>
+<tr><td>Annotator confidence</td><td><b>not provided</b></td></tr>
+<tr><td>Causal relations as structured fields</td><td><b>not provided</b> (consequences appear only as free text with a time span)</td></tr>
+</tbody></table></div>
+
+<h2>Proposed schema — illustrative, not benchmark data</h2>
+<div class="callout warn"><span class="tag manual">illustrative</span> The block below is a conceptual example of an extended person–object–time annotation. It is <b>not</b> taken from any dataset, describes no real video, and is excluded from all evaluation and from every count on this site.</div>
+<pre aria-label="Illustrative schema">{
+  "_status": "Proposed schema — illustrative, not benchmark data",
+  "event": {"interval_sec": ["&lt;start&gt;", "&lt;end&gt;"], "description": "&lt;free text&gt;"},
+  "entities": [
+    {"entity_id": "&lt;person-1&gt;", "type": "person", "visible_intervals_sec": [["&lt;start&gt;", "&lt;end&gt;"]]},
+    {"entity_id": "&lt;object-1&gt;", "type": "object", "visible_intervals_sec": [["&lt;start&gt;", "&lt;end&gt;"]]}
+  ],
+  "relations": [
+    {"subject": "&lt;person-1&gt;", "predicate": "&lt;picks up | puts down | carries | hands over&gt;",
+     "object": "&lt;object-1&gt;", "interval_sec": ["&lt;start&gt;", "&lt;end&gt;"]}
+  ],
+  "ambiguity_pair": "&lt;for example: fight vs. play&gt;"
+}</pre>
+</main>
+<footer>
+  Static build exported 2026-09-29T20:27:47Z. The browser plays local media and explores saved results; it does not run a model or contact an inference service.
+  Measured scores apply to <b>VALU demo subset v1 — adapted protocol</b> only and are not a reproduction of the full VALU benchmark.
+</footer>
+<script src="assets/data/core.js"></script>
+<script src="assets/data/videos.js"></script>
+<script src="assets/data/samples.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/annotations.js"></script>
+</body>
+</html>

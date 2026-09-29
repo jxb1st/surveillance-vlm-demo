@@ -1,0 +1,134 @@
+{
+  "run_id": "evaluation-videollama3_7b-fdf9f0551c",
+  "origin": "measured",
+  "split": "evaluation",
+  "status": "completed",
+  "started_at": "2026-09-29T20:11:34Z",
+  "ended_at": "2026-09-29T20:14:24Z",
+  "exported_at": "2026-09-29T20:14:24Z",
+  "protocol_id": "valu_demo_v1",
+  "protocol_label": "VALU demo subset v1 — adapted protocol",
+  "manifest_id": "valu-demo-v1",
+  "manifest_sha256": "a29f5969ed6587a421ca27190e8ac466b5e1de1bab3714382c63fbcd42e434f0",
+  "model_id": "videollama3_7b",
+  "display_name": "VideoLLaMA3-7B",
+  "checkpoint": "DAMO-NLP-SG/VideoLLaMA3-7B",
+  "model_revision": "d5b763e368861e7f5096e7ff1b49f92fbccf8ae6",
+  "processor_revision": "d5b763e368861e7f5096e7ff1b49f92fbccf8ae6",
+  "code_commit": "9f1ddbe27c268551e0f75363decbb5d38780f258-dirty",
+  "environment_name": "env-vl3",
+  "versions": {
+    "python": "3.10.20",
+    "platform": "Linux-5.14.0-687.36.1.el9_8.x86_64-x86_64-with-glibc2.34",
+    "torch": "2.8.0+cu128",
+    "transformers": "4.46.3",
+    "accelerate": "1.0.1",
+    "tokenizers": "0.20.3",
+    "numpy": "1.26.4",
+    "PIL": "12.3.0",
+    "av": "17.1.0",
+    "pydantic": "2.13.5",
+    "huggingface_hub": "0.36.2",
+    "safetensors": "0.8.0",
+    "cuda_runtime": "12.8",
+    "cudnn": 91002,
+    "ffmpeg": "ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers"
+  },
+  "gpu": {
+    "visible": true,
+    "nvidia_smi": [
+      {
+        "index": "0",
+        "name": "NVIDIA H200",
+        "memory_total_mib": "143771",
+        "memory_used_mib_at_probe": "26283",
+        "driver": "610.57.04"
+      }
+    ],
+    "count_visible": 1,
+    "device_name": "NVIDIA H200",
+    "memory_total_gib": 139.79,
+    "memory_free_at_probe_gib": 114.13
+  },
+  "precision": "bf16",
+  "quantization": "none",
+  "attention_backend": "flash_attention_2 (flash_attn_varlen_func; per-frame attention in the vision encoder, as in the official implementation)",
+  "generation_settings": {
+    "do_sample": false,
+    "num_beams": 1,
+    "repetition_penalty": 1.0,
+    "decoding": "greedy",
+    "deviation_from_model_card": {
+      "model_recommended": {
+        "source": "VideoLLaMA3 model card example",
+        "note": "example calls generate() with checkpoint defaults"
+      },
+      "used": "greedy decoding for a deterministic adapted protocol"
+    },
+    "add_system_prompt": true
+  },
+  "max_new_tokens": {
+    "ADC": 128,
+    "TDG": 192,
+    "ALD": 384
+  },
+  "sampling": {
+    "protocol_id": "valu_demo_v1",
+    "target_frames": 32,
+    "long_edge": 672,
+    "strategy": "uniform_segment_midpoints",
+    "frame_format": "jpeg_q95",
+    "sampling_config_sha256": "cdc3e5c4b6bcef2e331368c7a08900ac012fef5a81ed6db7287c46a472cf2cd9"
+  },
+  "input_handling": {
+    "processor_class": "Videollama3Qwen2Processor",
+    "model_class": "Videollama3Qwen2ForCausalLM",
+    "processor_resampling": "bypassed; pre-loaded frames and timestamps are supplied in the conversation",
+    "model_card_default_input": "video path with fps=1, max_frames=128 (not used here)",
+    "timestamps": "real decoded frame timestamps rendered by the chat template as 'Time <t>s:' before each frame",
+    "video_merge_size": 2,
+    "patch_size": 14,
+    "use_token_compression": true,
+    "token_compression_note": "checkpoint config enables difference-based visual token pruning for video; the number of visual tokens after pruning is content dependent",
+    "mm_projector_type": "mlp2x_gelu"
+  },
+  "thinking": "not_applicable",
+  "prompt_hashes": {
+    "adc_matching.txt": "e58bc3ad6689d80fa609d44ff3fdc32968421050ca556a2de901c3e7eb8b2598",
+    "adc_exclusion.txt": "2b9b46c2a1953c283db75c6341772191c36dd1801219efeb56f962fadbe394fa",
+    "adc_rejection.txt": "760b9b624654857fbcc7c3213ccc10080dad2a9ebd2d58fc90ede1a2754571cd",
+    "tdg.txt": "2e8cb9f514072ef8d6b7a0da9dcdddc4d361141099cbf110a8ed0c63d83b0f4e",
+    "ald.txt": "21832d9068299f32fcba39c45628ea3b5dc0e4477d6ab6d764da51950af89e98",
+    "replay.txt": "352e8b842ae30351be1acc00f9cce87028df3600c95caedb15098e957b8d2352",
+    "level_questions.json": "16b66ea753824414dff5a9f75be1d4517d3dcc671ddd43313c4df89d0b2ec21a",
+    "VERSION": "c6d729cd431d8deadce8cc6159ac18c133a01de6c23262506e73cb0563192136"
+  },
+  "load_time_sec": 7.66,
+  "warmup": {
+    "performed": true,
+    "scored": false,
+    "ms": 1637.4
+  },
+  "retry_history": [],
+  "training_overlap": {
+    "status": "unknown",
+    "source": "https://arxiv.org/abs/2501.13106",
+    "note": "Training data are listed at dataset level and do not name UCF-Crime or ECVA; video-level overlap through web video collections cannot be ruled out."
+  },
+  "counts": {
+    "selected": 192,
+    "attempted": 192,
+    "generation_ok": 192,
+    "valid_parse": 190,
+    "failed": 2,
+    "by_status": {
+      "completed": 190,
+      "parse_error": 2
+    }
+  },
+  "blocked_reason": null,
+  "notes": [
+    "prompt set version valu_demo_v1-prompts-1",
+    "latency profile 'cached_frames': frames were decoded and cached before inference; the decode time is the time to load cached JPEG frames, not video decoding"
+  ]
+}

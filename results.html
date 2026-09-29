@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Results · Surveillance Video Understanding Demo</title>
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="results.html">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar"><div class="topbar-in">
+  <div class="brand">Surveillance Video Understanding Demo</div>
+  <nav class="nav" aria-label="Pages">
+<a href="index.html" data-nav="index.html">Framework</a><a href="benchmarks.html" data-nav="benchmarks.html">Benchmarks</a><a href="videos.html" data-nav="videos.html">Videos</a><a href="annotations.html" data-nav="annotations.html">Annotations</a><a href="models.html" data-nav="models.html">Models</a><a href="results.html" data-nav="results.html" aria-current="page">Results</a>  </nav>
+</div></header>
+<div class="prov"><div class="prov-in">
+  <span><b>Build</b> 2026-09-29</span>
+  <span><b>Protocol</b> VALU demo subset v1 — adapted protocol</span>
+  <span><b>Dataset</b> VALU annotations @ <span class="mono">2ed33aa6</span>, UCF-Crime + ECVA masked media @ <span class="mono">299373f8</span></span>
+  <span><b>Manifest</b> <span class="mono">valu-demo-v1 · a29f5969ed65</span></span>
+  <span><b>Runs</b> Qwen3.8-27B: <span class="tag ok">completed</span> Qwen3-VL-8B-Instruct: <span class="tag ok">completed</span> VideoLLaMA3-7B: <span class="tag ok">completed</span></span>
+</div></div>
+<main id="main">
+<h1>Results</h1>
+<div class="filters" role="group" aria-label="Result view">
+  <div class="seg">
+    <button class="btn" type="button" id="view-measured" aria-pressed="true">Measured on our locked demo subset</button>
+    <button class="btn" type="button" id="view-published" aria-pressed="false">Published reference results</button>
+  </div>
+</div>
+
+<section id="sec-measured">
+<div class="banner"><span class="tag pred">measured</span> <b>VALU demo subset v1 — adapted protocol</b>
+  <span class="note">Same locked sample IDs for every model · manifest <span class="mono">a29f5969ed65</span> · 32 uniformly sampled frames · greedy decoding · not comparable with paper scores.</span></div>
+
+<h2>Runs</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Model</th><th>Status</th><th>Run ID</th><th class="n">Selected</th><th class="n">Attempted</th><th class="n">Generation OK</th><th class="n">Valid parse</th><th class="n">Failed</th><th>Exported</th></tr></thead><tbody>
+<tr><td>Qwen3.8-27B</td><td><span class="tag ok">completed</span></td>
+<td class="mono">evaluation-qwen38_27b-9e291ee519</td>
+<td class="n">192</td><td class="n">192</td><td class="n">192</td><td class="n">192</td><td class="n">0</td>
+<td>2026-09-29T20:20:49Z</td></tr><tr><td>Qwen3-VL-8B-Instruct</td><td><span class="tag ok">completed</span></td>
+<td class="mono">evaluation-qwen3vl_8b-f66a0edc80</td>
+<td class="n">192</td><td class="n">192</td><td class="n">192</td><td class="n">192</td><td class="n">0</td>
+<td>2026-09-29T20:10:38Z</td></tr><tr><td>VideoLLaMA3-7B</td><td><span class="tag ok">completed</span></td>
+<td class="mono">evaluation-videollama3_7b-fdf9f0551c</td>
+<td class="n">192</td><td class="n">192</td><td class="n">192</td><td class="n">190</td><td class="n">2</td>
+<td>2026-09-29T20:14:24Z</td></tr></tbody></table></div>
+<p class="note">A static build cannot poll live GPU jobs. For a run that is not <span class="mono">completed</span>, the export time shows when its snapshot was taken. Only <span class="mono">completed</span> runs are eligible for ranking.</p>
+
+<h2>ADC · accuracy by subtask</h2>
+<p class="note">Primary score: all selected questions, where a failed generation or invalid output counts as wrong (includes operational failures). Diagnostic score: valid outputs only, with its own denominator. No pooled ADC score is shown because the subtasks have different option sets and semantics. <b>Counts</b> columns read selected / attempted / generation OK / valid output / failed.</p>
+<div class="tablewrap"><table>
+<thead><tr><th rowspan="2">Model</th><th colspan="3">Matching</th><th colspan="3">Exclusion</th><th colspan="3">Rejection</th></tr>
+<tr><th class="n">All selected</th><th class="n">Valid only</th><th class="n" title="selected / attempted / generation OK / valid output / failed">Counts</th><th class="n">All selected</th><th class="n">Valid only</th><th class="n" title="selected / attempted / generation OK / valid output / failed">Counts</th><th class="n">All selected</th><th class="n">Valid only</th><th class="n" title="selected / attempted / generation OK / valid output / failed">Counts</th></tr></thead><tbody>
+<tr><td>Qwen3.8-27B</td>
+  <td class="n"><b>77.5%</b><span class="bar"><i style="width:77.5%"></i></span></td>
+  <td class="n">77.5%<br><span class="note">n=40</span></td>
+  <td class="n">40/40/40/40/0</td>
+  <td class="n"><b>67.5%</b><span class="bar"><i style="width:67.5%"></i></span></td>
+  <td class="n">67.5%<br><span class="note">n=40</span></td>
+  <td class="n">40/40/40/40/0</td>
+  <td class="n"><b>97.5%</b><span class="bar"><i style="width:97.5%"></i></span></td>
+  <td class="n">97.5%<br><span class="note">n=40</span></td>
+  <td class="n">40/40/40/40/0</td>
+</tr><tr><td>Qwen3-VL-8B-Instruct</td>
+  <td class="n"><b>65.0%</b><span class="bar"><i style="width:65.0%"></i></span></td>
+  <td class="n">65.0%<br><span class="note">n=40</span></td>
+  <td class="n">40/40/40/40/0</td>
+  <td class="n"><b>37.5%</b><span class="bar"><i style="width:37.5%"></i></span></td>
+  <td class="n">37.5%<br><span class="note">n=40</span></td>
+  <td class="n">40/40/40/40/0</td>
+  <td class="n"><b>92.5%</b><span class="bar"><i style="width:92.5%"></i></span></td>
+  <td class="n">92.5%<br><span class="note">n=40</span></td>
+  <td class="n">40/40/40/40/0</td>
+</tr><tr><td>VideoLLaMA3-7B</td>
+  <td class="n"><b>72.5%</b><span class="bar"><i style="width:72.5%"></i></span></td>
+  <td class="n">72.5%<br><span class="note">n=40</span></td>
+  <td class="n">40/40/40/40/0</td>
+  <td class="n"><b>7.5%</b><span class="bar"><i style="width:7.5%"></i></span></td>
+  <td class="n">7.5%<br><span class="note">n=40</span></td>
+  <td class="n">40/40/40/40/0</td>
+  <td class="n"><b>70.0%</b><span class="bar"><i style="width:70.0%"></i></span></td>
+  <td class="n">70.0%<br><span class="note">n=40</span></td>
+  <td class="n">40/40/40/40/0</td>
+</tr></tbody></table></div>
+<div class="callout warn">In the VALU records the correct Exclusion answer is always E and the correct Rejection answer is always F. A high Exclusion or Rejection score can come from a tendency to choose that option. An ADC description choice is not a binary violence classifier, and its errors are not violence false positives.</div>
+
+<details><summary>ADC by subtask and semantic level</summary>
+<div class="tablewrap"><table><thead><tr><th>Model</th><th>Subtask</th><th>Semantic level</th><th class="n">All selected</th><th class="n">Valid only</th><th class="n" title="selected / attempted / generation OK / valid output / failed">Counts</th></tr></thead><tbody>
+<tr><td>Qwen3.8-27B</td><td>Exclusion</td><td>Action</td><td class="n">87.5%</td><td class="n">87.5%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>Qwen3.8-27B</td><td>Exclusion</td><td>Consequence</td><td class="n">62.5%</td><td class="n">62.5%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>Qwen3.8-27B</td><td>Exclusion</td><td>Complete event</td><td class="n">50.0%</td><td class="n">50.0%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>Qwen3.8-27B</td><td>Exclusion</td><td>Abnormal segment</td><td class="n">87.5%</td><td class="n">87.5%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>Qwen3.8-27B</td><td>Exclusion</td><td>Subjects&#39; response</td><td class="n">50.0%</td><td class="n">50.0%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>Qwen3.8-27B</td><td>Matching</td><td>Action</td><td class="n">75.0%</td><td class="n">75.0%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>Qwen3.8-27B</td><td>Matching</td><td>Consequence</td><td class="n">75.0%</td><td class="n">75.0%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>Qwen3.8-27B</td><td>Matching</td><td>Complete event</td><td class="n">75.0%</td><td class="n">75.0%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>Qwen3.8-27B</td><td>Matching</td><td>Abnormal segment</td><td class="n">100.0%</td><td class="n">100.0%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>Qwen3.8-27B</td><td>Matching</td><td>Subjects&#39; response</td><td class="n">62.5%</td><td class="n">62.5%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>Qwen3.8-27B</td><td>Rejection</td><td>Normal event</td><td class="n">97.5%</td><td class="n">97.5%</td><td class="n">40/40/40/40/0</td></tr>
+<tr><td>Qwen3-VL-8B-Instruct</td><td>Exclusion</td><td>Action</td><td class="n">50.0%</td><td class="n">50.0%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>Qwen3-VL-8B-Instruct</td><td>Exclusion</td><td>Consequence</td><td class="n">50.0%</td><td class="n">50.0%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>Qwen3-VL-8B-Instruct</td><td>Exclusion</td><td>Complete event</td><td class="n">62.5%</td><td class="n">62.5%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>Qwen3-VL-8B-Instruct</td><td>Exclusion</td><td>Abnormal segment</td><td class="n">12.5%</td><td class="n">12.5%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>Qwen3-VL-8B-Instruct</td><td>Exclusion</td><td>Subjects&#39; response</td><td class="n">12.5%</td><td class="n">12.5%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>Qwen3-VL-8B-Instruct</td><td>Matching</td><td>Action</td><td class="n">75.0%</td><td class="n">75.0%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>Qwen3-VL-8B-Instruct</td><td>Matching</td><td>Consequence</td><td class="n">37.5%</td><td class="n">37.5%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>Qwen3-VL-8B-Instruct</td><td>Matching</td><td>Complete event</td><td class="n">75.0%</td><td class="n">75.0%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>Qwen3-VL-8B-Instruct</td><td>Matching</td><td>Abnormal segment</td><td class="n">62.5%</td><td class="n">62.5%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>Qwen3-VL-8B-Instruct</td><td>Matching</td><td>Subjects&#39; response</td><td class="n">75.0%</td><td class="n">75.0%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>Qwen3-VL-8B-Instruct</td><td>Rejection</td><td>Normal event</td><td class="n">92.5%</td><td class="n">92.5%</td><td class="n">40/40/40/40/0</td></tr>
+<tr><td>VideoLLaMA3-7B</td><td>Exclusion</td><td>Action</td><td class="n">12.5%</td><td class="n">12.5%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>VideoLLaMA3-7B</td><td>Exclusion</td><td>Consequence</td><td class="n">12.5%</td><td class="n">12.5%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>VideoLLaMA3-7B</td><td>Exclusion</td><td>Complete event</td><td class="n">0.0%</td><td class="n">0.0%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>VideoLLaMA3-7B</td><td>Exclusion</td><td>Abnormal segment</td><td class="n">12.5%</td><td class="n">12.5%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>VideoLLaMA3-7B</td><td>Exclusion</td><td>Subjects&#39; response</td><td class="n">0.0%</td><td class="n">0.0%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>VideoLLaMA3-7B</td><td>Matching</td><td>Action</td><td class="n">75.0%</td><td class="n">75.0%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>VideoLLaMA3-7B</td><td>Matching</td><td>Consequence</td><td class="n">62.5%</td><td class="n">62.5%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>VideoLLaMA3-7B</td><td>Matching</td><td>Complete event</td><td class="n">62.5%</td><td class="n">62.5%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>VideoLLaMA3-7B</td><td>Matching</td><td>Abnormal segment</td><td class="n">100.0%</td><td class="n">100.0%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>VideoLLaMA3-7B</td><td>Matching</td><td>Subjects&#39; response</td><td class="n">62.5%</td><td class="n">62.5%</td><td class="n">8/8/8/8/0</td></tr>
+<tr><td>VideoLLaMA3-7B</td><td>Rejection</td><td>Normal event</td><td class="n">70.0%</td><td class="n">70.0%</td><td class="n">40/40/40/40/0</td></tr>
+</tbody></table></div><p class="note">Subgroups have four questions each (Rejection: forty). Differences at this size are not reliable.</p></details>
+
+<h2>TDG · temporal grounding</h2>
+<p class="note">tIoU = intersection / union of the predicted and reference single span; invalid, missing or truncated predictions score 0. Predictions are never sorted or clamped. An end time up to the duration stated in the prompt (rounded to 0.1 s) is accepted.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Model</th><th class="n">Mean tIoU<br>all selected</th><th class="n">R@1, IoU ≥ 0.3<br>all selected</th><th class="n">R@1, IoU ≥ 0.5<br>all selected</th><th class="n">R@1, IoU ≥ 0.7<br>all selected</th><th class="n">Mean tIoU<br>valid only</th><th class="n" title="selected / attempted / generation OK / valid output / failed">Counts</th></tr></thead><tbody>
+<tr><td>Qwen3.8-27B</td>
+<td class="n"><b>65.2%</b><span class="bar"><i style="width:65.2%"></i></span></td>
+<td class="n">85.0%</td><td class="n">70.0%</td><td class="n">51.7%</td><td class="n">66.4%<br><span class="note">n=59</span></td><td class="n">60/60/60/59/1</td>
+</tr><tr><td>Qwen3-VL-8B-Instruct</td>
+<td class="n"><b>61.7%</b><span class="bar"><i style="width:61.7%"></i></span></td>
+<td class="n">80.0%</td><td class="n">68.3%</td><td class="n">40.0%</td><td class="n">61.7%<br><span class="note">n=60</span></td><td class="n">60/60/60/60/0</td>
+</tr><tr><td>VideoLLaMA3-7B</td>
+<td class="n"><b>37.6%</b><span class="bar"><i style="width:37.6%"></i></span></td>
+<td class="n">50.0%</td><td class="n">35.0%</td><td class="n">25.0%</td><td class="n">41.7%<br><span class="note">n=54</span></td><td class="n">60/60/60/54/6</td>
+</tr></tbody></table></div>
+<details><summary>TDG by semantic level</summary>
+<div class="tablewrap"><table><thead><tr><th>Model</th><th>Semantic level</th><th class="n">Mean tIoU, all selected</th><th class="n">R@0.5, all selected</th><th class="n">Mean tIoU, valid only</th><th class="n" title="selected / attempted / generation OK / valid output / failed">Counts</th></tr></thead><tbody>
+<tr><td>Qwen3.8-27B</td><td>Action</td><td class="n">55.1%</td><td class="n">60.0%</td><td class="n">55.1%</td><td class="n">10/10/10/10/0</td></tr>
+<tr><td>Qwen3.8-27B</td><td>Consequence</td><td class="n">52.1%</td><td class="n">60.0%</td><td class="n">52.1%</td><td class="n">10/10/10/10/0</td></tr>
+<tr><td>Qwen3.8-27B</td><td>Complete event</td><td class="n">77.4%</td><td class="n">80.0%</td><td class="n">77.4%</td><td class="n">10/10/10/10/0</td></tr>
+<tr><td>Qwen3.8-27B</td><td>Abnormal segment</td><td class="n">71.5%</td><td class="n">70.0%</td><td class="n">71.5%</td><td class="n">10/10/10/10/0</td></tr>
+<tr><td>Qwen3.8-27B</td><td>Normal event</td><td class="n">71.6%</td><td class="n">70.0%</td><td class="n">79.6%</td><td class="n">10/10/10/9/1</td></tr>
+<tr><td>Qwen3.8-27B</td><td>Subjects&#39; response</td><td class="n">63.7%</td><td class="n">80.0%</td><td class="n">63.7%</td><td class="n">10/10/10/10/0</td></tr>
+<tr><td>Qwen3-VL-8B-Instruct</td><td>Action</td><td class="n">52.8%</td><td class="n">60.0%</td><td class="n">52.8%</td><td class="n">10/10/10/10/0</td></tr>
+<tr><td>Qwen3-VL-8B-Instruct</td><td>Consequence</td><td class="n">51.0%</td><td class="n">60.0%</td><td class="n">51.0%</td><td class="n">10/10/10/10/0</td></tr>
+<tr><td>Qwen3-VL-8B-Instruct</td><td>Complete event</td><td class="n">66.7%</td><td class="n">70.0%</td><td class="n">66.7%</td><td class="n">10/10/10/10/0</td></tr>
+<tr><td>Qwen3-VL-8B-Instruct</td><td>Abnormal segment</td><td class="n">65.3%</td><td class="n">80.0%</td><td class="n">65.3%</td><td class="n">10/10/10/10/0</td></tr>
+<tr><td>Qwen3-VL-8B-Instruct</td><td>Normal event</td><td class="n">70.9%</td><td class="n">60.0%</td><td class="n">70.9%</td><td class="n">10/10/10/10/0</td></tr>
+<tr><td>Qwen3-VL-8B-Instruct</td><td>Subjects&#39; response</td><td class="n">63.7%</td><td class="n">80.0%</td><td class="n">63.7%</td><td class="n">10/10/10/10/0</td></tr>
+<tr><td>VideoLLaMA3-7B</td><td>Action</td><td class="n">30.3%</td><td class="n">40.0%</td><td class="n">33.7%</td><td class="n">10/10/10/9/1</td></tr>
+<tr><td>VideoLLaMA3-7B</td><td>Consequence</td><td class="n">39.4%</td><td class="n">40.0%</td><td class="n">43.7%</td><td class="n">10/10/10/9/1</td></tr>
+<tr><td>VideoLLaMA3-7B</td><td>Complete event</td><td class="n">35.6%</td><td class="n">30.0%</td><td class="n">44.5%</td><td class="n">10/10/10/8/2</td></tr>
+<tr><td>VideoLLaMA3-7B</td><td>Abnormal segment</td><td class="n">56.3%</td><td class="n">50.0%</td><td class="n">56.3%</td><td class="n">10/10/10/10/0</td></tr>
+<tr><td>VideoLLaMA3-7B</td><td>Normal event</td><td class="n">41.8%</td><td class="n">30.0%</td><td class="n">52.3%</td><td class="n">10/10/10/8/2</td></tr>
+<tr><td>VideoLLaMA3-7B</td><td>Subjects&#39; response</td><td class="n">22.0%</td><td class="n">20.0%</td><td class="n">22.0%</td><td class="n">10/10/10/10/0</td></tr>
+</tbody></table></div><p class="note">Ten questions per level. Differences at this size are not reliable.</p></details>
+
+<h2>ALD · qualitative only</h2>
+<p>No description score is computed in v1: there is no structured human review and no verified official evaluator in this build, and no BLEU, ROUGE or LLM judge is used. Compare outputs in the per-example view below.</p>
+<div class="tablewrap"><table><thead><tr><th>Model</th><th>Mode</th><th class="n" title="selected / attempted / generation OK / valid output / failed">Counts</th></tr></thead><tbody>
+<tr><td>Qwen3.8-27B</td><td><span class="tag norm">qualitative only</span></td><td class="n">12/12/12/12/0</td></tr><tr><td>Qwen3-VL-8B-Instruct</td><td><span class="tag norm">qualitative only</span></td><td class="n">12/12/12/12/0</td></tr><tr><td>VideoLLaMA3-7B</td><td><span class="tag norm">qualitative only</span></td><td class="n">12/12/12/10/2</td></tr></tbody></table></div>
+
+<h2>Measured latency and memory</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Model</th><th class="n">End-to-end, median (ms)</th><th class="n">End-to-end, p90 (ms)</th><th class="n">Generation, median (ms)</th><th class="n">Preprocess, median (ms)</th><th class="n">Frame load, median (ms)</th><th class="n">Peak GPU allocated, max (GiB)</th><th class="n">Visual tokens, median</th><th class="n">Model load (s)</th></tr></thead><tbody>
+<tr><td>Qwen3.8-27B</td>
+<td class="n">2,315</td><td class="n">3,848</td><td class="n">2,271</td><td class="n">28</td><td class="n">18</td><td class="n">53.7</td><td class="n">1,280</td><td class="n">20.8</td>
+</tr><tr><td>Qwen3-VL-8B-Instruct</td>
+<td class="n">691</td><td class="n">1,028</td><td class="n">605</td><td class="n">27</td><td class="n">20</td><td class="n">18.1</td><td class="n">1,280</td><td class="n">7.2</td>
+</tr><tr><td>VideoLLaMA3-7B</td>
+<td class="n">682</td><td class="n">1,248</td><td class="n">540</td><td class="n">96</td><td class="n">39</td><td class="n">17.5</td><td class="n">3,168</td><td class="n">7.7</td>
+</tr></tbody></table></div>
+<p class="note">One NVIDIA H200, batch size 1, BF16, one model per process, after an unscored warm-up. Latency profile <b>cached frames</b>: frames were decoded and cached before inference, so “frame load” is the time to read cached JPEG frames, not video decoding. Model loading is excluded from per-question latency. Peak memory is memory allocated by PyTorch for the request, not total device memory usage. Equal frame counts do not mean equal visual token budgets.
+ Qwen3.8-27B: optional kernels flash-linear-attention absent (reference PyTorch fallback), causal_conv1d absent (reference PyTorch fallback); generation time would be lower with optimized kernels. Qwen3-VL-8B-Instruct: optional kernels flash-linear-attention absent (reference PyTorch fallback), causal_conv1d absent (reference PyTorch fallback); generation time would be lower with optimized kernels.</p>
+
+<h2>Per-example comparison</h2>
+<div class="filters">
+  <label class="f">Task<select id="r-task"><option>ADC</option><option>TDG</option><option>ALD</option></select></label>
+  <label class="f">Subtask / level<select id="r-group"></select></label>
+  <label class="f">Outcome for selected model<select id="r-outcome"><option value="">All</option><option value="good">Correct / IoU ≥ 0.5</option><option value="bad">Wrong / IoU &lt; 0.5</option><option value="fail">Failed or invalid output</option></select></label>
+  <label class="f">Sample<select id="r-sample"></select></label>
+  <label class="f">Model<select id="r-model"><option value="qwen38_27b">Qwen3.8-27B</option><option value="qwen3vl_8b">Qwen3-VL-8B-Instruct</option><option value="videollama3_7b">VideoLLaMA3-7B</option></select></label>
+  <label class="check"><input type="checkbox" id="r-reveal"> Reveal reference</label>
+</div>
+<div id="r-body"></div>
+
+<h2>Representative examples</h2>
+<p class="note"><span class="tag manual">qualitative examples</span> Selected after evaluation by a fixed rule (first success and first failure per model and task in hash order). They illustrate behavior and are not statistics.</p>
+<div id="r-examples" class="grid g2"></div>
+
+<h2>Downloads</h2>
+<div class="tablewrap"><table><thead><tr><th>File</th><th class="n">Size</th></tr></thead><tbody>
+<tr><td><a href="downloads/manifest_valu-demo-v1.json" download>Frozen subset manifest</a> <span class="note mono">manifest_valu-demo-v1.json</span></td><td class="n">714.1 KB</td></tr><tr><td><a href="downloads/manifest_summary.json" download>Subset selection summary</a> <span class="note mono">manifest_summary.json</span></td><td class="n">25.0 KB</td></tr><tr><td><a href="downloads/manifest_replay.json" download>Replay windows manifest</a> <span class="note mono">manifest_replay.json</span></td><td class="n">10.9 KB</td></tr><tr><td><a href="downloads/data_audit.json" download>Data audit</a> <span class="note mono">data_audit.json</span></td><td class="n">15.9 KB</td></tr><tr><td><a href="downloads/source_audit.json" download>Source audit</a> <span class="note mono">source_audit.json</span></td><td class="n">20.7 KB</td></tr><tr><td><a href="downloads/excluded_records.json" download>Excluded records and reasons</a> <span class="note mono">excluded_records.json</span></td><td class="n">1,131.6 KB</td></tr><tr><td><a href="downloads/published_results.json" download>Published reference results</a> <span class="note mono">published_results.json</span></td><td class="n">327.7 KB</td></tr><tr><td><a href="downloads/evaluation-qwen38_27b-9e291ee519__run.json" download>Qwen3.8-27B · evaluation · run metadata</a> <span class="note mono">evaluation-qwen38_27b-9e291ee519__run.json</span></td><td class="n">5.2 KB</td></tr><tr><td><a href="downloads/evaluation-qwen38_27b-9e291ee519__predictions.jsonl" download>Qwen3.8-27B · evaluation · predictions</a> <span class="note mono">evaluation-qwen38_27b-9e291ee519__predictions.jsonl</span></td><td class="n">1,268.7 KB</td></tr><tr><td><a href="downloads/evaluation-qwen38_27b-9e291ee519__metrics.json" download>Qwen3.8-27B · evaluation · metrics</a> <span class="note mono">evaluation-qwen38_27b-9e291ee519__metrics.json</span></td><td class="n">94.2 KB</td></tr><tr><td><a href="downloads/evaluation-qwen38_27b-9e291ee519__frame_manifest.json" download>Qwen3.8-27B · evaluation · frame manifest</a> <span class="note mono">evaluation-qwen38_27b-9e291ee519__frame_manifest.json</span></td><td class="n">1,768.8 KB</td></tr><tr><td><a href="downloads/evaluation-qwen38_27b-9e291ee519__environment.json" download>Qwen3.8-27B · evaluation · environment</a> <span class="note mono">evaluation-qwen38_27b-9e291ee519__environment.json</span></td><td class="n">2.8 KB</td></tr><tr><td><a href="downloads/replay-qwen38_27b-af4768d4e0__run.json" download>Qwen3.8-27B · replay · run metadata</a> <span class="note mono">replay-qwen38_27b-af4768d4e0__run.json</span></td><td class="n">5.2 KB</td></tr><tr><td><a href="downloads/replay-qwen38_27b-af4768d4e0__predictions.jsonl" download>Qwen3.8-27B · replay · predictions</a> <span class="note mono">replay-qwen38_27b-af4768d4e0__predictions.jsonl</span></td><td class="n">20.6 KB</td></tr><tr><td><a href="downloads/replay-qwen38_27b-af4768d4e0__metrics.json" download>Qwen3.8-27B · replay · metrics</a> <span class="note mono">replay-qwen38_27b-af4768d4e0__metrics.json</span></td><td class="n">4.2 KB</td></tr><tr><td><a href="downloads/replay-qwen38_27b-af4768d4e0__frame_manifest.json" download>Qwen3.8-27B · replay · frame manifest</a> <span class="note mono">replay-qwen38_27b-af4768d4e0__frame_manifest.json</span></td><td class="n">27.8 KB</td></tr><tr><td><a href="downloads/replay-qwen38_27b-af4768d4e0__environment.json" download>Qwen3.8-27B · replay · environment</a> <span class="note mono">replay-qwen38_27b-af4768d4e0__environment.json</span></td><td class="n">2.8 KB</td></tr><tr><td><a href="downloads/evaluation-qwen3vl_8b-f66a0edc80__run.json" download>Qwen3-VL-8B-Instruct · evaluation · run metadata</a> <span class="note mono">evaluation-qwen3vl_8b-f66a0edc80__run.json</span></td><td class="n">5.1 KB</td></tr><tr><td><a href="downloads/evaluation-qwen3vl_8b-f66a0edc80__predictions.jsonl" download>Qwen3-VL-8B-Instruct · evaluation · predictions</a> <span class="note mono">evaluation-qwen3vl_8b-f66a0edc80__predictions.jsonl</span></td><td class="n">1,255.8 KB</td></tr><tr><td><a href="downloads/evaluation-qwen3vl_8b-f66a0edc80__metrics.json" download>Qwen3-VL-8B-Instruct · evaluation · metrics</a> <span class="note mono">evaluation-qwen3vl_8b-f66a0edc80__metrics.json</span></td><td class="n">94.1 KB</td></tr><tr><td><a href="downloads/evaluation-qwen3vl_8b-f66a0edc80__frame_manifest.json" download>Qwen3-VL-8B-Instruct · evaluation · frame manifest</a> <span class="note mono">evaluation-qwen3vl_8b-f66a0edc80__frame_manifest.json</span></td><td class="n">1,768.8 KB</td></tr><tr><td><a href="downloads/evaluation-qwen3vl_8b-f66a0edc80__environment.json" download>Qwen3-VL-8B-Instruct · evaluation · environment</a> <span class="note mono">evaluation-qwen3vl_8b-f66a0edc80__environment.json</span></td><td class="n">2.8 KB</td></tr><tr><td><a href="downloads/evaluation-videollama3_7b-fdf9f0551c__run.json" download>VideoLLaMA3-7B · evaluation · run metadata</a> <span class="note mono">evaluation-videollama3_7b-fdf9f0551c__run.json</span></td><td class="n">4.9 KB</td></tr><tr><td><a href="downloads/evaluation-videollama3_7b-fdf9f0551c__predictions.jsonl" download>VideoLLaMA3-7B · evaluation · predictions</a> <span class="note mono">evaluation-videollama3_7b-fdf9f0551c__predictions.jsonl</span></td><td class="n">1,245.2 KB</td></tr><tr><td><a href="downloads/evaluation-videollama3_7b-fdf9f0551c__metrics.json" download>VideoLLaMA3-7B · evaluation · metrics</a> <span class="note mono">evaluation-videollama3_7b-fdf9f0551c__metrics.json</span></td><td class="n">94.3 KB</td></tr><tr><td><a href="downloads/evaluation-videollama3_7b-fdf9f0551c__frame_manifest.json" download>VideoLLaMA3-7B · evaluation · frame manifest</a> <span class="note mono">evaluation-videollama3_7b-fdf9f0551c__frame_manifest.json</span></td><td class="n">1,795.4 KB</td></tr><tr><td><a href="downloads/evaluation-videollama3_7b-fdf9f0551c__environment.json" download>VideoLLaMA3-7B · evaluation · environment</a> <span class="note mono">evaluation-videollama3_7b-fdf9f0551c__environment.json</span></td><td class="n">3.0 KB</td></tr></tbody></table></div>
+<p class="note">All tables on this page are regenerated from these files by <span class="mono">python -m surveillance_demo evaluate</span> and <span class="mono">site build</span>.</p>
+</section>
+
+<section id="sec-published" class="hidden">
+<div class="banner" style="border-left-color:var(--paper)"><span class="tag paper">paper-reported</span> <b>Published reference results · not measured here</b>
+  <span class="note">Full VALU benchmark, the paper's prompts and evaluator. These numbers are not on the same axis as the demo-subset scores and are not ranked against them.</span></div>
+<dl class="kv panel">
+  <dt>Source</dt><dd><a href="https://aclanthology.org/2026.acl-long.56.pdf" target="_blank" rel="noopener">VALU paper</a>, Table 3, PDF page 6; retrieved 2026-09-29</dd>
+  <dt>Benchmark / split</dt><dd>VALU · full VALU benchmark (UCF-Crime, MSAD and ECVA sources)</dd>
+  <dt>Protocol</dt><dd>official weights and settings; 32 frames uniformly sampled per video (HolmesVAU: 16 frames, authors&#39; setup)</dd>
+  <dt>Metrics</dt><dd>TDG: mIoU and mR (mean of R@0.3, R@0.5, R@0.7), percent. ADC: accuracy, percent.</dd>
+  <dt>Extraction</dt><dd>PyMuPDF text extraction of Table 3; rows with a number count other than 23 are rejected.</dd>
+</dl>
+<h2>TDG mIoU (%), by semantic level</h2>
+<div class="tablewrap"><table><thead><tr><th>Model (row in Table 3)</th><th class="n">Complete event</th><th class="n">Abnormal segment</th><th class="n">Action</th><th class="n">Consequence</th><th class="n">Subjects&#39; response</th><th class="n">Normal event</th></tr></thead><tbody>
+<tr><td>TimeZero</td><td class="n">63.7</td><td class="n">56.5</td><td class="n">44.4</td><td class="n">38.2</td><td class="n">39.8</td><td class="n">50.0</td></tr><tr><td>Qwen2.5-VL-7B</td><td class="n">57.7</td><td class="n">49.5</td><td class="n">38.9</td><td class="n">27.4</td><td class="n">26.0</td><td class="n">49.7</td></tr><tr><td>VideoLLaMA3-7B</td><td class="n">48.1</td><td class="n">46.0</td><td class="n">41.8</td><td class="n">37.6</td><td class="n">34.3</td><td class="n">41.2</td></tr><tr><td>Qwen2.5-VL-32B</td><td class="n">58.1</td><td class="n">47.6</td><td class="n">40.9</td><td class="n">26.3</td><td class="n">27.9</td><td class="n">56.0</td></tr><tr><td>Qwen2.5-VL-72B</td><td class="n">58.6</td><td class="n">47.8</td><td class="n">40.8</td><td class="n">25.9</td><td class="n">30.2</td><td class="n">53.1</td></tr><tr><td>InternVL3-38B</td><td class="n">42.7</td><td class="n">35.6</td><td class="n">28.1</td><td class="n">16.5</td><td class="n">18.0</td><td class="n">44.3</td></tr><tr><td>HolmesVAU-2B†</td><td class="n">3.0</td><td class="n">1.7</td><td class="n">2.0</td><td class="n">0.1</td><td class="n">0.2</td><td class="n">2.4</td></tr><tr><td>HAWK-7B†</td><td class="n">5.9</td><td class="n">4.7</td><td class="n">4.7</td><td class="n">1.6</td><td class="n">0.8</td><td class="n">4.6</td></tr></tbody></table></div>
+<h2>ADC accuracy (%), by subtask and semantic level</h2>
+<div class="tablewrap"><table><thead><tr><th rowspan="2">Model (row in Table 3)</th><th colspan="2">Complete event</th><th colspan="2">Abnormal segment</th><th colspan="2">Action</th><th colspan="2">Consequence</th><th colspan="2">Subjects&#39; response</th><th>Normal event</th></tr>
+<tr><th class="n">Match.</th><th class="n">Excl.</th><th class="n">Match.</th><th class="n">Excl.</th><th class="n">Match.</th><th class="n">Excl.</th><th class="n">Match.</th><th class="n">Excl.</th><th class="n">Match.</th><th class="n">Excl.</th><th class="n">Rej.</th></tr></thead><tbody>
+<tr><td>TimeZero</td><td class="n">45.3</td><td class="n">64.7</td><td class="n">47.9</td><td class="n">49.6</td><td class="n">52.7</td><td class="n">70.1</td><td class="n">51.1</td><td class="n">63.1</td><td class="n">36.3</td><td class="n">55.8</td><td class="n">92.9</td></tr><tr><td>Qwen2.5-VL-7B</td><td class="n">35.6</td><td class="n">75.5</td><td class="n">40.0</td><td class="n">60.9</td><td class="n">47.2</td><td class="n">75.1</td><td class="n">44.6</td><td class="n">68.6</td><td class="n">33.6</td><td class="n">66.4</td><td class="n">97.8</td></tr><tr><td>VideoLLaMA3-7B</td><td class="n">56.9</td><td class="n">15.1</td><td class="n">56.3</td><td class="n">11.6</td><td class="n">68.7</td><td class="n">23.1</td><td class="n">62.9</td><td class="n">23.4</td><td class="n">28.3</td><td class="n">36.3</td><td class="n">91.8</td></tr><tr><td>Qwen2.5-VL-32B</td><td class="n">55.1</td><td class="n">9.5</td><td class="n">52.1</td><td class="n">15.2</td><td class="n">54.1</td><td class="n">18.3</td><td class="n">46.3</td><td class="n">17.4</td><td class="n">46.0</td><td class="n">23.0</td><td class="n">99.3</td></tr><tr><td>Qwen2.5-VL-72B</td><td class="n">62.1</td><td class="n">39.6</td><td class="n">57.2</td><td class="n">41.6</td><td class="n">68.8</td><td class="n">45.5</td><td class="n">56.0</td><td class="n">43.4</td><td class="n">60.2</td><td class="n">48.7</td><td class="n">88.5</td></tr><tr><td>InternVL3-38B</td><td class="n">70.4</td><td class="n">16.0</td><td class="n">70.1</td><td class="n">13.4</td><td class="n">77.7</td><td class="n">18.7</td><td class="n">70.9</td><td class="n">21.1</td><td class="n">60.2</td><td class="n">42.5</td><td class="n">100.0</td></tr><tr><td>HolmesVAU-2B†</td><td class="n">43.2</td><td class="n">0.0</td><td class="n">49.7</td><td class="n">2.9</td><td class="n">57.7</td><td class="n">10.0</td><td class="n">46.6</td><td class="n">18.9</td><td class="n">31.9</td><td class="n">5.3</td><td class="n">0.0</td></tr><tr><td>HAWK-7B†</td><td class="n">19.7</td><td class="n">2.3</td><td class="n">20.8</td><td class="n">3.3</td><td class="n">19.7</td><td class="n">4.3</td><td class="n">15.4</td><td class="n">5.1</td><td class="n">14.2</td><td class="n">7.1</td><td class="n">4.1</td></tr></tbody></table></div>
+<p class="note">† trained on video anomaly datasets, as marked in the paper. VideoLLaMA3-7B appears in both views: the paper row uses the paper's protocol on the full benchmark, the measured row uses the adapted protocol on the demo subset. The two are different measurements. None of the other two measured models appears in the paper. The complete extracted table is in <a href="downloads/published_results.json" download>published_results.json</a>.</p>
+</section>
+</main>
+<footer>
+  Static build exported 2026-09-29T20:27:47Z. The browser plays local media and explores saved results; it does not run a model or contact an inference service.
+  Measured scores apply to <b>VALU demo subset v1 — adapted protocol</b> only and are not a reproduction of the full VALU benchmark.
+</footer>
+<script src="assets/data/core.js"></script>
+<script src="assets/data/videos.js"></script>
+<script src="assets/data/samples.js"></script>
+<script src="assets/data/preds.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/results.js"></script>
+</body>
+</html>

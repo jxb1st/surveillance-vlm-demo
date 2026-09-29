@@ -1,0 +1,598 @@
+{
+  "generated_at": "2026-09-29T19:53:12Z",
+  "benchmark": "VALU",
+  "annotation_revision": "2ed33aa6fe6ccd282f2ff99e7ececf80b61a3eca",
+  "media_revision": "299373f8ca67fe27c20e196fd7185726980ff088",
+  "annotation_files_sha256": {
+    "ADC.parquet": "4a8c03e15fdc44c01d922bac604b33b8468db754469a93574974c094889c0ecf",
+    "TDG.parquet": "daa54ea9ad011d6093964c0e954c9600bf3afd87c317543a46d05e9001a92833",
+    "ALD.parquet": "7030e8c573995a59b9536ce71e6deae5f6436851529ea41e36b4bb7f9a5f7542"
+  },
+  "schema_report": {
+    "ADC": {
+      "file": "ADC.parquet",
+      "rows": 5695,
+      "columns": {
+        "task": "str",
+        "subset": "str",
+        "video": "str",
+        "source": "str",
+        "options": "object",
+        "answer": "str"
+      },
+      "unique_source_videos": 1019,
+      "value_counts": {
+        "task": {
+          "Matching": 2713,
+          "Exclusion": 2713,
+          "Rejection": 269
+        },
+        "subset": {
+          "Abnormal_Event": 1500,
+          "Abnormal_Segment": 1500,
+          "Abnormal_Action": 1500,
+          "Abnormal_Consequence": 700,
+          "Normal_Event": 269,
+          "Subjects_Response": 226
+        },
+        "source": {
+          "ECVA": 2552,
+          "MSAD": 1866,
+          "UCF": 1277
+        },
+        "answer": {
+          "E": 3246,
+          "C": 555,
+          "D": 552,
+          "A": 537,
+          "B": 536,
+          "F": 269
+        }
+      },
+      "representative_records": [
+        {
+          "row": 0,
+          "record": {
+            "task": "Matching",
+            "subset": "Abnormal_Event",
+            "video": "717.mp4",
+            "source": "ECVA",
+            "options": {
+              "A": "A cylindrical building leans precariously but remains standing, as dust begins to settle around its base.",
+              "B": "A cylindrical structure nearby wobbles and falls, while the main cylindrical building stands unaffected, with minimal dust disturbance.",
+              "C": "The cylindrical building shakes violently before partially collapsing, with dust rising from the impact.",
+              "D": "The cylindrical building tilts and collapses, followed by dust spreading.",
+              "E": "The cylindrical building collapses suddenly without any prior tilting, sending a cloud of dust into the air.",
+              "F": "There is an event involving an abnormal occurrence in the video, but none of the above options (A–E) accurately describe the entire event and its context, abnormal actions, and consequences.",
+              "G": "There is no abnormal occurrence in the video."
+            },
+            "answer": "D"
+          }
+        },
+        {
+          "row": 2847,
+          "record": {
+            "task": "Exclusion",
+            "subset": "Abnormal_Event",
+            "video": "Traffic_accident_8_clip_2.mp4",
+            "source": "MSAD",
+            "options": {
+              "A": "An electric scooter rider suddenly stops in front of a large truck, causing the truck to brake hard and narrowly avoid a collision before moving on.",
+              "B": "A large truck approaches an electric scooter rider from behind, swerves to avoid them, and continues driving without stopping.",
+              "C": "A large truck follows closely behind an electric scooter rider, then honks loudly causing the rider to move aside, and the truck proceeds without incident.",
+              "D": "An electric scooter rider loses control and falls near a large truck, which slows down but does not stop, and the rider gets up unharmed as the truck leaves.",
+              "E": "There is an event involving an abnormal occurrence in the video, but none of the above options (A–D) accurately describe the entire event and its context, abnormal actions, and consequences.",
+              "F": "There is no abnormal occurrence in the video.",
+              "G": null
+            },
+            "answer": "E"
+          }
+        },
+        {
+          "row": 5694,
+          "record": {
+            "task": "Rejection",
+            "subset": "Normal_Event",
+            "video": "MSAD_normal_testing_92.mp4",
+            "source": "MSAD",
+            "options": {
+              "A": "As the man steps onto the lawn, a large tree branch suddenly breaks and falls, narrowly missing him and causing pedestrians to scream and scatter.",
+              "B": "While the man is on the lawn, a group of individuals starts a violent altercation nearby, resulting in one person being knocked unconscious.",
+              "C": "As pedestrians walk by, a masked figure emerges from the bushes, snatches a woman's purse, and flees into the dense vegetation.",
+              "D": "While the man is walking on the lawn, a sudden gust of wind uproots a nearby tree, causing it to crash onto the path and block pedestrian access.",
+              "E": "There is an abnormal event in the video, but none of the above options (A–D) accurately describe the abnormal event as observed in the footage.",
+              "F": "There is no abnormal occurrence in the video.",
+              "G": null
+            },
+            "answer": "F"
+          }
+        }
+      ]
+    },
+    "TDG": {
+      "file": "TDG.parquet",
+      "rows": 3072,
+      "columns": {
+        "subset": "str",
+        "video": "str",
+        "source": "str",
+        "description": "str",
+        "timestamps": "object"
+      },
+      "unique_source_videos": 1019,
+      "value_counts": {
+        "subset": {
+          "Abnormal_Action": 798,
+          "Abnormal_Event": 750,
+          "Abnormal_Segment": 750,
+          "Abnormal_Consequence": 355,
+          "Normal_Event": 301,
+          "Subjects_Response": 118
+        },
+        "source": {
+          "ECVA": 1295,
+          "MSAD": 1019,
+          "UCF": 758
+        }
+      },
+      "representative_records": [
+        {
+          "row": 0,
+          "record": {
+            "subset": "Abnormal_Event",
+            "video": "717.mp4",
+            "source": "ECVA",
+            "description": "The cylindrical building tilts and collapses, followed by dust spreading.",
+            "timestamps": [
+              11.1,
+              23.0
+            ]
+          }
+        },
+        {
+          "row": 1536,
+          "record": {
+            "subset": "Abnormal_Action",
+            "video": "Explosion_14.mp4",
+            "source": "MSAD",
+            "description": "A residential building suddenly experiences a violent explosion with a massive fireball.",
+            "timestamps": [
+              14.9,
+              17.7
+            ]
+          }
+        },
+        {
+          "row": 3071,
+          "record": {
+            "subset": "Normal_Event",
+            "video": "Normal_Videos877_x264.mp4",
+            "source": "UCF",
+            "description": "On a road with many vehicles and pedestrians passing by, a red car parked by the roadside starts up and drives away.",
+            "timestamps": [
+              142.4,
+              150.7
+            ]
+          }
+        }
+      ],
+      "timestamps_lengths": {
+        "2": 3072
+      }
+    },
+    "ALD": {
+      "file": "ALD.parquet",
+      "rows": 2771,
+      "columns": {
+        "subset": "str",
+        "video": "str",
+        "source": "str",
+        "description": "str",
+        "timestamps": "object"
+      },
+      "unique_source_videos": 750,
+      "value_counts": {
+        "subset": {
+          "Abnormal_Action": 798,
+          "Abnormal_Event": 750,
+          "Abnormal_Segment": 750,
+          "Abnormal_Consequence": 355,
+          "Subjects_Response": 118
+        },
+        "source": {
+          "ECVA": 1295,
+          "MSAD": 877,
+          "UCF": 599
+        }
+      },
+      "representative_records": [
+        {
+          "row": 0,
+          "record": {
+            "subset": "Abnormal_Event",
+            "video": "717.mp4",
+            "source": "ECVA",
+            "description": "The cylindrical building tilts and collapses, followed by dust spreading.",
+            "timestamps": [
+              11.1,
+              23.0
+            ]
+          }
+        },
+        {
+          "row": 1385,
+          "record": {
+            "subset": "Abnormal_Segment",
+            "video": "People_falling_22.mp4",
+            "source": "MSAD",
+            "description": "A man faints and knocks another man onto the subway tracks. The approaching train service is suspended, and two people rescue the man lying on the tracks.",
+            "timestamps": [
+              2.4,
+              23.7
+            ]
+          }
+        },
+        {
+          "row": 2770,
+          "record": {
+            "subset": "Subjects_Response",
+            "video": "1468.mp4",
+            "source": "ECVA",
+            "description": "The ego vehicle and the black car in front slow down and maneuver around.",
+            "timestamps": [
+              8.3,
+              19.0
+            ]
+          }
+        }
+      ],
+      "timestamps_lengths": {
+        "2": 2771
+      }
+    }
+  },
+  "time_units": {
+    "documented": "seconds (VALU README)",
+    "validation": "every TDG/ALD span must be a finite single interval with 0 <= start < end and end <= decoded duration + 0.5s"
+  },
+  "counts": {
+    "imported_annotation_rows": {
+      "ADC": 5695,
+      "TDG": 3072,
+      "ALD": 2771
+    },
+    "unique_source_videos_referenced": 1019,
+    "unique_source_videos_by_source": {
+      "ECVA": 359,
+      "MSAD": 361,
+      "UCF": 299
+    },
+    "locally_available_media": 658,
+    "locally_available_by_source": {
+      "ECVA": 359,
+      "UCF": 299
+    },
+    "available_within_duration_limit": 639,
+    "eligible_rows": {
+      "ADC": 3749,
+      "TDG": 1995,
+      "ALD": 1846
+    }
+  },
+  "eligible_rows_by_stratum": {
+    "ADC": [
+      {
+        "source": "ECVA",
+        "subtask": "Exclusion",
+        "level": "Abnormal_Action",
+        "n": 357
+      },
+      {
+        "source": "ECVA",
+        "subtask": "Exclusion",
+        "level": "Abnormal_Consequence",
+        "n": 152
+      },
+      {
+        "source": "ECVA",
+        "subtask": "Exclusion",
+        "level": "Abnormal_Event",
+        "n": 357
+      },
+      {
+        "source": "ECVA",
+        "subtask": "Exclusion",
+        "level": "Abnormal_Segment",
+        "n": 357
+      },
+      {
+        "source": "ECVA",
+        "subtask": "Exclusion",
+        "level": "Subjects_Response",
+        "n": 45
+      },
+      {
+        "source": "ECVA",
+        "subtask": "Matching",
+        "level": "Abnormal_Action",
+        "n": 357
+      },
+      {
+        "source": "ECVA",
+        "subtask": "Matching",
+        "level": "Abnormal_Consequence",
+        "n": 152
+      },
+      {
+        "source": "ECVA",
+        "subtask": "Matching",
+        "level": "Abnormal_Event",
+        "n": 357
+      },
+      {
+        "source": "ECVA",
+        "subtask": "Matching",
+        "level": "Abnormal_Segment",
+        "n": 357
+      },
+      {
+        "source": "ECVA",
+        "subtask": "Matching",
+        "level": "Subjects_Response",
+        "n": 45
+      },
+      {
+        "source": "UCF",
+        "subtask": "Exclusion",
+        "level": "Abnormal_Action",
+        "n": 143
+      },
+      {
+        "source": "UCF",
+        "subtask": "Exclusion",
+        "level": "Abnormal_Consequence",
+        "n": 79
+      },
+      {
+        "source": "UCF",
+        "subtask": "Exclusion",
+        "level": "Abnormal_Event",
+        "n": 143
+      },
+      {
+        "source": "UCF",
+        "subtask": "Exclusion",
+        "level": "Abnormal_Segment",
+        "n": 143
+      },
+      {
+        "source": "UCF",
+        "subtask": "Exclusion",
+        "level": "Subjects_Response",
+        "n": 29
+      },
+      {
+        "source": "UCF",
+        "subtask": "Matching",
+        "level": "Abnormal_Action",
+        "n": 143
+      },
+      {
+        "source": "UCF",
+        "subtask": "Matching",
+        "level": "Abnormal_Consequence",
+        "n": 79
+      },
+      {
+        "source": "UCF",
+        "subtask": "Matching",
+        "level": "Abnormal_Event",
+        "n": 143
+      },
+      {
+        "source": "UCF",
+        "subtask": "Matching",
+        "level": "Abnormal_Segment",
+        "n": 143
+      },
+      {
+        "source": "UCF",
+        "subtask": "Matching",
+        "level": "Subjects_Response",
+        "n": 29
+      },
+      {
+        "source": "UCF",
+        "subtask": "Rejection",
+        "level": "Normal_Event",
+        "n": 139
+      }
+    ],
+    "TDG": [
+      {
+        "source": "ECVA",
+        "subtask": null,
+        "level": "Abnormal_Action",
+        "n": 368
+      },
+      {
+        "source": "ECVA",
+        "subtask": null,
+        "level": "Abnormal_Consequence",
+        "n": 155
+      },
+      {
+        "source": "ECVA",
+        "subtask": null,
+        "level": "Abnormal_Event",
+        "n": 354
+      },
+      {
+        "source": "ECVA",
+        "subtask": null,
+        "level": "Abnormal_Segment",
+        "n": 355
+      },
+      {
+        "source": "ECVA",
+        "subtask": null,
+        "level": "Subjects_Response",
+        "n": 48
+      },
+      {
+        "source": "UCF",
+        "subtask": null,
+        "level": "Abnormal_Action",
+        "n": 172
+      },
+      {
+        "source": "UCF",
+        "subtask": null,
+        "level": "Abnormal_Consequence",
+        "n": 80
+      },
+      {
+        "source": "UCF",
+        "subtask": null,
+        "level": "Abnormal_Event",
+        "n": 143
+      },
+      {
+        "source": "UCF",
+        "subtask": null,
+        "level": "Abnormal_Segment",
+        "n": 142
+      },
+      {
+        "source": "UCF",
+        "subtask": null,
+        "level": "Normal_Event",
+        "n": 149
+      },
+      {
+        "source": "UCF",
+        "subtask": null,
+        "level": "Subjects_Response",
+        "n": 29
+      }
+    ],
+    "ALD": [
+      {
+        "source": "ECVA",
+        "subtask": null,
+        "level": "Abnormal_Action",
+        "n": 368
+      },
+      {
+        "source": "ECVA",
+        "subtask": null,
+        "level": "Abnormal_Consequence",
+        "n": 155
+      },
+      {
+        "source": "ECVA",
+        "subtask": null,
+        "level": "Abnormal_Event",
+        "n": 354
+      },
+      {
+        "source": "ECVA",
+        "subtask": null,
+        "level": "Abnormal_Segment",
+        "n": 355
+      },
+      {
+        "source": "ECVA",
+        "subtask": null,
+        "level": "Subjects_Response",
+        "n": 48
+      },
+      {
+        "source": "UCF",
+        "subtask": null,
+        "level": "Abnormal_Action",
+        "n": 172
+      },
+      {
+        "source": "UCF",
+        "subtask": null,
+        "level": "Abnormal_Consequence",
+        "n": 80
+      },
+      {
+        "source": "UCF",
+        "subtask": null,
+        "level": "Abnormal_Event",
+        "n": 143
+      },
+      {
+        "source": "UCF",
+        "subtask": null,
+        "level": "Abnormal_Segment",
+        "n": 142
+      },
+      {
+        "source": "UCF",
+        "subtask": null,
+        "level": "Subjects_Response",
+        "n": 29
+      }
+    ]
+  },
+  "ambiguous_media_matches": [],
+  "excluded_summary": [
+    {
+      "task": "ADC",
+      "reason": "duration_over_300s",
+      "n": 80
+    },
+    {
+      "task": "ADC",
+      "reason": "source_media_not_redistributed (MSAD)",
+      "n": 1866
+    },
+    {
+      "task": "ALD",
+      "reason": "duration_over_300s",
+      "n": 40
+    },
+    {
+      "task": "ALD",
+      "reason": "source_media_not_redistributed (MSAD)",
+      "n": 877
+    },
+    {
+      "task": "ALD",
+      "reason": "span_exceeds_media_duration",
+      "n": 6
+    },
+    {
+      "task": "ALD",
+      "reason": "span_not_ordered_or_empty",
+      "n": 2
+    },
+    {
+      "task": "TDG",
+      "reason": "duration_over_300s",
+      "n": 50
+    },
+    {
+      "task": "TDG",
+      "reason": "source_media_not_redistributed (MSAD)",
+      "n": 1019
+    },
+    {
+      "task": "TDG",
+      "reason": "span_exceeds_media_duration",
+      "n": 6
+    },
+    {
+      "task": "TDG",
+      "reason": "span_not_ordered_or_empty",
+      "n": 2
+    }
+  ],
+  "video_label_conflicts": [],
+  "media_note": "Media are the publisher-masked videos released by the VALU authors. The hosting folder name 'split_mask_test_videos' is a hosting name, not an experimental split decision.",
+  "duration_limit_sec": 300.0
+}

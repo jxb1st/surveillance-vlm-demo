@@ -1,0 +1,627 @@
+{
+  "checked": "2026-09-29T20:01:13Z",
+  "policy": "Primary sources only. Download or access failures are listed, not hidden. No unofficial mirror is used as a fallback.",
+  "pinned_revisions": {
+    "annotation_revision": "2ed33aa6fe6ccd282f2ff99e7ececf80b61a3eca",
+    "media_revision": "299373f8ca67fe27c20e196fd7185726980ff088",
+    "models": {
+      "qwen38_27b": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "qwen3vl_8b": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "videollama3_7b": "d5b763e368861e7f5096e7ff1b49f92fbccf8ae6"
+    }
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "name": "VALU paper",
+      "source_role": "benchmark paper: task definitions, protocol, published tables",
+      "checked": "2026-09-29T20:01:13Z",
+      "primary": {
+        "url": "https://aclanthology.org/2026.acl-long.56/",
+        "resolved_url": "https://aclanthology.org/2026.acl-long.56/",
+        "http_status": 200,
+        "reachable": true,
+        "error": null,
+        "revision": null,
+        "assets": null,
+        "access": null
+      },
+      "related": [
+        {
+          "url": "https://aclanthology.org/2026.acl-long.56.pdf",
+          "resolved_url": "https://aclanthology.org/2026.acl-long.56.pdf",
+          "http_status": 200,
+          "reachable": true,
+          "error": null,
+          "revision": null,
+          "assets": null,
+          "access": null
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "S02",
+      "name": "VALU repository",
+      "source_role": "annotation source (ADC/TDG/ALD parquet)",
+      "checked": "2026-09-29T20:01:13Z",
+      "primary": {
+        "url": "https://github.com/Mr-xiu/VALU",
+        "resolved_url": "https://github.com/Mr-xiu/VALU",
+        "http_status": 200,
+        "reachable": true,
+        "error": null,
+        "revision": "2ed33aa6fe6ccd282f2ff99e7ececf80b61a3eca",
+        "assets": {
+          "files": 5,
+          "notable": [
+            "data/ADC.parquet",
+            "data/ALD.parquet",
+            "data/TDG.parquet"
+          ]
+        },
+        "access": null,
+        "revision_date": "2026-04-12T13:30:48Z"
+      },
+      "related": [],
+      "notes": [
+        "Pinned for this build: 2ed33aa6fe6ccd282f2ff99e7ececf80b61a3eca. ADC/TDG/ALD parquet files downloaded and hashed (see data_audit.json)."
+      ]
+    },
+    {
+      "id": "S03",
+      "name": "VALU media repository",
+      "source_role": "publisher-masked UCF/ECVA videos",
+      "checked": "2026-09-29T20:01:13Z",
+      "primary": {
+        "url": "https://huggingface.co/datasets/NIRCVAD/VALU",
+        "resolved_url": "https://huggingface.co/datasets/NIRCVAD/VALU",
+        "http_status": 200,
+        "reachable": true,
+        "error": null,
+        "revision": "299373f8ca67fe27c20e196fd7185726980ff088",
+        "assets": {
+          "files": 3,
+          "video_or_archive_files": 2,
+          "weights_files": 0,
+          "sample": [
+            ".gitattributes",
+            "ECVA_mask_videos_VALU.zip",
+            "UCF_mask_videos_VALU.zip"
+          ]
+        },
+        "access": {
+          "gated": false,
+          "private": false
+        },
+        "revision_date": "2026-04-12T13:20:38.000Z"
+      },
+      "related": [],
+      "notes": [
+        "Pinned for this build: 299373f8ca67fe27c20e196fd7185726980ff088.",
+        "Actual assets: two zip archives (UCF and ECVA masked videos). Selective per-video download is not possible; both archives were downloaded in full.",
+        "MSAD media are not distributed here; MSAD rows are excluded with a recorded reason.",
+        "The folder name 'split_mask_test_videos' is a hosting name, not an experimental split decision."
+      ]
+    },
+    {
+      "id": "S04",
+      "name": "SurveillanceVQA-589K",
+      "source_role": "catalog only: QA annotations",
+      "checked": "2026-09-29T20:01:13Z",
+      "primary": {
+        "url": "https://arxiv.org/abs/2505.12589",
+        "resolved_url": "https://arxiv.org/abs/2505.12589",
+        "http_status": 200,
+        "reachable": true,
+        "error": null,
+        "revision": null,
+        "assets": null,
+        "access": null
+      },
+      "related": [
+        {
+          "url": "https://huggingface.co/datasets/fei213/SurveillanceVQA-589K",
+          "resolved_url": "https://huggingface.co/datasets/fei213/SurveillanceVQA-589K",
+          "http_status": 200,
+          "reachable": true,
+          "error": null,
+          "revision": "8f8445fc2d92d2e85f6263feec14f0585608f587",
+          "assets": {
+            "files": 54,
+            "video_or_archive_files": 10,
+            "weights_files": 3,
+            "sample": [
+              ".gitattributes",
+              "README.md",
+              "github/10_get_score/1_get_score_CI.py",
+              "github/10_get_score/2_get_score_DO.py",
+              "github/10_get_score/3_get_score_CU.py",
+              "github/10_get_score/4_get_score_TU.py",
+              "github/11_finetune/batch_get_qa_lora.py",
+              "github/11_finetune/checkpoint-7366/README.md",
+              "github/11_finetune/checkpoint-7366/adapter_config.json",
+              "github/11_finetune/checkpoint-7366/adapter_model.safetensors",
+              "github/11_finetune/checkpoint-7366/added_tokens.json",
+              "github/11_finetune/checkpoint-7366/chat_template.jinja"
+            ]
+          },
+          "access": {
+            "gated": false,
+            "private": false
+          },
+          "revision_date": "2025-05-16T03:52:51.000Z"
+        }
+      ],
+      "notes": [
+        "Catalog only in v1. Original video acquisition is separate from the QA annotations."
+      ]
+    },
+    {
+      "id": "S05",
+      "name": "FineVAU / FineW3",
+      "source_role": "catalog only: structured events/entities annotations",
+      "checked": "2026-09-29T20:01:13Z",
+      "primary": {
+        "url": "https://finevau.github.io/",
+        "resolved_url": "https://finevau.github.io/",
+        "http_status": 200,
+        "reachable": true,
+        "error": null,
+        "revision": null,
+        "assets": null,
+        "access": null
+      },
+      "related": [
+        {
+          "url": "https://huggingface.co/datasets/joao-cardeira/FineW3",
+          "resolved_url": "https://huggingface.co/datasets/joao-cardeira/FineW3",
+          "http_status": 200,
+          "reachable": true,
+          "error": null,
+          "revision": "df7f5947b2e8d65639019ade621d796009077710",
+          "assets": {
+            "files": 2,
+            "video_or_archive_files": 0,
+            "weights_files": 0,
+            "sample": [
+              ".gitattributes",
+              "data/test-00000-of-00001.parquet"
+            ]
+          },
+          "access": {
+            "gated": false,
+            "private": false
+          },
+          "revision_date": "2026-01-17T17:48:25.000Z"
+        }
+      ],
+      "notes": [
+        "Catalog only in v1. Annotation resource; playable videos and uniform time units are not assumed."
+      ]
+    },
+    {
+      "id": "S06",
+      "name": "UCA paper",
+      "source_role": "catalog only: descriptions and temporal annotations on UCF-Crime",
+      "checked": "2026-09-29T20:01:13Z",
+      "primary": {
+        "url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Yuan_Towards_Surveillance_Video-and-Language_Understanding_New_Dataset_Baselines_and_Challenges_CVPR_2024_paper.pdf",
+        "resolved_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Yuan_Towards_Surveillance_Video-and-Language_Understanding_New_Dataset_Baselines_and_Challenges_CVPR_2024_paper.pdf",
+        "http_status": 200,
+        "reachable": true,
+        "error": null,
+        "revision": null,
+        "assets": null,
+        "access": null
+      },
+      "related": [],
+      "notes": []
+    },
+    {
+      "id": "S07",
+      "name": "CUVA paper",
+      "source_role": "catalog only: causal anomaly understanding",
+      "checked": "2026-09-29T20:01:13Z",
+      "primary": {
+        "url": "https://arxiv.org/abs/2405.00181",
+        "resolved_url": "https://arxiv.org/abs/2405.00181",
+        "http_status": 200,
+        "reachable": true,
+        "error": null,
+        "revision": null,
+        "assets": null,
+        "access": null
+      },
+      "related": [],
+      "notes": []
+    },
+    {
+      "id": "S08",
+      "name": "Holmes-VAU",
+      "source_role": "specialist method and HIVAU-70k",
+      "checked": "2026-09-29T20:01:13Z",
+      "primary": {
+        "url": "https://arxiv.org/abs/2412.06171",
+        "resolved_url": "https://arxiv.org/abs/2412.06171",
+        "http_status": 200,
+        "reachable": true,
+        "error": null,
+        "revision": null,
+        "assets": null,
+        "access": null
+      },
+      "related": [
+        {
+          "url": "https://github.com/pipixin321/HolmesVAU",
+          "resolved_url": "https://github.com/pipixin321/HolmesVAU",
+          "http_status": 200,
+          "reachable": true,
+          "error": null,
+          "revision": "fdef61ec58e8cfa747ff5f40d7e89e9bd6f9e90d",
+          "assets": {
+            "files": 69,
+            "notable": [
+              "HIVAU-70k/instruction/merge_instruction_test_final.jsonl",
+              "HIVAU-70k/instruction/merge_instruction_train_final.jsonl",
+              "HIVAU-70k/raw_annotations/ucf_database_test.json",
+              "HIVAU-70k/raw_annotations/ucf_database_train.json",
+              "HIVAU-70k/raw_annotations/xd_database_test.json",
+              "HIVAU-70k/raw_annotations/xd_database_train.json",
+              "holmesvau/ATS/anomaly_scorer.pth",
+              "internvl_chat/shell/data_example.jsonl",
+              "internvl_chat/shell/holmesvau_data.json",
+              "internvl_chat/zero_stage1_config.json",
+              "internvl_chat/zero_stage2_config.json",
+              "internvl_chat/zero_stage3_config.json",
+              "internvl_chat/zero_stage3_config_100b.json",
+              "internvl_chat/zero_stage3_config_34b.json",
+              "internvl_chat/zero_stage3_config_70b.json"
+            ]
+          },
+          "access": null,
+          "revision_date": "2025-03-25T04:45:07Z"
+        },
+        {
+          "url": "https://huggingface.co/ppxin321/HolmesVAU-2B",
+          "resolved_url": "https://huggingface.co/ppxin321/HolmesVAU-2B",
+          "http_status": 200,
+          "reachable": true,
+          "error": null,
+          "revision": "4ddd79211b9f144faa8fed08afc070f8b7c0db06",
+          "assets": {
+            "files": 18,
+            "video_or_archive_files": 0,
+            "weights_files": 1,
+            "sample": [
+              ".gitattributes",
+              "README.md",
+              "added_tokens.json",
+              "config.json",
+              "configuration_intern_vit.py",
+              "configuration_internlm2.py",
+              "configuration_internvl_chat.py",
+              "conversation.py",
+              "generation_config.json",
+              "model.safetensors",
+              "modeling_intern_vit.py",
+              "modeling_internlm2.py"
+            ]
+          },
+          "access": {
+            "gated": false,
+            "private": false
+          },
+          "revision_date": "2025-03-22T15:13:10.000Z"
+        }
+      ],
+      "notes": [
+        "HolmesVAU-2B is an optional specialist extension and was not run in this build."
+      ]
+    },
+    {
+      "id": "S09",
+      "name": "ReactVAU",
+      "source_role": "architecture reference",
+      "checked": "2026-09-29T20:01:13Z",
+      "primary": {
+        "url": "https://arxiv.org/abs/2609.07941",
+        "resolved_url": "https://arxiv.org/abs/2609.07941",
+        "http_status": 200,
+        "reachable": true,
+        "error": null,
+        "revision": null,
+        "assets": null,
+        "access": null
+      },
+      "related": [
+        {
+          "url": "https://github.com/huiyuiui/ReactVAU-code",
+          "resolved_url": "https://github.com/huiyuiui/ReactVAU-code",
+          "http_status": 200,
+          "reachable": true,
+          "error": null,
+          "revision": "22e26bc751196e6a36c4168b2f7b73633621d4bd",
+          "assets": {
+            "files": 73,
+            "notable": [
+              "scripts/deepspeed/zero1.json",
+              "scripts/deepspeed/zero2.json",
+              "scripts/deepspeed/zero2_fused_adamw.json",
+              "scripts/deepspeed/zero2_offload.json",
+              "scripts/deepspeed/zero3.json",
+              "scripts/deepspeed/zero3_offload.json",
+              "scripts/deepspeed/zero3pp.json"
+            ]
+          },
+          "access": null,
+          "revision_date": "2026-09-09T08:47:27Z"
+        }
+      ],
+      "notes": [
+        "Architecture reference only. Its trained Fast/Slow components are not reproduced here."
+      ]
+    },
+    {
+      "id": "S10",
+      "name": "Qwen3.8-27B model card",
+      "source_role": "measured model",
+      "checked": "2026-09-29T20:01:13Z",
+      "primary": {
+        "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+        "resolved_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+        "http_status": 200,
+        "reachable": true,
+        "error": null,
+        "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+        "assets": {
+          "files": 32,
+          "video_or_archive_files": 0,
+          "weights_files": 18,
+          "sample": [
+            ".gitattributes",
+            "LICENSE",
+            "README.md",
+            "chat_template.jinja",
+            "config.json",
+            "crc32.txt",
+            "generation_config.json",
+            "merges.txt",
+            "model-00001-of-00018.safetensors",
+            "model-00002-of-00018.safetensors",
+            "model-00003-of-00018.safetensors",
+            "model-00004-of-00018.safetensors"
+          ]
+        },
+        "access": {
+          "gated": false,
+          "private": false
+        },
+        "revision_date": "2026-08-14T15:00:01.000Z"
+      },
+      "related": [],
+      "notes": [
+        "Pinned checkpoint revision for measured runs: 1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0."
+      ]
+    },
+    {
+      "id": "S11",
+      "name": "Qwen3-VL",
+      "source_role": "measured model",
+      "checked": "2026-09-29T20:01:13Z",
+      "primary": {
+        "url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+        "resolved_url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+        "http_status": 200,
+        "reachable": true,
+        "error": null,
+        "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+        "assets": {
+          "files": 16,
+          "video_or_archive_files": 0,
+          "weights_files": 4,
+          "sample": [
+            ".gitattributes",
+            "README.md",
+            "chat_template.json",
+            "config.json",
+            "generation_config.json",
+            "merges.txt",
+            "model-00001-of-00004.safetensors",
+            "model-00002-of-00004.safetensors",
+            "model-00003-of-00004.safetensors",
+            "model-00004-of-00004.safetensors",
+            "model.safetensors.index.json",
+            "preprocessor_config.json"
+          ]
+        },
+        "access": {
+          "gated": false,
+          "private": false
+        },
+        "revision_date": "2025-10-15T16:16:59.000Z"
+      },
+      "related": [
+        {
+          "url": "https://github.com/QwenLM/Qwen3-VL",
+          "resolved_url": "https://github.com/QwenLM/Qwen3-VL",
+          "http_status": 200,
+          "reachable": true,
+          "error": null,
+          "revision": "96588727e44c78b25ba03ea03b8e12f7e64fd0da",
+          "assets": {
+            "files": 154,
+            "notable": [
+              "cookbooks/assets/spatial_understanding/cam_infos.json",
+              "qwen-vl-finetune/demo/single_images.json",
+              "qwen-vl-finetune/demo/video.json",
+              "qwen-vl-finetune/scripts/zero2.json",
+              "qwen-vl-finetune/scripts/zero3.json",
+              "qwen-vl-finetune/scripts/zero3_offload.json"
+            ]
+          },
+          "access": null,
+          "revision_date": "2026-01-30T04:47:30Z"
+        },
+        {
+          "url": "https://arxiv.org/abs/2511.21631",
+          "resolved_url": "https://arxiv.org/abs/2511.21631",
+          "http_status": 200,
+          "reachable": true,
+          "error": null,
+          "revision": null,
+          "assets": null,
+          "access": null
+        }
+      ],
+      "notes": [
+        "Pinned checkpoint revision for measured runs: 0c351dd01ed87e9c1b53cbc748cba10e6187ff3b."
+      ]
+    },
+    {
+      "id": "S12",
+      "name": "VideoLLaMA3",
+      "source_role": "measured model",
+      "checked": "2026-09-29T20:01:13Z",
+      "primary": {
+        "url": "https://huggingface.co/DAMO-NLP-SG/VideoLLaMA3-7B",
+        "resolved_url": "https://huggingface.co/DAMO-NLP-SG/VideoLLaMA3-7B",
+        "http_status": 200,
+        "reachable": true,
+        "error": null,
+        "revision": "d5b763e368861e7f5096e7ff1b49f92fbccf8ae6",
+        "assets": {
+          "files": 23,
+          "video_or_archive_files": 0,
+          "weights_files": 4,
+          "sample": [
+            ".gitattributes",
+            "README.md",
+            "added_tokens.json",
+            "chat_template.json",
+            "config.json",
+            "configuration_videollama3.py",
+            "configuration_videollama3_encoder.py",
+            "generation_config.json",
+            "image_processing_videollama3.py",
+            "merges.txt",
+            "model-00001-of-00004.safetensors",
+            "model-00002-of-00004.safetensors"
+          ]
+        },
+        "access": {
+          "gated": false,
+          "private": false
+        },
+        "revision_date": "2025-09-02T15:50:28.000Z"
+      },
+      "related": [
+        {
+          "url": "https://github.com/DAMO-NLP-SG/VideoLLaMA3",
+          "resolved_url": "https://github.com/DAMO-NLP-SG/VideoLLaMA3",
+          "http_status": 200,
+          "reachable": true,
+          "error": null,
+          "revision": "05cee23deb854fd6ff82dcff1243a4f682e4d617",
+          "assets": {
+            "files": 156,
+            "notable": [
+              "scripts/zero1.json",
+              "scripts/zero2.json",
+              "scripts/zero3.json"
+            ]
+          },
+          "access": null,
+          "revision_date": "2025-08-14T06:52:30Z"
+        },
+        {
+          "url": "https://arxiv.org/abs/2501.13106",
+          "resolved_url": "https://arxiv.org/abs/2501.13106",
+          "http_status": 200,
+          "reachable": true,
+          "error": null,
+          "revision": null,
+          "assets": null,
+          "access": null
+        }
+      ],
+      "notes": [
+        "Pinned checkpoint revision for measured runs: d5b763e368861e7f5096e7ff1b49f92fbccf8ae6."
+      ]
+    },
+    {
+      "id": "S13",
+      "name": "TimeZero / Time-R1",
+      "source_role": "benchmark-specific TDG leader reference",
+      "checked": "2026-09-29T20:01:13Z",
+      "primary": {
+        "url": "https://github.com/www-Ye/Time-R1",
+        "resolved_url": "https://github.com/www-Ye/Time-R1",
+        "http_status": 200,
+        "reachable": true,
+        "error": null,
+        "revision": "d1a0d543889ef32340432d46a6c3b7dcd009008f",
+        "assets": {
+          "files": 51,
+          "notable": [
+            "ActivityNet/activitynet_annotation/train.json",
+            "ActivityNet/activitynet_annotation/val_2.json",
+            "Charades/charades_annotation/train.json",
+            "Charades/charades_annotation/val.json",
+            "dataset/activitynet/test.json",
+            "dataset/activitynet/val.json",
+            "dataset/charades-sta/charades_test.json",
+            "dataset/charades-sta/charades_test_iid.json",
+            "dataset/charades-sta/charades_test_ood.json",
+            "dataset/charades-sta/novel_composition.json",
+            "dataset/charades-sta/novel_word.json",
+            "dataset/charades-sta/test_trivial.json",
+            "scripts/zero3_offload.json"
+          ]
+        },
+        "access": null,
+        "revision_date": "2025-06-20T03:08:38Z"
+      },
+      "related": [],
+      "notes": [
+        "The project evolved from TimeZero to Time-R1. No later checkpoint is substituted for the model evaluated in the VALU paper; no TimeZero run exists in this build."
+      ]
+    },
+    {
+      "id": "S14",
+      "name": "Streamo / StreamArena",
+      "source_role": "optional context on streaming",
+      "checked": "2026-09-29T20:01:13Z",
+      "primary": {
+        "url": "https://arxiv.org/abs/2512.21334",
+        "resolved_url": "https://arxiv.org/abs/2512.21334",
+        "http_status": 200,
+        "reachable": true,
+        "error": null,
+        "revision": null,
+        "assets": null,
+        "access": null
+      },
+      "related": [
+        {
+          "url": "https://arxiv.org/abs/2608.05703",
+          "resolved_url": "https://arxiv.org/abs/2608.05703",
+          "http_status": 200,
+          "reachable": true,
+          "error": null,
+          "revision": null,
+          "assets": null,
+          "access": null
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "failures": [],
+  "summary": {
+    "sources": 14,
+    "urls_checked": 25,
+    "unreachable": 0,
+    "checked": "2026-09-29T20:01:13Z"
+  }
+}
