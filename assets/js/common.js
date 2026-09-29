@@ -144,5 +144,22 @@
     return U.tag("failed: " + (p.failure || p.status), "bad");
   };
 
-  document.addEventListener("DOMContentLoaded", U.syncNav);
+  /* One tooltip for every chart mark. Value first, label second; same on keyboard focus. */
+  function initTips() {
+    var tip = U.el("div", { id: "tip", class: "hidden", role: "status" });
+    document.body.appendChild(tip);
+    function target(e) { var n = e.target; while (n && n !== document && !(n.getAttribute && n.getAttribute("data-tip"))) n = n.parentNode; return n && n !== document ? n : null; }
+    function show(n, x, y) {
+      U.clear(tip); tip.appendChild(U.el("b", { text: n.getAttribute("data-v") || "" })); tip.appendChild(U.el("span", { text: n.getAttribute("data-tip") }));
+      tip.classList.remove("hidden");
+      var w = tip.offsetWidth, h = tip.offsetHeight, vw = document.documentElement.clientWidth;
+      tip.style.left = Math.max(6, Math.min(vw - w - 6, x + 12)) + "px";
+      tip.style.top = (y - h - 12 < 6 ? y + 16 : y - h - 12) + "px";
+    }
+    document.addEventListener("pointermove", function (e) { var n = target(e); if (n) show(n, e.clientX, e.clientY); else tip.classList.add("hidden"); });
+    document.addEventListener("focusin", function (e) { var n = target(e); if (n) { var r = n.getBoundingClientRect(); show(n, r.left + r.width / 2, r.top); } });
+    document.addEventListener("focusout", function () { tip.classList.add("hidden"); });
+    document.addEventListener("scroll", function () { tip.classList.add("hidden"); }, true);
+  }
+  document.addEventListener("DOMContentLoaded", function () { U.syncNav(); initTips(); });
 })();

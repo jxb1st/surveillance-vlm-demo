@@ -7,7 +7,7 @@
   "protocol_label": "VALU demo subset v1 — adapted protocol",
   "manifest_id": "valu-demo-v1",
   "manifest_sha256": "a29f5969ed6587a421ca27190e8ac466b5e1de1bab3714382c63fbcd42e434f0",
-  "evaluated_at": "2026-09-29T20:27:47Z",
+  "evaluated_at": "2026-09-29T20:52:07Z",
   "eligible_for_main_ranking": true,
   "origin": "measured",
   "ADC": {

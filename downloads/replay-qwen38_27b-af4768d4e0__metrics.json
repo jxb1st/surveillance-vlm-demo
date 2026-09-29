@@ -7,7 +7,7 @@
   "protocol_label": "VALU demo subset v1 — adapted protocol (replay windows)",
   "manifest_id": "valu-demo-v1-replay",
   "manifest_sha256": "3e6a4efb5ff97c11192cf7ecab4fae2063f2258c24375f75ad449a01065fe24c",
-  "evaluated_at": "2026-09-29T20:27:47Z",
+  "evaluated_at": "2026-09-29T20:52:07Z",
   "eligible_for_main_ranking": false,
   "origin": "measured",
   "ADC": {

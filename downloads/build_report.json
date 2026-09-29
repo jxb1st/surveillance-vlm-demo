@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-09-29T20:27:47Z",
+  "built_at": "2026-09-29T20:52:07Z",
   "stage": "complete",
   "pages": [
     "index.html",
@@ -27,5 +27,5 @@
     "replay": 21791
   },
   "prompt_hash_checks": 576,
-  "site_size_mb": 210.8
+  "site_size_mb": 211.2
 }
