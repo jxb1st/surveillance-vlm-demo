@@ -21,15 +21,15 @@
 <div class="panel" style="margin:0 0 18px">
 <h2 style="margin-top:0">Verdict</h2>
 <ul style="font-size:14.5px;margin:0">
-  <li><b>Most accurate:</b> Qwen3.8-27B — Matching 78%, Exclusion 68%, TDG mean tIoU 0.65; 2315 ms per item (482 ms with the typed readout, same accuracy), 54 GiB.</li>
-<li><b>Fits one MIG slice (≤ 18 GiB):</b> VideoLLaMA3-7B — Matching 72%, Exclusion 8%, TDG 0.38; 682 ms, 17 GiB.</li>  <li>Ranking: ADC Matching, then Exclusion, then TDG mean tIoU. Failures count as wrong.</li>
+  <li><b>Most accurate:</b> Qwen3.8-27B — score 0.77 (Matching 78%, Exclusion 68%, Rejection 98%, TDG tIoU 0.65); 2315 ms per item (482 ms with the typed readout, same answers), 54 GiB.</li>
+<li><b>Best under 20 GiB:</b> Qwen3-VL-8B-Instruct — score 0.64 (Matching 65%, Exclusion 38%, Rejection 92%, TDG 0.62); 691 ms, 18.1 GiB peak (an 18 GB MIG slice is borderline).</li>  <li>Score = mean of the three ADC accuracies and the TDG mean tIoU, equal weight. Failures count as wrong.</li>
 </ul>
 </div>
 
 <h2>Ranking</h2>
 <div class="tablewrap"><table>
-<thead><tr><th>#</th><th>Model</th><th class="n">params</th><th class="n">ADC Matching</th><th class="n">ADC Exclusion</th><th class="n">ADC Rejection</th><th class="n">TDG mean tIoU</th><th class="n">TDG R@0.5</th><th class="n">failed / invalid</th><th class="n">ms / item</th><th class="n">p90 ms</th><th class="n">peak GiB</th></tr></thead><tbody>
-<tr><td class="n">1</td><td style="white-space:nowrap">Qwen3.8-27B</td><td class="n">27B</td><td class="n">77.5%</td><td class="n">67.5%</td><td class="n">97.5%</td><td class="n">0.652</td><td class="n">70%</td><td class="n">1 / 192</td><td class="n">2315</td><td class="n">3848</td><td class="n">53.7</td></tr><tr><td class="n">2</td><td style="white-space:nowrap">VideoLLaMA3-7B</td><td class="n">7B</td><td class="n">72.5%</td><td class="n">7.5%</td><td class="n">70.0%</td><td class="n">0.376</td><td class="n">35%</td><td class="n">8 / 192</td><td class="n">682</td><td class="n">1248</td><td class="n">17.5</td></tr><tr><td class="n">3</td><td style="white-space:nowrap">Qwen3-VL-8B-Instruct</td><td class="n">8B</td><td class="n">65.0%</td><td class="n">37.5%</td><td class="n">92.5%</td><td class="n">0.617</td><td class="n">68%</td><td class="n">0 / 192</td><td class="n">691</td><td class="n">1028</td><td class="n">18.1</td></tr></tbody></table></div>
+<thead><tr><th>#</th><th>Model</th><th class="n">params</th><th class="n">score</th><th class="n">ADC Matching</th><th class="n">ADC Exclusion</th><th class="n">ADC Rejection</th><th class="n">TDG mean tIoU</th><th class="n">TDG R@0.5</th><th class="n">failed / invalid</th><th class="n">ms / item</th><th class="n">p90 ms</th><th class="n">peak GiB</th></tr></thead><tbody>
+<tr><td class="n">1</td><td style="white-space:nowrap">Qwen3.8-27B</td><td class="n">27B</td><td class="n"><b>0.77</b></td><td class="n">77.5%</td><td class="n">67.5%</td><td class="n">97.5%</td><td class="n">0.652</td><td class="n">70%</td><td class="n">1 / 192</td><td class="n">2315</td><td class="n">3848</td><td class="n">53.7</td></tr><tr><td class="n">2</td><td style="white-space:nowrap">Qwen3-VL-8B-Instruct</td><td class="n">8B</td><td class="n"><b>0.64</b></td><td class="n">65.0%</td><td class="n">37.5%</td><td class="n">92.5%</td><td class="n">0.617</td><td class="n">68%</td><td class="n">0 / 192</td><td class="n">691</td><td class="n">1028</td><td class="n">18.1</td></tr><tr><td class="n">3</td><td style="white-space:nowrap">VideoLLaMA3-7B</td><td class="n">7B</td><td class="n"><b>0.47</b></td><td class="n">72.5%</td><td class="n">7.5%</td><td class="n">70.0%</td><td class="n">0.376</td><td class="n">35%</td><td class="n">8 / 192</td><td class="n">682</td><td class="n">1248</td><td class="n">17.5</td></tr></tbody></table></div>
 <p class="note">ADC: 40 items per subtask (Matching: pick the right description; Exclusion: none is right; Rejection: normal video). TDG: 60 items, tIoU of the predicted span against the publisher's. ALD (12 items) is shown on the Examples page and not scored. Latency: median end-to-end per item with cached frames, model loading excluded.</p>
 
 <div class="grid" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
@@ -44,7 +44,7 @@
 <h2>Typed readout instead of generated text</h2>
 <div class="tablewrap"><table>
 <thead><tr><th>Model</th><th class="n">ms / item, generated</th><th class="n">ms / item, typed readout</th><th class="n">ADC Matching (typed)</th><th class="n">ADC Exclusion (typed)</th><th class="n">ADC Rejection (typed)</th><th class="n">ECE</th><th class="n">acc. at conf. ≥ 0.7 (kept)</th></tr></thead><tbody>
-<tr><td>Qwen3.8-27B</td><td class="n">2315</td><td class="n">482</td><td class="n">77.5%</td><td class="n">70.0%</td><td class="n">97.5%</td><td class="n">0.124</td><td class="n">97% (56%)</td></tr></tbody></table></div>
+<tr><td>Qwen3.8-27B</td><td class="n">2315</td><td class="n">482</td><td class="n">77.5%</td><td class="n">70.0%</td><td class="n">97.5%</td><td class="n">0.124</td><td class="n">97% (56%)</td></tr><tr><td>Qwen3-VL-8B-Instruct</td><td class="n">691</td><td class="n">347</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">0.457</td><td class="n">33% (73%)</td></tr></tbody></table></div>
 <p class="note">Reading the model's probabilities over the option letters instead of decoding a JSON answer: same answers, no parsing, and a confidence that can be used to abstain. Details on the <a href="decision.html">Decision layer</a> page.</p>
 
 <details class="more"><summary>Protocol and run ids</summary>
