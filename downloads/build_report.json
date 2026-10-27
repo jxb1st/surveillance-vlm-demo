@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-10-27T22:18:49Z",
+  "built_at": "2026-10-27T22:45:39Z",
   "mode": "simple",
   "pages": [
     "index.html",
@@ -30,7 +30,9 @@
     "cnn_r18_w1",
     "cnn_mnv3_w4",
     "cnn_r18_w4",
-    "qwen_typed"
+    "qwen_typed",
+    "cnn_mnv3_w1_valu",
+    "cnn_mnv3_w4_valu"
   ],
   "catalog_samples": [
     "CUVA",
