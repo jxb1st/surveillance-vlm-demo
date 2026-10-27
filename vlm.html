@@ -44,7 +44,7 @@
 <h2>Typed readout instead of generated text</h2>
 <div class="tablewrap"><table>
 <thead><tr><th>Model</th><th class="n">ms / item, generated</th><th class="n">ms / item, typed readout</th><th class="n">ADC Matching (typed)</th><th class="n">ADC Exclusion (typed)</th><th class="n">ADC Rejection (typed)</th><th class="n">ECE</th><th class="n">acc. at conf. ≥ 0.7 (kept)</th></tr></thead><tbody>
-<tr><td>Qwen3.8-27B</td><td class="n">2315</td><td class="n">482</td><td class="n">77.5%</td><td class="n">70.0%</td><td class="n">97.5%</td><td class="n">0.124</td><td class="n">97% (56%)</td></tr><tr><td>Qwen3-VL-8B-Instruct</td><td class="n">691</td><td class="n">347</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">0.457</td><td class="n">33% (73%)</td></tr></tbody></table></div>
+<tr><td>Qwen3.8-27B</td><td class="n">2315</td><td class="n">482</td><td class="n">77.5%</td><td class="n">70.0%</td><td class="n">97.5%</td><td class="n">0.124</td><td class="n">97% (56%)</td></tr><tr><td>Qwen3-VL-8B-Instruct</td><td class="n">691</td><td class="n">158</td><td class="n">65.0%</td><td class="n">37.5%</td><td class="n">92.5%</td><td class="n">0.247</td><td class="n">68% (85%)</td></tr></tbody></table></div>
 <p class="note">Reading the model's probabilities over the option letters instead of decoding a JSON answer: same answers, no parsing, and a confidence that can be used to abstain. Details on the <a href="decision.html">Decision layer</a> page.</p>
 
 <details class="more"><summary>Protocol and run ids</summary>
