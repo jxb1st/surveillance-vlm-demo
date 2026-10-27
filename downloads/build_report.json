@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-10-27T11:10:14Z",
+  "built_at": "2026-10-27T18:15:44Z",
   "mode": "simple",
   "pages": [
     "index.html",
@@ -17,7 +17,8 @@
     "qwen38_27b": "completed",
     "qwen38_27b+letters": "completed",
     "qwen38_27b+laya_td": "completed",
-    "qwen38_27b+laya_root": "completed"
+    "qwen38_27b+laya_root": "completed",
+    "qwen38_27b+laya_ftv": "completed"
   },
   "edge_detectors": [
     "motion",
