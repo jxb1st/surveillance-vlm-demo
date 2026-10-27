@@ -53,11 +53,15 @@
   </div>
 </details>
 <h1>Video · ground truth · model output</h1>
+<p class="note" style="max-width:1100px;margin:0 0 10px">All measured items come from one benchmark, <b>VALU</b> (174 videos from UCF-Crime and ECVA). Three tasks:
+<b>ADC</b> = Anomaly Description Choice: pick the correct description among the options (Matching: one option is right; Exclusion: none is, the answer is "none of the above"; Rejection: the video is normal, the answer is "no abnormal occurrence").
+<b>TDG</b> = Temporal Description Grounding: given a description, give the start and end time of the event.
+<b>ALD</b> = Anomaly Localization and Description: find the anomaly and describe it (interval + free text; shown, not scored).</p>
 <div class="ctrl">
   <div class="seg" id="task-seg" role="group" aria-label="Task">
-    <button class="btn" type="button" data-task="ADC" aria-pressed="true">Choose a description <span class="n">120</span></button>
-    <button class="btn" type="button" data-task="TDG" aria-pressed="false">Find the time <span class="n">60</span></button>
-    <button class="btn" type="button" data-task="ALD" aria-pressed="false">Describe the anomaly <span class="n">12</span></button>
+    <button class="btn" type="button" data-task="ADC" aria-pressed="true">ADC · choose a description <span class="n">120</span></button>
+    <button class="btn" type="button" data-task="TDG" aria-pressed="false">TDG · find the time <span class="n">60</span></button>
+    <button class="btn" type="button" data-task="ALD" aria-pressed="false">ALD · describe the anomaly <span class="n">12</span></button>
   </div>
   <div class="pager">
     <button class="btn" type="button" id="prev" aria-label="Previous example">‹ Prev</button>

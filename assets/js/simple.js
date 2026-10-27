@@ -3,7 +3,7 @@
   "use strict";
   var D = window.DEMO, U = window.U, X = D.ex;
   var COLORS = ["#2a78d6", "#eb6834", "#1baf7a"];
-  var TASK_NAME = { ADC: "Choose a description", TDG: "Find the time", ALD: "Describe the anomaly" };
+  var TASK_NAME = { ADC: "Anomaly Description Choice", TDG: "Temporal Description Grounding", ALD: "Anomaly Localization and Description" };
   function color(mid) { var i = X.models.map(function (m) { return m.id; }).indexOf(mid); return COLORS[i] || "#888"; }
   function span(iv) { return iv ? U.fmt(iv[0], 1) + " – " + U.fmt(iv[1], 1) + " s" : "—"; }
   function good(s, o) { return o && o.state === "scored" && (s.task === "ADC" ? o.score >= 1 : s.task === "TDG" ? o.score >= 0.5 : true); }
