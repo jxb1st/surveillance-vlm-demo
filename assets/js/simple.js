@@ -115,40 +115,6 @@
       });
     }
 
-    /* Decision layer: typed heads on the same frames; probability bars over the options. */
-    function renderDecision(s) {
-      var DEC = D.dec, sec = U.$("dec-sec"), host = U.clear(U.$("dec"));
-      if (!sec) return;
-      if (s.task !== "ADC" || !DEC || !DEC.heads || !DEC.heads.length) { sec.hidden = true; return; }
-      sec.hidden = false;
-      var per = DEC.per_sample[s.id] || {}, desc = DEC.descriptions[s.id];
-      DEC.heads.forEach(function (h) {
-        var o = per[h.id], card = U.el("div", { class: "mcard dec", style: "--c:" + h.color });
-        var top = U.el("div", { class: "top" }, [U.el("span", { class: "name", text: h.name }), U.el("span", { class: "note", text: h.long })]);
-        card.appendChild(top);
-        if (!o) { card.appendChild(U.el("p", { class: "why", text: "No output: run status is " + h.status + "." })); host.appendChild(card); return; }
-        if (o.state !== "scored") top.appendChild(U.tag("no decision: " + o.failure, "bad")); else top.appendChild(mark(o.score >= 1));
-        if (o.probs) {
-          var ul = U.el("ul", { class: "pbars" });
-          s.options.forEach(function (opt) {
-            var p = o.probs[opt.id]; if (p == null) return;
-            var li = U.el("li", { class: (opt.id === s.answer ? "right " : "") + (opt.id === o.answer ? "chosen" : "") });
-            li.appendChild(U.el("b", { text: opt.id }));
-            li.appendChild(U.el("span", { class: "pb" }, [U.el("i", { style: "width:" + Math.round(100 * p) + "%;background:" + h.color })]));
-            li.appendChild(U.el("span", { class: "pv", text: (100 * p).toFixed(0) + "%" }));
-            ul.appendChild(li);
-          });
-          card.appendChild(ul);
-          card.appendChild(U.el("p", { class: "why", text: "Chose " + o.answer + " with confidence " + (100 * o.confidence).toFixed(0) + "%" + (o.ms != null ? " · " + U.fmt(o.ms, 0) + " ms" : "") + (o.top_is_option === false ? " · unrestricted next token was not a letter" : "") + (o.truncation ? " · text cut to the token budget" : "") }));
-        }
-        if (h.id.indexOf("laya") >= 0 && desc) {
-          card.appendChild(U.el("details", { class: "more", style: "margin:6px 0 0" }, [U.el("summary", { text: "The description the decision model read" + (desc.ms != null ? " · generated in " + U.fmt(desc.ms, 0) + " ms" : "") }), U.el("p", { class: "why", text: desc.text })]));
-        }
-        host.appendChild(card);
-      });
-      host.appendChild(U.el("p", { class: "note dec-foot", text: "Bars = probability per option; green = correct option; underlined = chosen." }));
-    }
-
     function renderThumbs() {
       var host = U.clear(U.$("thumbs"));
       list().forEach(function (id) {
@@ -166,7 +132,7 @@
       Array.prototype.forEach.call(document.querySelectorAll("#task-seg [data-task]"), function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-task") === st.task ? "true" : "false"); });
       var l = list();
       U.$("pos").textContent = (l.indexOf(id) + 1) + " of " + l.length;
-      renderVideo(s, X.videos[s.video]); renderGT(s); renderOut(s); renderDecision(s); renderThumbs();
+      renderVideo(s, X.videos[s.video]); renderGT(s); renderOut(s); renderThumbs();
       var raw = U.clear(U.$("raw"));
       raw.appendChild(U.el("div", {}, [U.el("h3", { text: "Prompt sent to every model" }), U.el("pre", { text: s.prompt })]));
       raw.appendChild(U.el("div", {}, [U.el("h3", { text: "Raw publisher annotation" }), U.json(s.raw)]));

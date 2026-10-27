@@ -85,12 +85,6 @@
   </section>
 </div>
 
-<section class="panel decsec" id="dec-sec" aria-labelledby="h-dec" hidden>
-  <h2 id="h-dec"><span class="step">4</span> Decision readout <span class="tag pred">same Qwen3.8-27B, four ways to produce the decision</span></h2>
-  <p class="note" style="margin:0 0 10px">The perception model is always Qwen3.8-27B on the same 32 frames. What differs is who turns its view into the answer: Qwen itself, read as probabilities over the option letters (D1), or a separate 421M text decision model that reads Qwen's written description of the video (D2 zero-shot, D3 fine-tuned on VALU).</p>
-  <div id="dec" class="dec-grid"></div>
-</section>
-
 <details class="more"><summary>Exact prompt and raw annotation</summary><div id="raw" class="grid g2"></div></details>
 
 <h2>All examples of this task</h2>
@@ -98,7 +92,6 @@
 </main>
 <footer>Build 2026-10-27 · VALU demo subset v1 — adapted protocol · real videos, publisher annotations and real model outputs · static page, no model runs in the browser</footer>
 <script src="assets/data/examples.js"></script>
-<script src="assets/data/decision.js"></script>
 <script src="assets/data/edge.js"></script>
 <script src="assets/js/common.js"></script>
 <script src="assets/js/simple.js"></script>
