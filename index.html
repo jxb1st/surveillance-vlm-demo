@@ -18,39 +18,34 @@
 <details class="pipeline" open>
   <summary>Pipeline design</summary>
 <div class="diagram">
-<svg viewBox="0 0 1180 330" role="img" aria-label="Pipeline: camera frames are scored by an edge detector; when the score crosses the threshold a context window is uploaded; the server Video VLM observes it and its answer is read out as probabilities over the options; confident answers are released, the rest go to an operator" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif">
+<svg viewBox="0 0 1180 330" role="img" aria-label="Framework: camera video feeds a lightweight edge detector and a rolling buffer; uncertain events trigger context window selection, server Video VLM analysis and operator review" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif">
   <defs><marker id="fa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b4450"/></marker></defs>
   <rect x="6" y="6" width="560" height="318" rx="10" fill="#fbfbfc" stroke="#d9dde3" stroke-dasharray="5 4"/>
-  <text x="18" y="26" font-size="12.5" fill="#5b6470" font-weight="600">EDGE (real per-frame detectors, see Decision layer)</text>
+  <text x="18" y="26" font-size="12.5" fill="#5b6470" font-weight="600">EDGE (real per-frame trigger, scored on the Decision layer page)</text>
   <rect x="750" y="6" width="424" height="318" rx="10" fill="#f7fbff" stroke="#b3cfee" stroke-dasharray="5 4"/>
-  <text x="762" y="26" font-size="12.5" fill="#0a447d" font-weight="600">SERVER (real inference)</text>
+  <text x="762" y="26" font-size="12.5" fill="#0a447d" font-weight="600">SERVER (real model inference + typed decision layer)</text>
   <g font-size="13" fill="#1a1e24" text-anchor="middle">
-    <g data-node="camera"><rect x="22" y="130" width="120" height="60" rx="8" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="82" y="156">Camera</text><text x="82" y="174">frames, 1 fps</text></g>
-    <g data-node="edge"><rect x="188" y="50" width="176" height="72" rx="8" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="276" y="74">Edge detector</text><text x="276" y="92" font-size="12">anomaly score per frame</text><text x="276" y="109" font-size="11" fill="#5b6470">frame diff · CNN · Laya-Vision</text></g>
+    <g data-node="camera"><rect x="22" y="130" width="120" height="60" rx="8" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="82" y="165">Camera video</text></g>
+    <g data-node="edge"><rect x="196" y="56" width="160" height="60" rx="8" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="276" y="82">Lightweight</text><text x="276" y="100">edge detector</text></g>
     <g data-node="buffer"><rect x="196" y="214" width="160" height="60" rx="8" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="276" y="240">Rolling video</text><text x="276" y="258">buffer</text></g>
-    <g data-node="gate"><path d="M476 36 L556 86 L476 136 L396 86 Z" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="476" y="82" font-size="12">Score ≥</text><text x="476" y="98" font-size="12">threshold?</text></g>
+    <g data-node="gate"><path d="M476 36 L556 86 L476 136 L396 86 Z" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="476" y="82" font-size="12">Uncertain or</text><text x="476" y="98" font-size="12">semantic event?</text></g>
     <g data-node="monitor"><rect x="410" y="170" width="132" height="44" rx="8" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="476" y="197" font-size="12.5">Continue monitoring</text></g>
-    <g data-node="window"><rect x="596" y="214" width="140" height="60" rx="8" fill="#fff3e6" stroke="#c77700" stroke-width="1.5"/><text x="666" y="240">Upload window</text><text x="666" y="258" font-size="12">−10 s … +20 s</text></g>
-    <g data-node="server"><rect x="778" y="214" width="150" height="60" rx="8" fill="#dbe9f8" stroke="#0b5aa6" stroke-width="1.5"/><text x="853" y="240">Video VLM</text><text x="853" y="258" font-size="12">observes 32 frames</text></g>
-    <g data-node="output"><rect x="966" y="200" width="196" height="88" rx="8" fill="#dbe9f8" stroke="#0b5aa6" stroke-width="1.5"/><text x="1064" y="226">Typed readout (D1)</text><text x="1064" y="244" font-size="12">probabilities over the options,</text><text x="1064" y="262" font-size="12">no text generation</text></g>
-    <g data-node="confidence"><path d="M1064 72 L1124 110 L1064 148 L1004 110 Z" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="1064" y="114" font-size="12">Confident?</text></g>
-    <g data-node="auto"><rect x="792" y="86" width="150" height="48" rx="8" fill="#fff" stroke="#0b5aa6" stroke-width="1.5"/><text x="867" y="106" font-size="12.5">Decision released</text><text x="867" y="123" font-size="11" fill="#5b6470">answer + evidence</text></g>
-    <g data-node="operator"><rect x="994" y="30" width="140" height="34" rx="8" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="1064" y="52" font-size="12.5">Operator review</text></g>
+    <g data-node="window"><rect x="596" y="214" width="140" height="60" rx="8" fill="#fff3e6" stroke="#c77700" stroke-width="1.5"/><text x="666" y="240">Select context</text><text x="666" y="258">window</text></g>
+    <g data-node="server"><rect x="778" y="214" width="150" height="60" rx="8" fill="#dbe9f8" stroke="#0b5aa6" stroke-width="1.5"/><text x="853" y="240">Server</text><text x="853" y="258">Video VLM</text></g>
+    <g data-node="output"><rect x="966" y="200" width="196" height="88" rx="8" fill="#fff" stroke="#0b5aa6" stroke-width="1.5"/><text x="1064" y="226">Decision,</text><text x="1064" y="244">evidence interval,</text><text x="1064" y="262">concise explanation</text></g>
+    <g data-node="operator"><rect x="994" y="70" width="140" height="56" rx="8" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="1064" y="103">Operator review</text></g>
   </g>
   <g stroke="#3b4450" stroke-width="1.5" fill="none" marker-end="url(#fa)">
-    <path d="M142 148 L186 100"/><path d="M142 172 L194 236"/>
-    <path d="M364 86 L394 86"/>
+    <path d="M142 148 L194 96"/><path d="M142 172 L194 236"/>
+    <path d="M356 86 L394 86"/>
     <path d="M476 136 L476 168"/>
     <path d="M556 86 L666 86 L666 212"/>
     <path d="M356 244 L594 244"/>
     <path d="M736 244 L776 244"/>
     <path d="M928 244 L964 244"/>
-    <path d="M1064 200 L1064 150"/>
-    <path d="M1004 110 L944 110"/>
-    <path d="M1064 72 L1064 66"/>
+    <path d="M1064 200 L1064 128"/>
   </g>
-  <g font-size="12" fill="#3b4450"><text x="484" y="156">No</text><text x="600" y="78">Yes</text><text x="966" y="104">Yes</text><text x="1070" y="70">No</text></g>
-  <text x="762" y="312" font-size="11" fill="#5b6470">Also tested, set aside: VLM description → text decision model (D2, D3).</text>
+  <g font-size="12" fill="#3b4450"><text x="484" y="156">No</text><text x="600" y="78">Yes</text></g>
 </svg>
 </div>
   <div class="chipset" style="margin-top:8px">
