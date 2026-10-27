@@ -113,15 +113,15 @@
         card.appendChild(U.el("details", { class: "more", style: "margin:8px 0 0" }, [U.el("summary", { text: "Raw response · " + U.fmt(o.ms, 0) + " ms" }), U.el("pre", { text: o.text == null ? "(no text)" : o.text })]));
         host.appendChild(card);
       });
-      if (s.task === "ADC") renderDecision(s, host);
     }
 
     /* Decision layer: typed heads on the same frames; probability bars over the options. */
-    function renderDecision(s, host) {
-      var DEC = D.dec;
-      if (!DEC || !DEC.heads || !DEC.heads.length) return;
+    function renderDecision(s) {
+      var DEC = D.dec, sec = U.$("dec-sec"), host = U.clear(U.$("dec"));
+      if (!sec) return;
+      if (s.task !== "ADC" || !DEC || !DEC.heads || !DEC.heads.length) { sec.hidden = true; return; }
+      sec.hidden = false;
       var per = DEC.per_sample[s.id] || {}, desc = DEC.descriptions[s.id];
-      host.appendChild(U.el("h3", { class: "dec-h", text: "Decision layer · probabilities instead of generated text" }));
       DEC.heads.forEach(function (h) {
         var o = per[h.id], card = U.el("div", { class: "mcard dec", style: "--c:" + h.color });
         var top = U.el("div", { class: "top" }, [U.el("span", { class: "name", text: h.name }), U.el("span", { class: "note", text: h.long })]);
@@ -146,7 +146,7 @@
         }
         host.appendChild(card);
       });
-      host.appendChild(U.el("p", { class: "note", text: "Bars = probability per option; green = correct option; underlined = chosen." }));
+      host.appendChild(U.el("p", { class: "note dec-foot", text: "Bars = probability per option; green = correct option; underlined = chosen." }));
     }
 
     function renderThumbs() {
@@ -166,7 +166,7 @@
       Array.prototype.forEach.call(document.querySelectorAll("#task-seg [data-task]"), function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-task") === st.task ? "true" : "false"); });
       var l = list();
       U.$("pos").textContent = (l.indexOf(id) + 1) + " of " + l.length;
-      renderVideo(s, X.videos[s.video]); renderGT(s); renderOut(s); renderThumbs();
+      renderVideo(s, X.videos[s.video]); renderGT(s); renderOut(s); renderDecision(s); renderThumbs();
       var raw = U.clear(U.$("raw"));
       raw.appendChild(U.el("div", {}, [U.el("h3", { text: "Prompt sent to every model" }), U.el("pre", { text: s.prompt })]));
       raw.appendChild(U.el("div", {}, [U.el("h3", { text: "Raw publisher annotation" }), U.json(s.raw)]));
