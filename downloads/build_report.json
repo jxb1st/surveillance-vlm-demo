@@ -1,9 +1,10 @@
 {
-  "built_at": "2026-09-29T23:59:11Z",
+  "built_at": "2026-10-27T11:08:36Z",
   "mode": "simple",
   "pages": [
     "index.html",
-    "benchmarks.html"
+    "benchmarks.html",
+    "decision.html"
   ],
   "samples": 192,
   "videos": 174,
@@ -12,6 +13,23 @@
     "qwen3vl_8b": "completed",
     "videollama3_7b": "completed"
   },
+  "decision_heads": {
+    "qwen38_27b": "completed",
+    "qwen38_27b+letters": "completed",
+    "qwen38_27b+laya_td": "completed",
+    "qwen38_27b+laya_root": "completed"
+  },
+  "edge_detectors": [
+    "motion",
+    "motion_ema",
+    "laya_zs",
+    "laya_ft",
+    "cnn_mnv3_w1",
+    "cnn_r18_w1",
+    "cnn_mnv3_w4",
+    "cnn_r18_w4",
+    "qwen_typed"
+  ],
   "catalog_samples": [
     "CUVA",
     "FINEVAU",

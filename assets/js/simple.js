@@ -31,6 +31,35 @@
         var tl = U.el("div", { class: "tl" }), api = U.timeline(tl, v.duration, tracks, pl.seek);
         pl.onTime(api.setTime); host.appendChild(tl);
       }
+      renderEdge(s, v, host, pl);
+    }
+
+    /* Edge trigger strips: per-second anomaly score of each complete detector, threshold at 1 % FPR, alarm seconds shaded. */
+    function svg(tag, attrs) { var e = document.createElementNS("http://www.w3.org/2000/svg", tag), k; for (k in attrs) if (Object.prototype.hasOwnProperty.call(attrs, k)) e.setAttribute(k, attrs[k]); return e; }
+    function renderEdge(s, v, host, pl) {
+      var E = D.edge;
+      if (!E || !E.detectors || !E.detectors.length) return;
+      var tr = E.traces[s.video] || {}, W = 600, H = 34, cursors = [];
+      var box = U.el("div", { class: "edge" });
+      box.appendChild(U.el("p", { class: "q", style: "margin:10px 0 4px", text: "Edge trigger · per-second anomaly score from the frames alone (real detectors; dashed line = threshold at 1 % false-positive rate)" }));
+      E.detectors.forEach(function (d) {
+        var ys = tr[d.id]; if (!ys || !ys.length) return;
+        var n = ys.length, dur = Math.max(v.duration, n), g = svg("svg", { viewBox: "0 0 " + W + " " + H, class: "strip", role: "img", "aria-label": d.name + " anomaly score over time" });
+        var X = function (i) { return W * (i + 0.5) / dur; }, Y = function (p) { return H - 2 - (H - 4) * p; };
+        if (d.thr != null) {
+          ys.forEach(function (p, i) { if (p >= d.thr) g.appendChild(svg("rect", { x: W * i / dur, y: 0, width: W / dur, height: H, fill: d.color, opacity: 0.18 })); });
+          g.appendChild(svg("line", { x1: 0, x2: W, y1: Y(d.thr), y2: Y(d.thr), stroke: "#52514e", "stroke-dasharray": "3 3" }));
+        }
+        if (s.interval) g.appendChild(svg("rect", { x: W * s.interval[0] / dur, y: 0, width: W * (s.interval[1] - s.interval[0]) / dur, height: 3, fill: "#1baf7a" }));
+        g.appendChild(svg("path", { d: ys.map(function (p, i) { return (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(p).toFixed(1); }).join(" "), fill: "none", stroke: d.color, "stroke-width": 1.6 }));
+        var cur = svg("line", { x1: 0, x2: 0, y1: 0, y2: H, stroke: "#1a1e24", "stroke-width": 1 }); g.appendChild(cur); cursors.push({ el: cur, dur: dur });
+        g.addEventListener("click", function (e) { var r = g.getBoundingClientRect(); pl.seek(dur * (e.clientX - r.left) / r.width); });
+        var row = U.el("div", { class: "striprow" }, [U.el("span", { class: "lbl", text: d.name + (d.thr != null ? " · thr " + d.thr.toFixed(2) : "") + " · " + U.fmt(d.ms, 0) + " ms/frame" }), g]);
+        box.appendChild(row);
+      });
+      if (!box.querySelector("svg")) return;
+      pl.onTime(function (t) { cursors.forEach(function (c) { var x = (W * t / c.dur).toFixed(1); c.el.setAttribute("x1", x); c.el.setAttribute("x2", x); }); });
+      host.appendChild(box);
     }
 
     function renderGT(s) {
@@ -84,6 +113,40 @@
         card.appendChild(U.el("details", { class: "more", style: "margin:8px 0 0" }, [U.el("summary", { text: "Raw response · " + U.fmt(o.ms, 0) + " ms" }), U.el("pre", { text: o.text == null ? "(no text)" : o.text })]));
         host.appendChild(card);
       });
+      if (s.task === "ADC") renderDecision(s, host);
+    }
+
+    /* Decision layer: typed heads on the same frames; probability bars over the options. */
+    function renderDecision(s, host) {
+      var DEC = D.dec;
+      if (!DEC || !DEC.heads || !DEC.heads.length) return;
+      var per = DEC.per_sample[s.id] || {}, desc = DEC.descriptions[s.id];
+      host.appendChild(U.el("h3", { class: "dec-h", text: "Decision layer · typed heads on the same frames" }));
+      DEC.heads.forEach(function (h) {
+        var o = per[h.id], card = U.el("div", { class: "mcard dec", style: "--c:" + h.color });
+        var top = U.el("div", { class: "top" }, [U.el("span", { class: "name", text: h.name }), U.el("span", { class: "note", text: h.long })]);
+        card.appendChild(top);
+        if (!o) { card.appendChild(U.el("p", { class: "why", text: "No output: run status is " + h.status + "." })); host.appendChild(card); return; }
+        if (o.state !== "scored") top.appendChild(U.tag("no decision: " + o.failure, "bad")); else top.appendChild(mark(o.score >= 1));
+        if (o.probs) {
+          var ul = U.el("ul", { class: "pbars" });
+          s.options.forEach(function (opt) {
+            var p = o.probs[opt.id]; if (p == null) return;
+            var li = U.el("li", { class: (opt.id === s.answer ? "right " : "") + (opt.id === o.answer ? "chosen" : "") });
+            li.appendChild(U.el("b", { text: opt.id }));
+            li.appendChild(U.el("span", { class: "pb" }, [U.el("i", { style: "width:" + Math.round(100 * p) + "%;background:" + h.color })]));
+            li.appendChild(U.el("span", { class: "pv", text: (100 * p).toFixed(0) + "%" }));
+            ul.appendChild(li);
+          });
+          card.appendChild(ul);
+          card.appendChild(U.el("p", { class: "why", text: "Chose " + o.answer + " with confidence " + (100 * o.confidence).toFixed(0) + "%" + (o.ms != null ? " · " + U.fmt(o.ms, 0) + " ms" : "") + (o.top_is_option === false ? " · unrestricted next token was not a letter" : "") + (o.truncation ? " · text cut to the token budget" : "") }));
+        }
+        if (h.id.indexOf("laya") >= 0 && desc) {
+          card.appendChild(U.el("details", { class: "more", style: "margin:6px 0 0" }, [U.el("summary", { text: "The description the decision model read" + (desc.ms != null ? " · generated in " + U.fmt(desc.ms, 0) + " ms" : "") }), U.el("p", { class: "why", text: desc.text })]));
+        }
+        host.appendChild(card);
+      });
+      host.appendChild(U.el("p", { class: "note", text: "Bars: probability per option. Green outline = correct option; bold = the option chosen by this head. Details on the Decision layer page." }));
     }
 
     function renderThumbs() {

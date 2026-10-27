@@ -12,18 +12,18 @@
 <header class="topbar"><div class="topbar-in">
   <div class="brand">Surveillance Video Understanding Demo</div>
   <nav class="nav" aria-label="Pages">
-<a href="index.html" aria-current="page">Examples</a><a href="benchmarks.html">Benchmarks</a>  </nav>
+<a href="index.html" aria-current="page">Examples</a><a href="benchmarks.html">Benchmarks</a><a href="decision.html">Decision layer</a>  </nav>
 </div></header>
 <main id="main">
 <details class="pipeline" open>
   <summary>Pipeline design</summary>
-  <div class="diagram">
+<div class="diagram">
 <svg viewBox="0 0 1180 330" role="img" aria-label="Framework: camera video feeds a lightweight edge detector and a rolling buffer; uncertain events trigger context window selection, server Video VLM analysis and operator review" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif">
   <defs><marker id="fa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b4450"/></marker></defs>
   <rect x="6" y="6" width="560" height="318" rx="10" fill="#fbfbfc" stroke="#d9dde3" stroke-dasharray="5 4"/>
-  <text x="18" y="26" font-size="12.5" fill="#5b6470" font-weight="600">EDGE (design only, not run in this demo)</text>
+  <text x="18" y="26" font-size="12.5" fill="#5b6470" font-weight="600">EDGE (real per-frame trigger, scored on the Decision layer page)</text>
   <rect x="750" y="6" width="424" height="318" rx="10" fill="#f7fbff" stroke="#b3cfee" stroke-dasharray="5 4"/>
-  <text x="762" y="26" font-size="12.5" fill="#0a447d" font-weight="600">SERVER (real model inference)</text>
+  <text x="762" y="26" font-size="12.5" fill="#0a447d" font-weight="600">SERVER (real model inference + typed decision layer)</text>
   <g font-size="13" fill="#1a1e24" text-anchor="middle">
     <g data-node="camera"><rect x="22" y="130" width="120" height="60" rx="8" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="82" y="165">Camera video</text></g>
     <g data-node="edge"><rect x="196" y="56" width="160" height="60" rx="8" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="276" y="82">Lightweight</text><text x="276" y="100">edge detector</text></g>
@@ -48,11 +48,9 @@
   <g font-size="12" fill="#3b4450"><text x="484" y="156">No</text><text x="600" y="78">Yes</text></g>
 </svg>
 </div>
-
   <div class="chipset" style="margin-top:8px">
-    <span class="tag manual">Edge side: design only, not run in this demo</span>
-    <span class="tag pred">Server Video VLM: real inference, shown below</span>
-  </div>
+<span class="tag pred">Edge side: real per-frame detectors, evaluated on the <a href="decision.html">Decision layer</a> page</span>    <span class="tag pred">Server Video VLM: real inference, shown below</span>
+<span class="tag pred">Decision layer: 3 typed head(s) on the ADC items, shown below the model outputs</span>  </div>
 </details>
 <h1>Video · ground truth · model output</h1>
 <div class="ctrl">
@@ -88,8 +86,10 @@
 <h2>All examples of this task</h2>
 <div id="thumbs" class="thumbs"></div>
 </main>
-<footer>Build 2026-09-29 · VALU demo subset v1 — adapted protocol · real videos, publisher annotations and real model outputs · static page, no model runs in the browser</footer>
+<footer>Build 2026-10-27 · VALU demo subset v1 — adapted protocol · real videos, publisher annotations and real model outputs · static page, no model runs in the browser</footer>
 <script src="assets/data/examples.js"></script>
+<script src="assets/data/decision.js"></script>
+<script src="assets/data/edge.js"></script>
 <script src="assets/js/common.js"></script>
 <script src="assets/js/simple.js"></script>
 </body>
