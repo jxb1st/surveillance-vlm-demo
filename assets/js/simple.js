@@ -41,7 +41,7 @@
       if (!E || !E.detectors || !E.detectors.length) return;
       var tr = E.traces[s.video] || {}, W = 600, H = 34, cursors = [];
       var box = U.el("div", { class: "edge" });
-      box.appendChild(U.el("p", { class: "q", style: "margin:10px 0 4px", text: "Edge trigger · per-second anomaly score from the frames alone (real detectors; dashed line = threshold at 1 % false-positive rate)" }));
+      box.appendChild(U.el("p", { class: "q", style: "margin:10px 0 4px", text: "Edge trigger · anomaly score per second (dashed = 1 % FPR threshold, shaded = alarm)" }));
       E.detectors.forEach(function (d) {
         var ys = tr[d.id]; if (!ys || !ys.length) return;
         var n = ys.length, dur = Math.max(v.duration, n), g = svg("svg", { viewBox: "0 0 " + W + " " + H, class: "strip", role: "img", "aria-label": d.name + " anomaly score over time" });
@@ -121,7 +121,7 @@
       var DEC = D.dec;
       if (!DEC || !DEC.heads || !DEC.heads.length) return;
       var per = DEC.per_sample[s.id] || {}, desc = DEC.descriptions[s.id];
-      host.appendChild(U.el("h3", { class: "dec-h", text: "Decision layer · typed heads on the same frames" }));
+      host.appendChild(U.el("h3", { class: "dec-h", text: "Decision layer · probabilities instead of generated text" }));
       DEC.heads.forEach(function (h) {
         var o = per[h.id], card = U.el("div", { class: "mcard dec", style: "--c:" + h.color });
         var top = U.el("div", { class: "top" }, [U.el("span", { class: "name", text: h.name }), U.el("span", { class: "note", text: h.long })]);
@@ -146,7 +146,7 @@
         }
         host.appendChild(card);
       });
-      host.appendChild(U.el("p", { class: "note", text: "Bars: probability per option. Green outline = correct option; bold = the option chosen by this head. Details on the Decision layer page." }));
+      host.appendChild(U.el("p", { class: "note", text: "Bars = probability per option; green = correct option; underlined = chosen." }));
     }
 
     function renderThumbs() {
