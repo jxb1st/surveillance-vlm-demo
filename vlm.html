@@ -12,7 +12,7 @@
 <header class="topbar"><div class="topbar-in">
   <div class="brand">Surveillance Video Understanding Demo</div>
   <nav class="nav" aria-label="Pages">
-<a href="index.html">Examples</a><a href="benchmarks.html">Benchmarks</a><a href="vlm.html" aria-current="page">Video VLM</a><a href="edge.html">Edge detector</a><a href="decision.html">Decision layer</a>  </nav>
+<a href="index.html">Examples</a><a href="benchmarks.html">Benchmarks</a><a href="vlm.html" aria-current="page">Video VLM</a><a href="edge.html">Edge detector</a>  </nav>
 </div></header>
 <main id="main">
 <h1>Video VLM</h1>
@@ -45,12 +45,20 @@
 <div class="tablewrap"><table>
 <thead><tr><th>Model</th><th class="n">ms / item, generated</th><th class="n">ms / item, typed readout</th><th class="n">ADC Matching (typed)</th><th class="n">ADC Exclusion (typed)</th><th class="n">ADC Rejection (typed)</th><th class="n">ECE</th><th class="n">acc. at conf. ≥ 0.7 (kept)</th></tr></thead><tbody>
 <tr><td>Qwen3.8-27B</td><td class="n">2315</td><td class="n">482</td><td class="n">77.5%</td><td class="n">70.0%</td><td class="n">97.5%</td><td class="n">0.124</td><td class="n">97% (56%)</td></tr><tr><td>Qwen3-VL-8B-Instruct</td><td class="n">691</td><td class="n">158</td><td class="n">65.0%</td><td class="n">37.5%</td><td class="n">92.5%</td><td class="n">0.247</td><td class="n">68% (85%)</td></tr></tbody></table></div>
-<p class="note">Reading the model's probabilities over the option letters instead of decoding a JSON answer: same answers, no parsing, and a confidence that can be used to abstain. Details on the <a href="decision.html">Decision layer</a> page.</p>
+<p class="note">Reading the model's probabilities over the option letters instead of decoding a JSON answer: same answers, no parsing, and a confidence that can be used to abstain.</p>
+
+<h2>Tested and not adopted: a separate decision model</h2>
+<p class="note">The proposal's two-stage recipe: Qwen writes a description of the window, a 421M text decision model (Laya, Jev-compatible) reads it and picks the option. Zero-shot (D2) and after fine-tuning on 2,368 VALU items from other videos (D3), with the description replaced as a control.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Head</th><th>State given to the decision model</th><th class="n">ADC Matching</th><th class="n">ADC Exclusion</th><th class="n">ADC Rejection</th><th class="n">abnormal-vs-normal AUC</th><th class="n">ms / item</th></tr></thead><tbody>
+<tr><td>D1 · Qwen3.8-27B typed readout (reference)</td><td>32 frames</td><td class="n">77.5%</td><td class="n">70.0%</td><td class="n">97.5%</td><td class="n">0.997</td><td class="n">482</td></tr><tr><td>D2 Laya typed-decisions</td><td>the video&#39;s own description</td><td class="n">17.5%</td><td class="n">40.0%</td><td class="n">97.5%</td><td class="n">0.855</td><td class="n">40 (+ 5,662 for the description)</td></tr><tr><td></td><td>blank state (options only)</td><td class="n">15.0%</td><td class="n">92.5%</td><td class="n">0.0%</td><td class="n">0.203</td><td class="n"></td></tr><tr><td></td><td>another item&#39;s description</td><td class="n">2.5%</td><td class="n">35.0%</td><td class="n">55.0%</td><td class="n">0.538</td><td class="n"></td></tr><tr><td>D3 Laya fine-tuned (VALU)</td><td>the video&#39;s own description</td><td class="n">95.0%</td><td class="n">100.0%</td><td class="n">100.0%</td><td class="n">1.000</td><td class="n">40 (+ 5,662 for the description)</td></tr><tr><td></td><td>blank state (options only)</td><td class="n">92.5%</td><td class="n">100.0%</td><td class="n">100.0%</td><td class="n">1.000</td><td class="n"></td></tr><tr><td></td><td>another item&#39;s description</td><td class="n">92.5%</td><td class="n">100.0%</td><td class="n">80.0%</td><td class="n">0.961</td><td class="n"></td></tr><tr><td>bag-of-words logistic regression</td><td>option texts only</td><td class="n">97.5%</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr></tbody></table></div>
+<p class="note">Zero-shot, the text model loses the answer (Matching at chance). Fine-tuned, it scores 95 / 100 / 100 % — and 92.5 / 100 / 100 % with no description at all, while a 16k-parameter bag-of-words model over the option texts scores 97.5 %: the benchmark's options give the answer away, so D3 is not evidence of video understanding. Neither head is used.</p>
 
 <details class="more"><summary>Protocol and run ids</summary>
 <ul class="note" style="font-size:13px">
   <li>VALU demo subset v1, adapted protocol: 32 frames uniform over the whole video (long edge ≤ 672 px), BF16, greedy decoding, batch size 1, one model per process; frames cached before inference. Not comparable with the VALU paper's numbers.</li>
   <li>Runs: Qwen3.8-27B = <code>evaluation-qwen38_27b-9e291ee519</code> (Qwen/Qwen3.8-27B); Qwen3-VL-8B-Instruct = <code>evaluation-qwen3vl_8b-f66a0edc80</code> (Qwen/Qwen3-VL-8B-Instruct); VideoLLaMA3-7B = <code>evaluation-videollama3_7b-fdf9f0551c</code> (DAMO-NLP-SG/VideoLLaMA3-7B); </li>
+  <li>Decision heads (protocol <code>valu_demo_v1_decision</code>, same frozen items and frames): D0 generative = <code>evaluation-qwen38_27b-9e291ee519</code>; D1 letter logits = <code>evaluation-qwen38_27b+letters-04b42426c0</code>; D2 Laya typed-decisions = <code>evaluation-qwen38_27b+laya_td-f6b42401e8</code>; D2′ Laya root = <code>evaluation-qwen38_27b+laya_root-c348c93694</code>; D3 Laya fine-tuned (VALU) = <code>evaluation-qwen38_27b+laya_ftv-db238237c1</code>;  D3 trained on manifest <code>valu-demo-v1-decision-train</code> (videos disjoint from the evaluation and smoke sets); Laya budgets max_len 1024 / head_max_len 400.</li>
 </ul>
 </details>
 </main>

@@ -1,12 +1,11 @@
 {
-  "built_at": "2026-10-27T22:53:38Z",
+  "built_at": "2026-10-27T22:57:50Z",
   "mode": "simple",
   "pages": [
     "index.html",
     "benchmarks.html",
     "vlm.html",
-    "edge.html",
-    "decision.html"
+    "edge.html"
   ],
   "samples": 192,
   "videos": 174,
