@@ -18,7 +18,7 @@
 <details class="pipeline" open>
   <summary>Pipeline design</summary>
 <div class="diagram">
-<svg viewBox="0 0 1180 330" role="img" aria-label="Framework: camera video feeds a lightweight edge detector and a rolling buffer; uncertain events trigger context window selection, server Video VLM analysis and operator review" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif">
+<svg viewBox="0 0 1180 330" role="img" aria-label="Framework: camera video feeds a lightweight edge detector and a rolling buffer; uncertain events trigger context window selection and server Video VLM analysis" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif">
   <defs><marker id="fa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b4450"/></marker></defs>
   <rect x="6" y="6" width="560" height="318" rx="10" fill="#fbfbfc" stroke="#d9dde3" stroke-dasharray="5 4"/>
   <text x="18" y="26" font-size="12.5" fill="#5b6470" font-weight="600">EDGE (real per-frame trigger, scored on the Decision layer page)</text>
@@ -33,7 +33,6 @@
     <g data-node="window"><rect x="596" y="214" width="140" height="60" rx="8" fill="#fff3e6" stroke="#c77700" stroke-width="1.5"/><text x="666" y="240">Select context</text><text x="666" y="258">window</text></g>
     <g data-node="server"><rect x="778" y="214" width="150" height="60" rx="8" fill="#dbe9f8" stroke="#0b5aa6" stroke-width="1.5"/><text x="853" y="240">Server</text><text x="853" y="258">Video VLM</text></g>
     <g data-node="output"><rect x="966" y="200" width="196" height="88" rx="8" fill="#fff" stroke="#0b5aa6" stroke-width="1.5"/><text x="1064" y="226">Decision,</text><text x="1064" y="244">evidence interval,</text><text x="1064" y="262">concise explanation</text></g>
-    <g data-node="operator"><rect x="994" y="70" width="140" height="56" rx="8" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="1064" y="103">Operator review</text></g>
   </g>
   <g stroke="#3b4450" stroke-width="1.5" fill="none" marker-end="url(#fa)">
     <path d="M142 148 L194 96"/><path d="M142 172 L194 236"/>
@@ -43,7 +42,6 @@
     <path d="M356 244 L594 244"/>
     <path d="M736 244 L776 244"/>
     <path d="M928 244 L964 244"/>
-    <path d="M1064 200 L1064 128"/>
   </g>
   <g font-size="12" fill="#3b4450"><text x="484" y="156">No</text><text x="600" y="78">Yes</text></g>
 </svg>
