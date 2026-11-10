@@ -25,7 +25,7 @@
   <rect x="6" y="6" width="560" height="318" rx="10" fill="#fbfbfc" stroke="#d9dde3" stroke-dasharray="5 4"/>
   <text x="18" y="26" font-size="12.5" fill="#5b6470" font-weight="600">EDGE · A: what should trigger the upload?</text>
   <rect x="750" y="6" width="424" height="318" rx="10" fill="#f7fbff" stroke="#b3cfee" stroke-dasharray="5 4"/>
-  <text x="762" y="26" font-size="12.5" fill="#0a447d" font-weight="600">SERVER · B: how should the VLM decide?  C: is a decision model after it useful?</text>
+  <text x="762" y="26" font-size="12.5" fill="#0a447d" font-weight="600">SERVER · B: how should the VLM decide?</text>
   <g font-size="13" fill="#1a1e24" text-anchor="middle">
     <g data-node="camera"><rect x="22" y="130" width="120" height="60" rx="8" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="82" y="165">Camera video</text></g>
     <g data-node="edge"><rect x="196" y="56" width="160" height="60" rx="8" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="276" y="82">Lightweight</text><text x="276" y="100">edge detector</text></g>
@@ -49,6 +49,7 @@
 </svg>
 </div>
 
+<p class="note" style="margin:4px 0 0">C, a separate decision model placed after the server VLM, is the proposal's third option; it is tested on the Server VLM page.</p>
 
 <div class="grid g3" style="margin-top:14px">
   <div class="panel"><h2 style="margin-top:0">A · Edge trigger</h2><p style="margin:6px 0 10px">Which per-frame detector decides what to upload: frame differencing, a zero-shot or cross-domain foundation model, a small CNN trained on in-domain footage — or one trained on labels the server VLM produces itself.</p><a class="btn" href="edge.html">Edge trigger →</a></div>
@@ -75,7 +76,7 @@
 </section>
 
 <section class="panel">
-<h3 style="margin-top:0">A · The trigger should be a small model trained on footage like the camera's</h3>
+<h3 style="margin-top:0">A1 · The trigger should be a small model trained on footage like the camera's</h3>
 <div class="tiles">
   <div class="tile"><div class="v">38%</div><div class="l">events caught at a 1 % false-alarm budget by a 4M MobileNetV3 trained on in-domain footage, 16 ms per frame</div></div>
 <div class="tile"><div class="v">22%</div><div class="l">frame differencing, 1 ms</div></div><div class="tile"><div class="v">2%</div><div class="l">the 27B VLM asked per frame (219 ms; 58% at a 5 % budget)</div></div><div class="tile"><div class="v">≤ 14%</div><div class="l">every model trained on the other domain (ETRI CCTV), incl. the typed vision decision model</div></div></div>
@@ -83,7 +84,7 @@
 </section>
 
 <section class="panel">
-<h3 style="margin-top:0">A′ · The server can label the camera's footage for its own trigger (no annotation)</h3>
+<h3 style="margin-top:0">A2 · The server can label the camera's footage for its own trigger (no annotation)</h3>
 <div class="tiles">
   <div class="tile"><div class="v">37%</div><div class="l">recall at 1 % FPR on ETRI CCTV of a student trained only on the server VLM's per-second typed readout of the unlabelled train footage</div></div>
   <div class="tile"><div class="v">54%</div><div class="l">the same CNN trained on the human annotations</div></div>
