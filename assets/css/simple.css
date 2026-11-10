@@ -73,3 +73,5 @@ details.pipeline .diagram{border:0;padding:0}
 .dec-grid .dec-foot{grid-column:1/-1;margin:0}
 
 tr.hl td { background: #fff4ef; }
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){.g3{grid-template-columns:minmax(0,1fr)}}

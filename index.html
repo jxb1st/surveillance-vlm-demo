@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Examples · Surveillance Video Understanding Demo</title>
+<title>Overview · Surveillance Video Understanding Demo</title>
 <link rel="stylesheet" href="assets/css/site.css">
 <link rel="stylesheet" href="assets/css/simple.css">
 </head>
@@ -12,18 +12,20 @@
 <header class="topbar"><div class="topbar-in">
   <div class="brand">Surveillance Video Understanding Demo</div>
   <nav class="nav" aria-label="Pages">
-<a href="index.html" aria-current="page">Examples</a><a href="benchmarks.html">Benchmarks</a><a href="vlm.html">Video VLM</a><a href="edge.html">Edge detector</a>  </nav>
+<a href="index.html" aria-current="page">Overview</a><a href="examples.html">Examples</a><a href="vlm.html">Server VLM</a><a href="edge.html">Edge trigger</a><a href="benchmarks.html">Benchmarks</a>  </nav>
 </div></header>
 <main id="main">
-<details class="pipeline" open>
-  <summary>Pipeline design</summary>
+<script>(function(){var q=location.search;if(/[?&]sample=/.test(q)){location.replace("examples.html"+q+location.hash);}})();</script>
+<h1>Where should the decision live?</h1>
+<p class="lede">A surveillance pipeline watches the camera with a lightweight edge trigger, uploads a short window when it fires, and lets a Video VLM on the server decide what happened. We ask where in this chain the decision should be made — at the edge, inside the VLM, or in a separate decision model after it — and measure every option on the same frozen benchmark footage and on real CCTV.</p>
+
 <div class="diagram">
 <svg viewBox="0 0 1180 330" role="img" aria-label="Framework: camera video feeds a lightweight edge detector and a rolling buffer; uncertain events trigger context window selection and server Video VLM analysis" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif">
   <defs><marker id="fa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#3b4450"/></marker></defs>
   <rect x="6" y="6" width="560" height="318" rx="10" fill="#fbfbfc" stroke="#d9dde3" stroke-dasharray="5 4"/>
-  <text x="18" y="26" font-size="12.5" fill="#5b6470" font-weight="600">EDGE (real per-frame trigger, scored on the Decision layer page)</text>
+  <text x="18" y="26" font-size="12.5" fill="#5b6470" font-weight="600">EDGE · A: what should trigger the upload?</text>
   <rect x="750" y="6" width="424" height="318" rx="10" fill="#f7fbff" stroke="#b3cfee" stroke-dasharray="5 4"/>
-  <text x="762" y="26" font-size="12.5" fill="#0a447d" font-weight="600">SERVER (real model inference + typed decision layer)</text>
+  <text x="762" y="26" font-size="12.5" fill="#0a447d" font-weight="600">SERVER · B: how should the VLM decide?  C: is a decision model after it useful?</text>
   <g font-size="13" fill="#1a1e24" text-anchor="middle">
     <g data-node="camera"><rect x="22" y="130" width="120" height="60" rx="8" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="82" y="165">Camera video</text></g>
     <g data-node="edge"><rect x="196" y="56" width="160" height="60" rx="8" fill="#fff" stroke="#8a94a2" stroke-width="1.5"/><text x="276" y="82">Lightweight</text><text x="276" y="100">edge detector</text></g>
@@ -46,54 +48,78 @@
   <g font-size="12" fill="#3b4450"><text x="484" y="156">No</text><text x="600" y="78">Yes</text></g>
 </svg>
 </div>
-  <div class="chipset" style="margin-top:8px">
-<span class="tag pred">Edge: real per-frame detectors (score strips under the video; results on the <a href="edge.html">Edge detector</a> page)</span>    <span class="tag pred">Server: real VLM inference, below</span>
-  </div>
-</details>
-<h1>Video · ground truth · model output</h1>
-<details class="more" style="margin:0 0 10px"><summary>What the three tasks are</summary>
-<ul class="note" style="font-size:13.5px;margin:6px 0 0">
-  <li><b>ADC</b> (Anomaly Description Choice): choose the option that correctly describes the video.</li>
-  <li><b>TDG</b> (Temporal Description Grounding): given a description, give the start and end time of that event.</li>
-  <li><b>ALD</b> (Anomaly Localization and Description): find the anomaly and describe it in words with its time interval.</li>
-</ul></details>
-<div class="ctrl">
-  <div class="seg" id="task-seg" role="group" aria-label="Task">
-    <button class="btn" type="button" data-task="ADC" aria-pressed="true">ADC · choose a description <span class="n">120</span></button>
-    <button class="btn" type="button" data-task="TDG" aria-pressed="false">TDG · find the time <span class="n">60</span></button>
-    <button class="btn" type="button" data-task="ALD" aria-pressed="false">ALD · describe the anomaly <span class="n">12</span></button>
-  </div>
-  <div class="pager">
-    <button class="btn" type="button" id="prev" aria-label="Previous example">‹ Prev</button>
-    <span id="pos" class="note" aria-live="polite"></span>
-    <button class="btn" type="button" id="next" aria-label="Next example">Next ›</button>
-  </div>
+
+
+<div class="grid g3" style="margin-top:14px">
+  <div class="panel"><h2 style="margin-top:0">A · Edge trigger</h2><p style="margin:6px 0 10px">Which per-frame detector decides what to upload: frame differencing, a zero-shot or cross-domain foundation model, a small CNN trained on in-domain footage — or one trained on labels the server VLM produces itself.</p><a class="btn" href="edge.html">Edge trigger →</a></div>
+  <div class="panel"><h2 style="margin-top:0">B · Server readout</h2><p style="margin:6px 0 10px">Which VLM, and how to read its decision: decode a JSON answer, or read the probabilities over the option letters (typed readout) and use them as a confidence.</p><a class="btn" href="vlm.html">Server VLM →</a></div>
+  <div class="panel"><h2 style="margin-top:0">C · A separate decision model?</h2><p style="margin:6px 0 10px">The proposal's recipe: the VLM describes the window, a 421M typed text decision model picks the option. Tested zero-shot, fine-tuned, and with the description removed.</p><a class="btn" href="vlm.html#decision">Decision model →</a></div>
 </div>
 
-<div class="three">
-  <section class="panel" aria-labelledby="h-video">
-    <h2 id="h-video"><span class="step">1</span> Video</h2>
-    <div id="video"></div>
-  </section>
-  <section class="panel gt" aria-labelledby="h-gt">
-    <h2 id="h-gt"><span class="step">2</span> Ground truth <span class="tag ref">publisher annotation</span></h2>
-    <div id="gt"></div>
-  </section>
-  <section class="panel mo" aria-labelledby="h-out">
-    <h2 id="h-out"><span class="step">3</span> Model output <span class="tag pred">real inference</span></h2>
-    <div id="out"></div>
-  </section>
+<h2>What we found</h2>
+
+<section class="panel">
+<h3 style="margin-top:0">B · Read the VLM's probabilities; Qwen3.8-27B is the model</h3>
+<div class="tiles">
+  <div class="tile"><div class="v">0.77</div><div class="l">Qwen3.8-27B: best score of three VLMs (Matching 78%, Exclusion 68%, Rejection 98%)</div></div>
+<div class="tile"><div class="v">3.4×</div><div class="l">Qwen3-VL-8B-Instruct is this much faster, fits 18 GiB, score 0.64</div></div><div class="tile"><div class="v">1/4.8</div><div class="l">time per item with the typed readout (482 vs 2315 ms), same answers (2605 / 2646 on the held-out items)</div></div><div class="tile"><div class="v">97%</div><div class="l">accuracy on the 56% most confident items (ECE 0.12): the confidence supports abstention</div></div><div class="tile"><div class="v">0% / 100%</div><div class="l">Matching / Rejection with black frames: without the video it always answers "normal", so the probabilities come from the frames</div></div></div>
+<p class="note">Three VLMs on 192 frozen items (ADC, TDG, ALD). Appending <code>{"answer_id": "</code> and reading the next-token logits over the option letters replaces generation: no parsing failures, and a calibrated confidence for the 27B model (not for the 8B). <a href="vlm.html#typed">Details →</a></p>
+</section>
+
+<section class="panel">
+<h3 style="margin-top:0">C · A separate decision model does not help — and the benchmark's options leak the answer</h3>
+<div class="tiles">
+<div class="tile"><div class="v">18%</div><div class="l">Matching accuracy of the zero-shot text decision model reading the VLM's description (chance 14 %)</div></div>  <div class="tile"><div class="v">95%</div><div class="l">after fine-tuning on 2,368 benchmark items from other videos</div></div>
+<div class="tile"><div class="v">92%</div><div class="l">the same fine-tuned model with the description removed</div></div><div class="tile"><div class="v">98%</div><div class="l">a bag-of-words model that sees only the option texts</div></div></div>
+<p class="note">The fine-tuned head learns the distractor generator's wording, not the video. Any decision head trained on these items needs an options-only probe and a description-removed control; neither head is used. <a href="vlm.html#decision">Details →</a></p>
+</section>
+
+<section class="panel">
+<h3 style="margin-top:0">A · The trigger should be a small model trained on footage like the camera's</h3>
+<div class="tiles">
+  <div class="tile"><div class="v">38%</div><div class="l">events caught at a 1 % false-alarm budget by a 4M MobileNetV3 trained on in-domain footage, 16 ms per frame</div></div>
+<div class="tile"><div class="v">22%</div><div class="l">frame differencing, 1 ms</div></div><div class="tile"><div class="v">2%</div><div class="l">the 27B VLM asked per frame (219 ms; 58% at a 5 % budget)</div></div><div class="tile"><div class="v">≤ 14%</div><div class="l">every model trained on the other domain (ETRI CCTV), incl. the typed vision decision model</div></div></div>
+<p class="note">13 detectors score every second of 88 labelled videos (50 events); thresholds at matched frame false-positive rates, post-hoc and cross-fitted. <a href="edge.html">Details →</a></p>
+</section>
+
+<section class="panel">
+<h3 style="margin-top:0">A′ · The server can label the camera's footage for its own trigger (no annotation)</h3>
+<div class="tiles">
+  <div class="tile"><div class="v">37%</div><div class="l">recall at 1 % FPR on ETRI CCTV of a student trained only on the server VLM's per-second typed readout of the unlabelled train footage</div></div>
+  <div class="tile"><div class="v">54%</div><div class="l">the same CNN trained on the human annotations</div></div>
+<div class="tile"><div class="v">≤ 10%</div><div class="l">any model trained on other footage, with or without labels</div></div><div class="tile"><div class="v">54%</div><div class="l">the teacher itself per frame, at 217 ms (a one-off 782 GPU-s per hour of footage)</div></div></div>
+<p class="note">41 test videos, 41 events. The recipe works where the teacher's per-frame judgement is good (fixed cameras); on the web footage the teacher is weak at low false-alarm rates and the student inherits it. <a href="edge.html">Details →</a></p>
+</section>
+
+<section class="panel">
+<h3 style="margin-top:0">End to end: the trigger sets the ceiling and the cost; the server removes false alarms cheaply</h3>
+<div class="tiles">
+  <div class="tile"><div class="v">22%</div><div class="l">of the footage uploaded with the in-domain CNN at a 5 % budget (41 windows)</div></div>
+  <div class="tile"><div class="v">50%–58%</div><div class="l">events kept after the server's typed yes/no (27B / 8B), from 64% at the trigger</div></div>
+  <div class="tile"><div class="v">2.1/h</div><div class="l">false alarms per hour after the server, from 6.9/h at the trigger</div></div>
+  <div class="tile"><div class="v">59 + 3–10</div><div class="l">GPU-seconds per hour of video, edge + server; 788 with the VLM as the trigger</div></div>
 </div>
+<p class="note">1.7 h of labelled video, 50 events; alarm onsets open −10 s … +20 s windows; a window is kept at P(yes) ≥ 0.5. <a href="edge.html">Details →</a></p>
+</section>
 
-<details class="more"><summary>Exact prompt and raw annotation</summary><div id="raw" class="grid g2"></div></details>
+<h2>What was tested</h2>
+<div class="tablewrap"><table>
+<tbody>
+<tr><th style="white-space:nowrap">Footage</th><td>VALU demo subset v1: 174 videos from UCF-Crime and ECVA (public media), 120 ADC / 60 TDG / 12 ALD items, frozen before any model ran; 2,651 further ADC items on 409 other videos for the scale check. Edge: 88 labelled videos (50 events, 40 normal videos) at 1 fps. ETRI CCTV: 125 fixed-camera videos (abandoned object, falling), 84 train / 41 test.</td></tr>
+<tr><th>Server</th><td>Qwen3.8-27B, Qwen3-VL-8B-Instruct, VideoLLaMA3-7B; readouts: generated JSON (D0), option-letter logits (D1); decision model: Laya typed-decisions zero-shot (D2) and fine-tuned on VALU (D3); controls: black frames, blank / shuffled description, options-only probe.</td></tr>
+<tr><th>Edge</th><td>Frame differencing (+ EMA), Laya-Vision zero-shot and ETRI-tuned, four ETRI-trained CNNs, Qwen per frame (27B, 8B), VALU-trained MobileNetV3 (1 / 4 / 8 frames, 3 seeds, single-source), and students distilled from the VLM's typed readout on VALU and on ETRI footage.</td></tr>
+<tr><th>Protocol</th><td>32 uniform frames (long edge 672 px), BF16, greedy, one H200 (MIG slice for the small models); failures count as wrong. Edge thresholds at 1 % / 5 % frame false-positive budgets, chosen post-hoc and cross-fitted on video halves. End to end: windows −10 / +20 s, server P(yes) ≥ 0.5, GPU-seconds per hour of video.</td></tr>
+</tbody></table></div>
 
-<h2>All examples of this task</h2>
-<div id="thumbs" class="thumbs"></div>
+<h2>Reading order</h2>
+<ol style="font-size:14.5px">
+  <li><a href="examples.html">Examples</a> — the data and what each server VLM answers, one item at a time.</li>
+  <li><a href="vlm.html">Server VLM</a> — which model, the typed readout, the decision model that was not adopted.</li>
+  <li><a href="edge.html">Edge trigger</a> — the detectors, the label-free trigger, the end-to-end numbers.</li>
+  <li><a href="benchmarks.html">Benchmarks</a> — appendix: the six benchmarks and one real record of each.</li>
+</ol>
 </main>
 <footer>Build 2026-11-10 · VALU demo subset v1 — adapted protocol · real videos, publisher annotations and real model outputs · static page, no model runs in the browser</footer>
-<script src="assets/data/examples.js"></script>
-<script src="assets/data/edge.js"></script>
 <script src="assets/js/common.js"></script>
-<script src="assets/js/simple.js"></script>
 </body>
 </html>

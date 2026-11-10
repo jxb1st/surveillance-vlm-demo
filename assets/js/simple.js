@@ -211,7 +211,7 @@
       if (s.interval) { var tl = U.el("div", { class: "tl" }); var api = U.timeline(tl, v.duration, [{ label: "Ground truth", spans: [{ s: s.interval[0], e: s.interval[1], cls: "ref", text: "ground truth" }] }], pl.seek); pl.onTime(api.setTime); left.appendChild(tl); }
       if (t === "ADC") { right.appendChild(qa("Question", s.question)); s.options.forEach(function (o) { right.appendChild(U.el("div", { class: "qa", style: o.id === s.answer ? "border-color:var(--ref);background:var(--ref-soft)" : "" }, [U.el("span", { class: "k", text: o.id + (o.id === s.answer ? " · correct answer" : "") }), U.el("span", { class: "a", text: o.text })])); }); }
       else { right.appendChild(qa(t === "TDG" ? "Description given to the model" : "Reference description (hidden from the model)", s.description)); right.appendChild(qa("Time interval", span(s.interval))); right.appendChild(qa("Semantic level", U.level(s.level))); }
-      right.appendChild(U.el("p", {}, U.el("a", { class: "btn primary", href: U.href("index.html", { sample: s.id }) }, "See what the models answered")));
+      right.appendChild(U.el("p", {}, U.el("a", { class: "btn primary", href: U.href("examples.html", { sample: s.id }) }, "See what the models answered")));
       right.appendChild(rawBox(s.raw));
       U.clear(body).appendChild(U.el("div", { class: "rec" }, [left, right]));
     }
@@ -231,6 +231,6 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     var page = document.body.getAttribute("data-page");
-    if (page === "index.html") examples(); else if (page === "benchmarks.html") benchmarks();
+    if (page === "examples.html") examples(); else if (page === "benchmarks.html") benchmarks();
   });
 })();

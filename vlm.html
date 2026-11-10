@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Video VLM · Surveillance Video Understanding Demo</title>
+<title>Server VLM · Surveillance Video Understanding Demo</title>
 <link rel="stylesheet" href="assets/css/site.css">
 <link rel="stylesheet" href="assets/css/simple.css">
 </head>
@@ -12,10 +12,10 @@
 <header class="topbar"><div class="topbar-in">
   <div class="brand">Surveillance Video Understanding Demo</div>
   <nav class="nav" aria-label="Pages">
-<a href="index.html">Examples</a><a href="benchmarks.html">Benchmarks</a><a href="vlm.html" aria-current="page">Video VLM</a><a href="edge.html">Edge detector</a>  </nav>
+<a href="index.html">Overview</a><a href="examples.html">Examples</a><a href="vlm.html" aria-current="page">Server VLM</a><a href="edge.html">Edge trigger</a><a href="benchmarks.html">Benchmarks</a>  </nav>
 </div></header>
 <main id="main">
-<h1>Video VLM</h1>
+<h1>Server VLM</h1>
 <p class="lede">Which model should analyse the uploaded window on the server? Three VLMs, the same 192 items (120 ADC, 60 TDG, 12 ALD), the same 32 frames, greedy decoding, one H200.</p>
 
 <div class="panel" style="margin:0 0 18px">
@@ -41,15 +41,15 @@
   <div class="chartcard"><h3>Peak GPU memory</h3><svg class="chart" width="390" height="114" viewBox="0 0 390 114" role="group" aria-label="Peak GPU memory" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"><line x1="170" x2="170" y1="6" y2="108" stroke="#c3c7ce" stroke-width="1"/><text x="160" y="27" text-anchor="end" font-size="12.5" fill="#1a1e24">Qwen3.8-27B</text><g class="mark" data-v="54 GiB" data-tip="Qwen3.8-27B" tabindex="0" role="img" aria-label="Qwen3.8-27B: 54 GiB"><rect x="170" y="8" width="214" height="30" fill="transparent"/><path d="M170 13 H290 Q294 13 294 17 V29 Q294 33 290 33 H170 Z" fill="#2a78d6"/></g><text x="301" y="27" font-size="12" font-weight="600" fill="#1a1e24">54 GiB</text><text x="160" y="61" text-anchor="end" font-size="12.5" fill="#1a1e24">Qwen3-VL-8B-Instruct</text><g class="mark" data-v="18 GiB" data-tip="Qwen3-VL-8B-Instruct" tabindex="0" role="img" aria-label="Qwen3-VL-8B-Instruct: 18 GiB"><rect x="170" y="42" width="214" height="30" fill="transparent"/><path d="M170 47 H207.731 Q211.731 47 211.731 51 V63 Q211.731 67 207.731 67 H170 Z" fill="#eb6834"/></g><text x="218.731" y="61" font-size="12" font-weight="600" fill="#1a1e24">18 GiB</text><text x="160" y="95" text-anchor="end" font-size="12.5" fill="#1a1e24">VideoLLaMA3-7B</text><g class="mark" data-v="17 GiB" data-tip="VideoLLaMA3-7B" tabindex="0" role="img" aria-label="VideoLLaMA3-7B: 17 GiB"><rect x="170" y="76" width="214" height="30" fill="transparent"/><path d="M170 81 H206.385 Q210.385 81 210.385 85 V97 Q210.385 101 206.385 101 H170 Z" fill="#1baf7a"/></g><text x="217.385" y="95" font-size="12" font-weight="600" fill="#1a1e24">17 GiB</text></svg></div>
 </div>
 
-<h2>Typed readout instead of generated text</h2>
+<h2 id="typed">Typed readout instead of generated text</h2>
+<p class="note">Read the model's probabilities over the option letters instead of decoding a JSON answer: same answers, no parsing, a fraction of the time, and a confidence that can be used to abstain.</p>
 <div class="tablewrap"><table>
 <thead><tr><th>Model</th><th class="n">ms / item, generated</th><th class="n">ms / item, typed readout</th><th class="n">ADC Matching (typed)</th><th class="n">ADC Exclusion (typed)</th><th class="n">ADC Rejection (typed)</th><th class="n">ECE</th><th class="n">acc. at conf. ≥ 0.7 (kept)</th></tr></thead><tbody>
 <tr><td>Qwen3.8-27B</td><td class="n">2315</td><td class="n">482</td><td class="n">77.5%</td><td class="n">70.0%</td><td class="n">97.5%</td><td class="n">0.124</td><td class="n">97% (56%)</td></tr>
 <tr><td class="note">Qwen3.8-27B · black frames (control)</td><td class="n">—</td><td class="n">—</td><td class="n note">0.0%</td><td class="n note">0.0%</td><td class="n note">100.0%</td><td class="n">—</td><td class="n">—</td></tr><tr><td class="note">Qwen3.8-27B · generated, 2651 items outside the test set</td><td class="n note">3171</td><td class="n">—</td><td class="n note">86.0%</td><td class="n note">60.4%</td><td class="n note">96.6%</td><td class="n">—</td><td class="n">—</td></tr><tr><td class="note">Qwen3.8-27B · typed, 2651 items outside the test set (same answer as generated on 2605 / 2646)</td><td class="n">—</td><td class="n note">1100</td><td class="n note">85.6%</td><td class="n note">61.0%</td><td class="n note">96.6%</td><td class="n note">0.063</td><td class="n note">90% (47%)</td></tr><tr><td>Qwen3-VL-8B-Instruct</td><td class="n">691</td><td class="n">158</td><td class="n">65.0%</td><td class="n">37.5%</td><td class="n">92.5%</td><td class="n">0.247</td><td class="n">68% (85%)</td></tr>
 <tr><td class="note">Qwen3-VL-8B-Instruct · black frames (control)</td><td class="n">—</td><td class="n">—</td><td class="n note">0.0%</td><td class="n note">0.0%</td><td class="n note">100.0%</td><td class="n">—</td><td class="n">—</td></tr><tr><td class="note">Qwen3-VL-8B-Instruct · typed, 2651 items outside the test set</td><td class="n">—</td><td class="n note">367</td><td class="n note">66.2%</td><td class="n note">36.1%</td><td class="n note">93.3%</td><td class="n note">0.355</td><td class="n note">57% (82%)</td></tr></tbody></table></div>
-<p class="note">Black frames: the same prompt with the video replaced by black frames, i.e. what the question and option texts alone give the VLM. "Items outside the test set": the 2,651 ADC items of the 409 videos that were held out to train the text decision model, scored with the same protocol.</p><p class="note">Reading the model's probabilities over the option letters instead of decoding a JSON answer: same answers, no parsing, and a confidence that can be used to abstain.</p>
-
-<h2>Tested and not adopted: a separate decision model</h2>
+<p class="note">Black frames: the same prompt with the video replaced by black frames, i.e. what the question and option texts alone give the VLM. "Items outside the test set": the 2,651 ADC items of the 409 videos that were held out to train the text decision model, scored with the same protocol.</p>
+<h2 id="decision">Tested and not adopted: a separate decision model</h2>
 <p class="note">The proposal's two-stage recipe: Qwen writes a description of the window, a 421M text decision model (Laya, Jev-compatible) reads it and picks the option. Zero-shot (D2) and after fine-tuning on 2,368 VALU items from other videos (D3), with the description replaced as a control.</p>
 <div class="tablewrap"><table>
 <thead><tr><th>Head</th><th>State given to the decision model</th><th class="n">ADC Matching</th><th class="n">ADC Exclusion</th><th class="n">ADC Rejection</th><th class="n">abnormal-vs-normal AUC</th><th class="n">ms / item</th></tr></thead><tbody>
