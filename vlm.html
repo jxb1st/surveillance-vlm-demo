@@ -44,8 +44,10 @@
 <h2>Typed readout instead of generated text</h2>
 <div class="tablewrap"><table>
 <thead><tr><th>Model</th><th class="n">ms / item, generated</th><th class="n">ms / item, typed readout</th><th class="n">ADC Matching (typed)</th><th class="n">ADC Exclusion (typed)</th><th class="n">ADC Rejection (typed)</th><th class="n">ECE</th><th class="n">acc. at conf. ≥ 0.7 (kept)</th></tr></thead><tbody>
-<tr><td>Qwen3.8-27B</td><td class="n">2315</td><td class="n">482</td><td class="n">77.5%</td><td class="n">70.0%</td><td class="n">97.5%</td><td class="n">0.124</td><td class="n">97% (56%)</td></tr><tr><td>Qwen3-VL-8B-Instruct</td><td class="n">691</td><td class="n">158</td><td class="n">65.0%</td><td class="n">37.5%</td><td class="n">92.5%</td><td class="n">0.247</td><td class="n">68% (85%)</td></tr></tbody></table></div>
-<p class="note">Reading the model's probabilities over the option letters instead of decoding a JSON answer: same answers, no parsing, and a confidence that can be used to abstain.</p>
+<tr><td>Qwen3.8-27B</td><td class="n">2315</td><td class="n">482</td><td class="n">77.5%</td><td class="n">70.0%</td><td class="n">97.5%</td><td class="n">0.124</td><td class="n">97% (56%)</td></tr>
+<tr><td class="note">Qwen3.8-27B · black frames (control)</td><td class="n">—</td><td class="n">—</td><td class="n note">0.0%</td><td class="n note">0.0%</td><td class="n note">100.0%</td><td class="n">—</td><td class="n">—</td></tr><tr><td class="note">Qwen3.8-27B · generated, 2651 items outside the test set</td><td class="n note">3171</td><td class="n">—</td><td class="n note">86.0%</td><td class="n note">60.4%</td><td class="n note">96.6%</td><td class="n">—</td><td class="n">—</td></tr><tr><td class="note">Qwen3.8-27B · typed, 2651 items outside the test set (same answer as generated on 2605 / 2646)</td><td class="n">—</td><td class="n note">1100</td><td class="n note">85.6%</td><td class="n note">61.0%</td><td class="n note">96.6%</td><td class="n note">0.063</td><td class="n note">90% (47%)</td></tr><tr><td>Qwen3-VL-8B-Instruct</td><td class="n">691</td><td class="n">158</td><td class="n">65.0%</td><td class="n">37.5%</td><td class="n">92.5%</td><td class="n">0.247</td><td class="n">68% (85%)</td></tr>
+<tr><td class="note">Qwen3-VL-8B-Instruct · black frames (control)</td><td class="n">—</td><td class="n">—</td><td class="n note">0.0%</td><td class="n note">0.0%</td><td class="n note">100.0%</td><td class="n">—</td><td class="n">—</td></tr><tr><td class="note">Qwen3-VL-8B-Instruct · typed, 2651 items outside the test set</td><td class="n">—</td><td class="n note">367</td><td class="n note">66.2%</td><td class="n note">36.1%</td><td class="n note">93.3%</td><td class="n note">0.355</td><td class="n note">57% (82%)</td></tr></tbody></table></div>
+<p class="note">Black frames: the same prompt with the video replaced by black frames, i.e. what the question and option texts alone give the VLM. "Items outside the test set": the 2,651 ADC items of the 409 videos that were held out to train the text decision model, scored with the same protocol.</p><p class="note">Reading the model's probabilities over the option letters instead of decoding a JSON answer: same answers, no parsing, and a confidence that can be used to abstain.</p>
 
 <h2>Tested and not adopted: a separate decision model</h2>
 <p class="note">The proposal's two-stage recipe: Qwen writes a description of the window, a 421M text decision model (Laya, Jev-compatible) reads it and picks the option. Zero-shot (D2) and after fine-tuning on 2,368 VALU items from other videos (D3), with the description replaced as a control.</p>
@@ -62,7 +64,7 @@
 </ul>
 </details>
 </main>
-<footer>Build 2026-10-27 · VALU demo subset v1 — adapted protocol · real videos, publisher annotations and real model outputs · static page, no model runs in the browser</footer>
+<footer>Build 2026-11-10 · VALU demo subset v1 — adapted protocol · real videos, publisher annotations and real model outputs · static page, no model runs in the browser</footer>
 <script src="assets/js/common.js"></script>
 </body>
 </html>
