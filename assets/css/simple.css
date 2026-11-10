@@ -71,3 +71,5 @@ details.pipeline .diagram{border:0;padding:0}
 .dec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px}
 .dec-grid .mcard{margin:0}
 .dec-grid .dec-foot{grid-column:1/-1;margin:0}
+
+tr.hl td { background: #fff4ef; }
