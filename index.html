@@ -50,47 +50,6 @@
 </div>
 
 
-<h2>Findings</h2>
-
-<section class="panel">
-<h3 style="margin-top:0">B · Read the VLM's probabilities, not its text <a href="vlm.html#typed" style="font-weight:400;font-size:13.5px;margin-left:8px">Details →</a></h3>
-<div class="tiles">
-<div class="tile"><div class="v">1/4.8</div><div class="l">of the time per item, same answers</div></div><div class="tile"><div class="v">97%</div><div class="l">accuracy on the 56% most confident items</div></div><div class="tile"><div class="v">0%</div><div class="l">Matching with black frames: the confidence comes from the video</div></div>  <div class="tile"><div class="v">0.77</div><div class="l">Qwen3.8-27B, best of three VLMs; Qwen3-VL-8B-Instruct 3.4× faster at 0.64</div></div>
-</div>
-</section>
-
-<section class="panel">
-<h3 style="margin-top:0">C · A separate decision model adds nothing; the benchmark's options leak the answer <a href="vlm.html#decision" style="font-weight:400;font-size:13.5px;margin-left:8px">Details →</a></h3>
-<div class="tiles">
-<div class="tile"><div class="v">18%</div><div class="l">zero-shot text decision model (chance 14 %)</div></div>  <div class="tile"><div class="v">95%</div><div class="l">fine-tuned on benchmark items</div></div>
-<div class="tile"><div class="v">92%</div><div class="l">the same model with no description at all</div></div><div class="tile"><div class="v">98%</div><div class="l">bag of words over the option texts only</div></div></div>
-</section>
-
-<section class="panel">
-<h3 style="margin-top:0">A · The trigger: a small CNN trained on in-domain footage <a href="edge.html" style="font-weight:400;font-size:13.5px;margin-left:8px">Details →</a></h3>
-<div class="tiles">
-  <div class="tile"><div class="v">38%</div><div class="l">of events at 1 % false alarms, 4M CNN, 16 ms per frame</div></div>
-<div class="tile"><div class="v">22%</div><div class="l">frame differencing</div></div><div class="tile"><div class="v">2%</div><div class="l">the 27B VLM per frame, 219 ms</div></div><div class="tile"><div class="v">≤ 14%</div><div class="l">anything trained on another domain</div></div></div>
-</section>
-
-<section class="panel">
-<h3 style="margin-top:0">A · … and the server can train it with no labels <a href="edge.html" style="font-weight:400;font-size:13.5px;margin-left:8px">Details →</a></h3>
-<div class="tiles">
-  <div class="tile"><div class="v">37%</div><div class="l">on ETRI CCTV, trained only on the server VLM's labels</div></div>
-  <div class="tile"><div class="v">54%</div><div class="l">trained on human annotations</div></div>
-<div class="tile"><div class="v">≤ 10%</div><div class="l">trained on other footage</div></div><div class="tile"><div class="v">54%</div><div class="l">the teacher VLM itself, 217 ms per frame</div></div></div>
-</section>
-
-<section class="panel">
-<h3 style="margin-top:0">End to end: the trigger sets recall and cost; the server removes false alarms <a href="edge.html" style="font-weight:400;font-size:13.5px;margin-left:8px">Details →</a></h3>
-<div class="tiles">
-  <div class="tile"><div class="v">22%</div><div class="l">of the footage uploaded</div></div>
-  <div class="tile"><div class="v">50%–58%</div><div class="l">of events kept after the server (trigger alone 64%)</div></div>
-  <div class="tile"><div class="v">2.1/h</div><div class="l">false alarms (trigger alone 6.9/h)</div></div>
-  <div class="tile"><div class="v">59 + 3–10</div><div class="l">GPU-s per hour of video (788 with the VLM as the trigger)</div></div>
-</div>
-</section>
-
 <p class="note">Data: VALU subset (174 videos; 120 ADC, 60 TDG, 12 ALD items; 50 edge events) and ETRI CCTV (125 videos, 41 test events). Server: Qwen3.8-27B, Qwen3-VL-8B, VideoLLaMA3-7B. Edge: 13 detectors. One H200; failures count as wrong.</p>
 </main>
 <footer>Build 2026-11-11 · real videos, publisher annotations and real model outputs</footer>
