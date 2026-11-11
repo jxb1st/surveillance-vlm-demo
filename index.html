@@ -16,8 +16,8 @@
 </div></header>
 <main id="main">
 <script>(function(){var q=location.search;if(/[?&]sample=/.test(q)){location.replace("examples.html"+q+location.hash);}})();</script>
-<h1>Where should the decision live?</h1>
-<p class="lede">Camera → edge trigger → upload window → server Video VLM. Three places can decide: the edge (A), the VLM itself (B), or a separate decision model after it (C). Every option is measured on the same frozen footage.</p>
+<h1>Placing the decision in a surveillance VLM pipeline</h1>
+<p class="lede">Camera → edge trigger → upload window → server Video VLM. We compare three places to make the decision: the edge trigger (A), the VLM's own readout (B), and a separate decision model after it (C), all on the same frozen footage.</p>
 
 <div class="diagram">
 <svg viewBox="0 0 1180 330" role="img" aria-label="Framework: camera video feeds a lightweight edge detector and a rolling buffer; uncertain events trigger context window selection and server Video VLM analysis" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif">
